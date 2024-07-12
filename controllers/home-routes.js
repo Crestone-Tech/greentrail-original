@@ -8,10 +8,7 @@ const router = require("express").Router();
 router.get("/", async (req, res) => {
   try {
     // Render
-    res.render("homepage", {
-      posts,
-      loggedIn: req.session.loggedIn,
-    });
+    res.render("home", {});
   } catch (err) {
     res.status(500).json(err);
   }
