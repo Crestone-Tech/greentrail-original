@@ -6,12 +6,25 @@
     <title>GreenTrail</title>
 
     {{! ICONS }}
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/443d45a2cf.js"
+      crossorigin="anonymous"
+    ></script>
 
     {{! FONTS }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     {{! STYLES }}
     <link href="./output.css" rel="stylesheet" />
@@ -20,28 +33,27 @@
 
   <body>
     <header>
-      <nav>
-        <div>
-          <a href="/">Locations</a>
-          <a href="/">Add</a>
-          <a href="/">About</a>
-          <a href="/"></a>
-          {{#if loggedIn}}
-            <a
-              href="/logout"
-              type="button"
-              class="btn btn-outline-light"
-              id="logout"
-            >Logout</a>
-          {{else}}
-            <a
-              href="/login"
-              type="button"
-              class="btn btn-outline-light"
-              id="login"
-            >Login</a>
-          {{/if}}
-        </div>
+      <a href="/" class="grotesque" id="title">GreenTrail</a>
+      <nav class="inter">
+        <i class="fa-solid fa-bars"></i>
+        <a href="/">Locations</a>
+        <a href="/">Add</a>
+        <a href="/">About</a>
+        {{#if loggedIn}}
+          <a
+            href="/logout"
+            type="button"
+            class="btn btn-outline-light"
+            id="logout"
+          >Logout</a>
+        {{else}}
+          <a
+            href="/login"
+            type="button"
+            class="btn btn-outline-light"
+            id="login"
+          >Login</a>
+        {{/if}}
       </nav>
     </header>
 
@@ -53,7 +65,7 @@
       <a
         href="https://github.com/crestonesoftware/boombastic-froggy"
         target="_blank"
-      ><i class="fa fa-github" style="font-size:24px"></i></a>
+      ><i class="fa fa-github"></i></a>
     </footer>
 
     {{! JAVASCRIPT }}
