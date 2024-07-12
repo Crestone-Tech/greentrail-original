@@ -13,7 +13,7 @@ Event.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    event_name: {
       type: DataTypes.STRING,
       allowNull: false,
       verification: {
