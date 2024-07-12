@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Provider extends Model {}
+class ProviderTag extends Model {}
 
-Provider.init(
+ProviderTag.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,45 +11,32 @@ Provider.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    provider_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      verification: {
-        isAlpha: true,
-      },
-    },
-    community_id: {
+    provider_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: "community",
+        model: "provider",
         key: "id",
+        unique: false,
       },
+      allowNull: false,
     },
-    site_id: {
+    tag_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
       references: {
-        model: "site",
+        model: "tag",
         key: "id",
+        unique: false,
       },
-    },
-    service: {
-      type: DataTypes.STRING,
       allowNull: false,
-      verification: {
-        isAlpha: true,
-      },
     },
-    // Add provider tag(s) reference(s) here
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "provider",
+    modelName: "provider_tag",
   }
 );
 
-module.exports = Provider;
+module.exports = ProviderTag;

@@ -1,7 +1,33 @@
 const Traveler = require("./Traveler");
-const Event = require("./Event");
-const {Country, Province, Town, Site} = require('./Location')
+const { Event, EventSeries } = require("./Event");
+const { Country, Province, Town, Site } = require("./Location");
+const Provider = require("./Provider");
+const ProviderTag = require("./ProviderTag");
+const Tag = require("./Tag");
 
 // Event.belongsTo(Location, {});
 
-module.exports = { Traveler, Event, Country, Province, Town, Site};
+Provider.belongsToMany(Tag, {
+  through: {
+    model: ProviderTag,
+    unique: false,
+  },
+});
+
+Tag.belongsToMany(Provider, {
+  through: {
+    model: ProviderTag,
+    unique: false,
+  },
+});
+
+module.exports = {
+  Traveler,
+  Event,
+  EventSeries,
+  Country,
+  Province,
+  Town,
+  Site,
+  Provider,
+};
