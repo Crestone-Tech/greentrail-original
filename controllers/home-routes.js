@@ -7,14 +7,7 @@ const router = require("express").Router();
 /* Get request for homepage, gets all posts */
 router.get("/", authenticate, async (req, res) => {
   try {
-    // Get all posts
-    const posts = await Post.findAll({
-      include: [{ model: User }],
-    });
-
-    // Map data
-
-    // Render posts
+    // Render
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
