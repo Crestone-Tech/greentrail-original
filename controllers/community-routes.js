@@ -5,7 +5,7 @@ const router = require("express").Router();
 
 /* ROUTES */
 /* Get request for homepage, gets all posts */
-router.get("/community", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Render
     res.render("community", {
