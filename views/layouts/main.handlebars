@@ -1,4 +1,8 @@
-<html lang="en-US">
+{{#if darkText}}
+<html lang="en-US" class="light-background">
+{{else}}
+<html lang="en-US" class="dark-background">
+{{/if}}
 
   <head>
     <meta charset="UTF-8" />
@@ -29,11 +33,12 @@
     {{! STYLES }}
     <link href="./output.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/effects.css" />
   </head>
 
   <body>
     <header>
-      <a href="/" class="grotesque" id="title">GreenTrail</a>
       {{#if darkText}}
         {{> darkNav}}
       {{else}}

@@ -1,0 +1,8 @@
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+.hidden:hover {
+  display: none;
+}
