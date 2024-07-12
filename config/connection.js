@@ -7,7 +7,7 @@ const sequelize = process.env.DB_URL
   ? new Sequelize(process.env.DB_URL, {
       hooks: {
         beforeDefine: function (columns, model) {
-          model.tableName = `${process.end.DB_NAME}_${model.name.singluar}`;
+          model.tableName = `${process.env.DB_NAME}_${model.name.singular}`;
         },
       },
     })
