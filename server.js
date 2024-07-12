@@ -2,6 +2,7 @@
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
+const helper = require('./utils/helper');
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -38,7 +39,9 @@ app.use(routes);
 
 /* SEQUELIZE */
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () =>
+  app.listen(PORT, () => {
+    helper.logDBConnectionDetails();
     console.log(`Now listening at http://localhost:${PORT}/`)
+  }
   );
 });
