@@ -1,0 +1,62 @@
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenTrail</title>
+
+    {{! ICONS }}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    {{! FONTS }}
+
+    {{! STYLES }}
+    {{! <link rel="stylesheet" href="./assets/css/reset.css" /> }}
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div>
+          <a href="/">Locations</a>
+          <a href="/">Add</a>
+          <a href="/">About</a>
+          <a href="/"></a>
+          {{#if loggedIn}}
+            <a
+              href="/logout"
+              type="button"
+              class="btn btn-outline-light"
+              id="logout"
+            >Logout</a>
+          {{else}}
+            <a
+              href="/login"
+              type="button"
+              class="btn btn-outline-light"
+              id="login"
+            >Login</a>
+          {{/if}}
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      {{body}}
+    </main>
+
+    <footer id="contact">
+      <a
+        href="https://github.com/crestonesoftware/boombastic-froggy"
+        target="_blank"
+      ><i class="fa fa-github" style="font-size:24px"></i></a>
+    </footer>
+
+    {{! JAVASCRIPT }}
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
