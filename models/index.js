@@ -1,7 +1,6 @@
-const Location = require("./Location");
 const Traveler = require("./Traveler");
 const Event = require("./Event");
 
-Event.belongsTo(Location, {});
+// Event.belongsTo(Location, {});
 
-module.exports = { Location, Traveler, Event };
+module.exports = { Traveler, Event };
