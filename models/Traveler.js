@@ -48,3 +48,4 @@ Traveler.init(
         modelName: 'traveler',
     }
 );
+module.exports = Traveler;
