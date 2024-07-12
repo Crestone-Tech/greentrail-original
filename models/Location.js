@@ -188,4 +188,4 @@ Site.init(
 
 
 
-module.exports = {Country, Province, Town};
+module.exports = {Country, Province, Town, Site};
