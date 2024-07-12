@@ -12,18 +12,6 @@ Location.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        country: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        province: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
-        city:{
-            type: DataTypes.STRING,
-            allowNull: false,
-        }
     },
     {
         sequelize, 
@@ -137,8 +125,15 @@ Town.init(
             }
         }
     },
+    {
+        sequelize, 
+        tiemstamps: false, 
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'town'
+    }
 );
 
 
 
-module.exports = Location;
+module.exports = {Country, Province, Town};
