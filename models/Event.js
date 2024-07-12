@@ -1,4 +1,4 @@
-const { Model, Datatypes } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Event extends Model {
@@ -14,41 +14,41 @@ Event.init(
       autoIncrement: true,
     },
     name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       verification: {
         isAlpha: true,
       },
     },
     date: {
-      type: Datatypes.RANGE(Datatypes.DATE),
+      type: DataTypes.RANGE(DataTypes.DATE),
       allowNull: false,
       verification: {
         isDate: true,
       },
     },
     community_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'community',
-        key: 'id'
+        model: "community",
+        key: "id",
       },
     },
     site_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'site',
-        key: 'id'
+        model: "site",
+        key: "id",
       },
     },
     category: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
-      type: Datatypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },
@@ -66,20 +66,20 @@ class EventSeries extends Event {}
 EventSeries.init(
   {
     id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     event_series_name: {
-      type: Datatypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       verification: {
         isAlpha: true,
       },
     },
     event_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       unique: false,
       references: {
         model: "event",
@@ -87,30 +87,30 @@ EventSeries.init(
       },
     },
     community_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'community',
-        key: 'id'
+        model: "community",
+        key: "id",
       },
     },
     site_id: {
-      type: Datatypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'site',
-        key: 'id'
+        model: "site",
+        key: "id",
       },
     },
     date: {
-      type: Datatypes.RANGE(Datatypes.DATE),
+      type: DataTypes.RANGE(DataTypes.DATE),
       allowNull: false,
       verification: {
         isDate: true,
       },
     },
     description: {
-      type: Datatypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false,
     },
   },
