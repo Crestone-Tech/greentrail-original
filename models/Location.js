@@ -24,3 +24,5 @@ Location.init(
         modelName: 'location'
     }
 );
+
+module.exports = Location;
