@@ -1,4 +1,8 @@
-<html lang="en-US">
+{{#if darkText}}
+<html lang="en-US" class="light-background">
+{{else}}
+<html lang="en-US" class="dark-background">
+{{/if}}
 
   <head>
     <meta charset="UTF-8" />
@@ -29,11 +33,12 @@
     {{! STYLES }}
     <link href="./output.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/effects.css" />
   </head>
 
   <body>
-    <header>
-      <a href="/" class="grotesque" id="title">GreenTrail</a>
+    <header class="fade-in">
       {{#if darkText}}
         {{> darkNav}}
       {{else}}
@@ -45,7 +50,7 @@
       {{{body}}}
     </main>
 
-    <footer id="contact">
+    <footer class="fade-in" id="contact">
       {{#if darkText}}
         <a href="https://github.com/crestonesoftware/boombastic-froggy" target="_blank"><i class="fa fa-github dark"></i></a>
       {{else}}
