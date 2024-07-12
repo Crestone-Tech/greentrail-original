@@ -8,8 +8,8 @@ const router = require("express").Router();
 router.get("/", async (req, res) => {
   try {
     // Render
-    res.render("home", {
-      darkText: false,
+    res.render("locations", {
+      darkText: true,
     });
   } catch (err) {
     res.status(500).json(err);

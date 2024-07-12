@@ -1,9 +1,18 @@
 /* GENERAL */
 :root {
   --background: white;
-  --text: white;
+  --dark-text: black;
+  --light-text: white;
   --accent: #092325;
   --hover: #7bb1b2;
+}
+
+light {
+  color: var(--light-text);
+}
+
+dark {
+  color: var(--dark-text);
 }
 
 html {
@@ -52,7 +61,6 @@ header {
 }
 
 a {
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -70,7 +78,6 @@ nav a {
 nav i {
   position: relative;
   top: calc(-7px + 0.3vw);
-  color: var(--text);
   display: inline;
   margin: 0px 10px 0.35vw 20px;
 }
