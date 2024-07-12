@@ -1,20 +1,21 @@
-/* DEPENDECIES */
-const router = require("express").Router();
-// Import authentication middleware
-// Import models
+const router = require('exxpress').Router();
+const sequelize = require('../config/connection')
+const{Country, Province, Town, Site} = require('../models')
 
-/* ROUTES */
-/* Get request for homepage, gets all posts */
-router.get("/", async (req, res) => {
-  try {
-    // Render
-    res.render("locations", {
-      darkText: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.get('/countries', async (req,res) => {
+    try{
+        const countryData = await Country.findAll();
+        res.status(200).json(countryData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
 });
 
-/* EXPORTS */
-module.exports = router;
+router.get('countries/provinces', async (req,res) => {
+    try{
+        const provinceData = await Province.findAll();
+        res.status(200).json(provinceData);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+});
