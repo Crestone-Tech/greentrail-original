@@ -5,11 +5,11 @@ const router = require("express").Router();
 
 /* ROUTES */
 /* Get request for homepage, gets all posts */
-router.get("/", async (req, res) => {
+router.get("/community", async (req, res) => {
   try {
     // Render
-    res.render("home", {
-      darkText: false,
+    res.render("community", {
+      darkText: true,
     });
   } catch (err) {
     res.status(500).json(err);
