@@ -27,7 +27,22 @@ Event.init(
         isDate: true,
       },
     },
-    // add location (site) reference here
+    community_id: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'community',
+        key: 'id'
+      },
+    },
+    site_id: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'site',
+        key: 'id'
+      },
+    },
     category: {
       type: Datatypes.STRING,
       allowNull: false,
@@ -71,7 +86,22 @@ EventSeries.init(
         key: "id",
       },
     },
-    // add location (site) reference here
+    community_id: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'community',
+        key: 'id'
+      },
+    },
+    site_id: {
+      type: Datatypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'site',
+        key: 'id'
+      },
+    },
     date: {
       type: Datatypes.RANGE(Datatypes.DATE),
       allowNull: false,
