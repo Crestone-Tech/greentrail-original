@@ -116,7 +116,7 @@ Town.init(
                 key: 'id'
             }
         },
-        province_key:{
+        province_id:{
             type: DataTypes.INTEGER,
             unique: false,
             references: {
@@ -133,6 +133,58 @@ Town.init(
         modelName: 'town'
     }
 );
+class Site extends Location {}
+Site.init(
+    {
+        id: {
+            type:DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true, 
+            autoIncrement: true
+        },
+        site_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate:{
+                isAlpha: true,
+            },
+        },
+        town_id: {
+            type: DataTypes.INTEGER,
+            unique:false,
+            references:{
+                model:'town',
+                key:'id'
+            }
+
+        },
+        street_address: {
+            type:DataTypes.STRING,
+            allowNull: false,
+            
+        },
+        latitude: {
+            type: DataTypes.INTEGER,
+
+        },
+        longitude: {
+            type: DataTypes.INTEGER,
+        },
+        map_link:{
+            type: DataTypes.STRING,
+            
+        }, 
+        community_id: {
+            type: DataTypes.INTEGER,
+            unique: false,
+            references: {
+                model: 'community',
+                key:'id',
+            },
+        },
+
+    },
+)
 
 
 
