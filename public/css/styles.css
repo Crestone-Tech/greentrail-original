@@ -1,11 +1,28 @@
 /* GENERAL */
 :root {
   --background: white;
-  --text: black;
+  --text: white;
+  --accent: #092325;
+  --hover: #7bb1b2;
 }
 
 html {
-  background-color: rgb(9, 35, 37);
+  color: var(--white);
+  background-color: var(--accent);
+  min-width: 250px;
+}
+
+/* FONTS */
+.grotesque {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
 }
 
 /* BACKGROUND */
@@ -18,10 +35,67 @@ html {
   height: 100vh;
   opacity: 78%;
   object-fit: cover;
+  min-width: 250px;
 }
 
-/* NAVIGATION */
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 18px 22px 18px 22px;
+  align-items: flex-end;
+}
+
+#title {
+  font-size: calc(1vw + 30px);
+  margin: 0px 0px 0px 10px;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 nav {
+  font-size: calc(0.5vw + 20px);
+  display: flex;
+  margin: 0px 0px 0.35vw 0px;
+}
+
+nav a {
+  display: none;
+  padding: 0px 10px 0px 10px;
+}
+
+nav i {
+  position: relative;
+  top: calc(-7px + 0.3vw);
+  color: var(--text);
+  display: inline;
+  margin: 0px 10px 0.35vw 20px;
+}
+
+a:hover {
+  color: var(--hover);
 }
 
 /* PAGE CONTENT */
+
+/* FOOTER */
+footer {
+  font-size: calc(0.5vw + 20px);
+  position: fixed;
+  bottom: 26px;
+  right: 32px;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 696px) {
+  nav a {
+    display: inline;
+  }
+
+  nav i {
+    display: none !important;
+  }
+}
