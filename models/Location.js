@@ -29,12 +29,7 @@ class Country extends Location {}
 
 Country.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+    // id is inherited
     country_name: {
       type: DataTypes.STRING,
       allowNull: false,
