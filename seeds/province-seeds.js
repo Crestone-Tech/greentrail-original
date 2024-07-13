@@ -1,17 +1,61 @@
-const { Country } = require('../models/Location');
+const { Province } = require('../models/Location');
 
-const countryData = [
+const provinceData = [
   {
-    country_name: "Canada",
+    province_name: "Alberta",
+    country_id: 1,
   },
   {
-    country_name: "Mexico",
+    province_name: "British Columbia",
+    country_id: 1,
   },
   {
-    country_name: "United Status of America",
+    province_name: "Manitoba",
+    country_id: 1,
+  },
+
+  {
+    province_name: "New Brunswick",
+    country_id: 1,
+  },
+  {
+    province_name: "Newfoundland and Labrador",
+    country_id: 1,
+  },
+  {
+    province_name: "Nova Scotia",
+    country_id: 1,
+  },
+  {
+    province_name: "Ontario",
+    country_id: 1,
+  },
+  {
+    province_name: "Prince Edward Island",
+    country_id: 1,
+  },
+  {
+    province_name: "Quebec",
+    country_id: 1,
+  },
+  {
+    province_name: "Saskatchewan",
+    country_id: 1,
+  },
+  {
+    province_name: "Yukon",
+    country_id: 1,
+  },
+  {
+    province_name: "Nunavut",
+    country_id: 1,
+  },
+  {
+    province_name: "Northwest Territory",
+    country_id: 1,
   },
 ];
 
-const seedCountry = () => Country.bulkCreate(countryData);
+const seedProvince = () => Province.bulkCreate(provinceData);
 
-module.exports = seedCountry;
+module.exports = seedProvince;
