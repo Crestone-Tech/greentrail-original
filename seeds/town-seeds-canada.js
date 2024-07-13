@@ -38,6 +38,39 @@ const townData = [
     town_name: "Whistler",
     province_id: 2,
   },
+  // Newfoundland
+  {
+    town_name: "Bonavista",
+    province_id: 5,
+  },
+  {
+    town_name: "Corner Brook",
+    province_id: 5,
+  },
+  {
+    town_name: "Fogo Island",
+    province_id: 5,
+  },
+  {
+    town_name: "Gander",
+    province_id: 5,
+  },
+  {
+    town_name: "St. John's",
+    province_id: 5,
+  },
+  {
+    town_name: "Stephenville",
+    province_id: 5,
+  },
+  {
+    town_name: "Twillingate",
+    province_id: 5,
+  },
+  {
+    town_name: "Trinity",
+    province_id: 5,
+  },
   // Quebec
   {
     town_name: "Baie-Saint-Paul",
