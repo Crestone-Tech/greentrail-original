@@ -87,6 +87,39 @@ const townData = [
     town_name: "Zapopan",
     province_id: 26,
   },
+  // Michoacán
+  {
+    town_name: "Pátzcuaro",
+    province_id: 29,
+  },
+  {
+    town_name: "Tzintzuntzan",
+    province_id: 29,
+  },
+  {
+    town_name: "Santa Clara del Cobre",
+    province_id: 29,
+  },
+  {
+    town_name: "Cuitzeo",
+    province_id: 29,
+  },
+  {
+    town_name: "Tlalpujahua",
+    province_id: 29,
+  },
+  {
+    town_name: "Angangueo",
+    province_id: 29,
+  },
+  {
+    town_name: "Jiquilpan",
+    province_id: 29,
+  },
+  {
+    town_name: "Tacámbaro",
+    province_id: 29,
+  },
 ];
 
 const seedTown = () => Town.bulkCreate(townData);
