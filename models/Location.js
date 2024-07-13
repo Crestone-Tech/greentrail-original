@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-
+const {TABLES } = require('./Constants');
 class Location extends Model {}
 
 Location.init(
@@ -29,12 +29,7 @@ class Country extends Location {}
 
 Country.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+    // id is inherited
     country_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -45,7 +40,7 @@ Country.init(
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "country",
@@ -56,12 +51,6 @@ class Province extends Location {}
 
 Province.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     province_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -73,14 +62,14 @@ Province.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "country",
+        model: TABLES.COUNTRY,
         key: "id",
       },
     },
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "province",
@@ -91,38 +80,24 @@ class Town extends Location {}
 
 Town.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    city_name: {
+    town_name: {
       type: DataTypes.STRING,
       verification: {
         isAlpha: true,
-      },
-    },
-    country_id: {
-      type: DataTypes.INTEGER,
-      unique: false,
-      references: {
-        model: "country",
-        key: "id",
       },
     },
     province_id: {
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "province",
+        model: TABLES.PROVINCE,
         key: "id",
       },
     },
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "town",
@@ -131,12 +106,6 @@ Town.init(
 class Site extends Location {}
 Site.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     site_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -148,7 +117,7 @@ Site.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "town",
+        model: TABLES.TOWN,
         key: "id",
       },
     },
@@ -165,18 +134,19 @@ Site.init(
     map_link: {
       type: DataTypes.STRING,
     },
-    community_id: {
-      type: DataTypes.INTEGER,
-      unique: false,
-      references: {
-        model: "community",
-        key: "id",
-      },
-    },
+// Commented until Community is created
+    // community_id: {
+    //   type: DataTypes.INTEGER,
+    //   unique: false,
+    //   references: {
+    //     model: "community",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "site",
