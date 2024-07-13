@@ -51,12 +51,6 @@ class Province extends Location {}
 
 Province.init(
   {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    //   primaryKey: true,
-    //   autoIncrement: true,
-    // },
     province_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -86,13 +80,7 @@ class Town extends Location {}
 
 Town.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    city_name: {
+    town_name: {
       type: DataTypes.STRING,
       verification: {
         isAlpha: true,
@@ -109,7 +97,7 @@ Town.init(
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "town",
