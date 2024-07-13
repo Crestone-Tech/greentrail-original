@@ -45,7 +45,7 @@ Country.init(
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "country",
