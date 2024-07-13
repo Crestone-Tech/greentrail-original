@@ -126,10 +126,10 @@ Site.init(
       allowNull: false,
     },
     latitude: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
     },
     longitude: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
     },
     map_link: {
       type: DataTypes.STRING,
