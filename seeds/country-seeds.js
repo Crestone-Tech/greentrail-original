@@ -1,8 +1,16 @@
 const { Country } = require('../models/Location');
 
-const countryData = {
-
-};
+const countryData = [
+  {
+    country_name: "Canada",
+  },
+  {
+    country_name: "Mexico",
+  },
+  {
+    country_name: "United Status of America",
+  },
+];
 
 const seedCountry = () => Country.bulkCreate(countryData);
 
