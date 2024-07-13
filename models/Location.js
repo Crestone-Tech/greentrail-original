@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
-
+const {TABLES } = require('./Constants');
 class Location extends Model {}
 
 Location.init(
@@ -73,7 +73,7 @@ Province.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "country",
+        model: TABLES.COUNTRY,
         key: "id",
       },
     },
@@ -103,19 +103,11 @@ Town.init(
         isAlpha: true,
       },
     },
-    country_id: {
-      type: DataTypes.INTEGER,
-      unique: false,
-      references: {
-        model: "country",
-        key: "id",
-      },
-    },
     province_id: {
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "province",
+        model: TABLES.PROVINCE,
         key: "id",
       },
     },
@@ -148,7 +140,7 @@ Site.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "town",
+        model: TABLES.TOWN,
         key: "id",
       },
     },
@@ -165,14 +157,15 @@ Site.init(
     map_link: {
       type: DataTypes.STRING,
     },
-    community_id: {
-      type: DataTypes.INTEGER,
-      unique: false,
-      references: {
-        model: "community",
-        key: "id",
-      },
-    },
+// Commented until Community is created
+    // community_id: {
+    //   type: DataTypes.INTEGER,
+    //   unique: false,
+    //   references: {
+    //     model: "community",
+    //     key: "id",
+    //   },
+    // },
   },
   {
     sequelize,
