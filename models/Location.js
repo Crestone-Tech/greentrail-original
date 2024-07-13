@@ -106,12 +106,6 @@ Town.init(
 class Site extends Location {}
 Site.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     site_name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -152,7 +146,7 @@ Site.init(
   },
   {
     sequelize,
-    tiemstamps: false,
+    timestamps: false,
     freezeTableName: true,
     underscored: true,
     modelName: "site",
