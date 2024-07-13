@@ -1,5 +1,6 @@
 const seedCountries = require('./country-seeds');
 const seedProvinces = require("./province-seeds");
+const seedTowns = require("./town-seeds");
 
 const sequelize = require('../config/connection');
 
@@ -14,6 +15,9 @@ const seedAll = async () => {
 
     await seedProvinces();
     console.log("\n----- PROVIDENCES SEEDED -----\n");
+
+    await seedTowns();
+    console.log("\n----- TOWNS SEEDED -----\n");
 
     console.log("Seeds: done");
     console.log();
