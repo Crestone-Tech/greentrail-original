@@ -66,15 +66,15 @@ const townData = [
     province_id: 26,
   },
   {
-    town_name: "Cocula",
-    province_id: 26,
-  },
-  {
-    town_name: "Sayula",
-    province_id: 26,
-  },
-  {
     town_name: "Temacapulín",
+    province_id: 26,
+  },
+  {
+    town_name: "Guadalajara",
+    province_id: 26,
+  },
+  {
+    town_name: "Zapopan",
     province_id: 26,
   },
 ];
