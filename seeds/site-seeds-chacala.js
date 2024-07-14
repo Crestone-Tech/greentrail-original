@@ -25,14 +25,14 @@ const siteData = [
     longitude: "-105.22560976447247",
     map_link: "https://maps.app.goo.gl/hTLMkCEziD2ves5c9",
   },
-  // {
-  //   site_name: "Volcán Durón Ivanna",
-  //   town_id: 1,
-  //   street_address: "",
-  //   latitude: "",
-  //   longitude: "",
-  //   map_link: "https://maps.app.goo.gl/hTLMkCEziD2ves5c9",
-  // },
+  {
+    site_name: "Volcán Durón Ivanna",
+    town_id: 1,
+    street_address: "",
+    latitude: null,
+    longitude: null,
+    map_link: "https://maps.app.goo.gl/hTLMkCEziD2ves5c9",
+  },
 ];
 
 const seedSite = () => Site.bulkCreate(siteData);
