@@ -4,7 +4,8 @@ const seedTownsMexico = require("./town-seeds-mexico");
 const seedTownsCanada = require("./town-seeds-canada");
 const seedTownsUSA = require("./town-seeds-usa");
 const seedSitesChacala = require("./site-seeds-chacala");
-const seedCommunity = require('./community-seeds');
+const seedCommunity = require("./community-seeds");
+const seedProviders = require('./provider-seeds-chacala');
 
 const sequelize = require("../config/connection");
 
@@ -34,6 +35,9 @@ const seedAll = async () => {
 
   await seedCommunity();
   console.log("\n----- COMMUNITIES SEEDED -----\n");
+
+  await seedProviders(); 
+  console.log("\n----- PROVIDERS SEEDED for CHACALA -----\n");
 
   console.log("Seeds: done");
   console.log();

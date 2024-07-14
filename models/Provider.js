@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const { TABLES } = require("./Constants");
 
 class Provider extends Model {}
 
@@ -22,7 +23,7 @@ Provider.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "community",
+        model: TABLES.COMMUNITY,
         key: "id",
       },
     },
@@ -30,7 +31,7 @@ Provider.init(
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: "site",
+        model: TABLES.SITE,
         key: "id",
       },
     },
