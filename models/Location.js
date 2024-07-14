@@ -113,6 +113,10 @@ Site.init(
         isAlpha: true,
       },
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     town_id: {
       type: DataTypes.INTEGER,
       unique: false,
@@ -123,18 +127,21 @@ Site.init(
     },
     street_address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     latitude: {
       type: DataTypes.DECIMAL,
+      allowNull: true,
     },
     longitude: {
       type: DataTypes.DECIMAL,
+      allowNull: true,
     },
     map_link: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
-// Commented until Community is created
+    // Commented until Community is created
     // community_id: {
     //   type: DataTypes.INTEGER,
     //   unique: false,
