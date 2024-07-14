@@ -7,6 +7,7 @@ const seedSitesChacala = require("./site-seeds-chacala");
 const seedCommunity = require("./community-seeds");
 const seedProviders = require('./provider-seeds-chacala');
 const seedTags = require('./tag-seeds');
+const seedProviderTags = require('./providerTag-seeds-chacala');
 
 const sequelize = require("../config/connection");
 
@@ -42,6 +43,9 @@ const seedAll = async () => {
 
   await seedProviders(); 
   console.log("\n----- PROVIDERS SEEDED for CHACALA -----\n");
+
+  await seedProviderTags();
+  console.log("\n----- PROVIDER TAGS SEEDED for CHACALA -----\n");
 
   console.log("Seeds: done");
   console.log();

@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
+const {TABLES} = require('./Constants');
 const sequelize = require("../config/connection");
 
 class ProviderTag extends Model {}
@@ -14,7 +15,7 @@ ProviderTag.init(
     provider_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "provider",
+        model: TABLES.PROVIDER,
         key: "id",
         unique: false,
       },
@@ -23,7 +24,7 @@ ProviderTag.init(
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "tag",
+        model: TABLES.PROVIDER,
         key: "id",
         unique: false,
       },

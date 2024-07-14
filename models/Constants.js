@@ -1,9 +1,15 @@
 const TABLES = {
-  COMMUNITY: "greentrail_db_community",
+  // Location tables
   COUNTRY: "greentrail_db_country",
   PROVINCE: "greentrail_db_province",
-  SITE: "greentrail_db_site",
   TOWN: "greentrail_db_town",
+  SITE: "greentrail_db_site",
+
+  // Community and Provider tables
+  COMMUNITY: "greentrail_db_community",
+  PROVIDER: "greentrail_db_provider",
+  PROVIDER_TAG: "greentrail_db_provider_tag",
+  TAG: "greentrail_db_tag",
 };
 
 module.exports = { TABLES }
