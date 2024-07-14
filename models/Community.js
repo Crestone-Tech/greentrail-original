@@ -27,7 +27,7 @@ Community.init(
         key: "id",
       },
     },
-    community_center_id: {
+    community_center_site_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
