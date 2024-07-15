@@ -29,7 +29,7 @@ router.get("/locations", async (req, res) => {
 });
 
 /* Get request for community page */
-router.get("/", async (req, res) => {
+router.get("/community", async (req, res) => {
   try {
     // Render
     res.render("community", {

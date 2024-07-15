@@ -21,7 +21,6 @@ function showSignUp() {
 
 /* Signs a user in */
 const userSignIn = async (event) => {
-  console.log("Signing user in");
   event.preventDefault();
 
   const email = document.querySelector("#sign-in-email").value;
