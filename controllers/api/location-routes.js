@@ -53,18 +53,6 @@ router.get('/towns', async(req,res)=> {
   }
 });
 
-/* Get route to get all towns plus sites associated with them */
-router.get('towns/:id', async (req,res) => {
-  try{ 
-    const townData = await Town.findByPk(req.params.id, {
-      include:[{model:Site}]
-    });
-    if(!townData){
-      res.status(404).json({message:"No such town exists as community"})
-    }
-  } catch(err){
-    res.status(500).json(err)
-  }
-});
+
 
 module.exports = router;
