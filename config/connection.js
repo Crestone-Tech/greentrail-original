@@ -18,6 +18,11 @@ const sequelize = process.env.DB_URL
       {
         host: "localhost",
         dialect: "postgres",
+        hooks: {
+          beforeDefine: function (columns, model) {
+            model.tableName = `${process.env.DB_NAME}_${model.name.singular}`;
+          },
+        },
       }
     );
 

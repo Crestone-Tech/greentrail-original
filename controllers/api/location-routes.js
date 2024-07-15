@@ -66,3 +66,5 @@ router.get('towns/:id', async (req,res) => {
     res.status(500).json(err)
   }
 });
+
+module.export = router;
