@@ -11,7 +11,11 @@ Traveler.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    first: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last: {
       type: DataTypes.STRING,
       allowNull: false,
     },

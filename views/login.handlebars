@@ -1,22 +1,31 @@
-<div>
-  <button id="sign-in-button">Sign in</button>
-  <button id="sign-up-button">Sign up</button>
+<div class="fade-in" id="login-page">
+  <div>
+    <button id="sign-in-button">Sign in</button>
+    <button id="sign-up-button">Sign up</button>
+  </div>
+
+  <div>
+    <section id="sign-in">
+      <p>Email:</p>
+      <input type="text" id="sign-in-email" name="sign-in-email" />
+      <p>Password:</p>
+      <input type="password" id="sign-in-password" name="sign-in-password" />
+      <button id="go-sign-in">Sign in</button>
+    </section>
+
+    <section id="sign-up">
+      <p>First name:</p>
+      <input type="text" id="sign-up-first" name="sign-up-first" />
+      <p>Last name:</p>
+      <input type="text" id="sign-up-last" name="sign-up-last" />
+      <p>Email:</p>
+      <input type="text" id="sign-up-email" name="sign-up-email" />
+      <p>Password:</p>
+      <input type="password" id="sign-up-password" name="sign-up-password" />
+      <button id="go-sign-up">Sign in</button>
+    </section>
+  </div>
 </div>
 
-<div>
-  <section id="sign-in">
-    <p>Email:</p>
-    <input type="text" id="sign-in-email" name="sign-in-email" />
-    <p>Password:</p>
-    <input type="password" id="sign-in-password" name="sign-in-password" />
-  </section>
-
-  <section id="sign-up">
-    <p>Email:</p>
-    <input type="text" id="sign-up-email" name="sign-up-email" />
-    <p>Username:</p>
-    <input type="text" id="sign-up-username" name="sign-up-username" />
-    <p>Password:</p>
-    <input type="password" id="sign-up-password" name="sign-up-password" />
-  </section>
-</div>
+{{! JAVASCRIPT }}
+<script src="./js/login.js"></script>

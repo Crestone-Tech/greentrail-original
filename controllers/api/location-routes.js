@@ -56,6 +56,4 @@ router.get('/towns', async(req,res)=> {
   }
 });
 
-
-
 module.exports = router;
