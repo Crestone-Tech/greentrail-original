@@ -21,7 +21,15 @@ Tag.belongsToMany(Provider, {
   },
 });
 
+Event.hasOne(Community, {
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
+});
 
+Community.hasMany(Event, {
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
+});
 
 module.exports = {
   Community,
