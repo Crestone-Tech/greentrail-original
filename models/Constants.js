@@ -10,6 +10,8 @@ const TABLES = {
   PROVIDER: "greentrail_db_provider",
   PROVIDER_TAG: "greentrail_db_provider_tag",
   TAG: "greentrail_db_tag",
+  EVENT: "greentrail_db_event", 
+  EVENT_SERIES: "greentrail_db_event_series"
 };
 
 module.exports = { TABLES }
