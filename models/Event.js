@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const { TABLES } = require("./Constants");
 
 class Event extends Model {
   //add login verification here
@@ -31,7 +32,7 @@ Event.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "community",
+        model: TABLES.COMMUNITY,
         key: "id",
       },
     },
@@ -39,7 +40,7 @@ Event.init(
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: "site",
+        model: TABLES.SITE,
         key: "id",
       },
     },
@@ -82,7 +83,7 @@ EventSeries.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "event",
+        model: TABLES.EVENT,
         key: "id",
       },
     },
@@ -90,7 +91,7 @@ EventSeries.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "community",
+        model: TABLES.COMMUNITY,
         key: "id",
       },
     },
@@ -98,7 +99,7 @@ EventSeries.init(
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: "site",
+        model: TABLES.SITE,
         key: "id",
       },
     },

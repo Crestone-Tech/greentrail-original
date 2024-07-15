@@ -34,9 +34,6 @@ const seedAll = async () => {
   await seedTownsUSA();
   console.log("\n----- TOWNS SEEDED for USA -----\n");
 
-  await seedTags();
-  console.log("\n----- TAGS SEEDED -----\n");
-
   await seedSitesChacala();
   console.log("\n----- SITES SEEDED for CHACALA -----\n");
 
@@ -45,6 +42,9 @@ const seedAll = async () => {
 
   await seedProviders();
   console.log("\n----- PROVIDERS SEEDED for CHACALA -----\n");
+
+  await seedTags();
+  console.log("\n----- TAGS SEEDED -----\n");
 
   await seedProviderTags();
   console.log("\n----- PROVIDER TAGS SEEDED for CHACALA -----\n");

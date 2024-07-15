@@ -1,4 +1,5 @@
 /* VARIABLES */
+/* Variables for homepage */
 const subtitle = document.querySelector("#homepage-subtitle");
 const subtitleText = [
   "Travel respectfully.",
@@ -16,6 +17,5 @@ function changeText() {
 
 /* INITIALIZERS */
 window.onload = () => {
-  changeText;
   setInterval(changeText, 8200);
 };
