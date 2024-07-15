@@ -99,7 +99,7 @@ EventSeries.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "site",
+        model: TABLES.SITE,
         key: "id",
       },
     },

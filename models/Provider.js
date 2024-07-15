@@ -42,7 +42,8 @@ Provider.init(
         isAlpha: true,
       },
     },
-    // Add provider tag(s) reference(s) here
+    
+   
   },
   {
     sequelize,

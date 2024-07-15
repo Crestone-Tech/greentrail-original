@@ -24,7 +24,7 @@ ProviderTag.init(
     tag_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: TABLES.PROVIDER,
+        model: TABLES.TAG, //was TABLES.PROVIDER
         key: "id",
         unique: false,
       },
