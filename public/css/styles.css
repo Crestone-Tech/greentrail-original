@@ -74,7 +74,7 @@ nav {
 
 nav a {
   display: none;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0.35vw 10px;
 }
 
 nav i {

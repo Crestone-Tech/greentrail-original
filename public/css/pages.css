@@ -25,5 +25,48 @@
 }
 
 /* COMMUNITY PAGE */
+#community {
+  margin: 20px;
+}
+
+#community-features {
+  display: flex;
+  justify-content: center;
+}
+
+#community-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  line-height: 0.5;
+  border: 1px solid var(--dark-text);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+#community-nav a {
+  color: var(--dark-text);
+  padding: 10px;
+  font-size: calc(0.5vw + 20px);
+}
 
 /* LOGIN PAGE */
+#sign-up {
+  display: none;
+}
+
+/* MOBILE */
+
+/* LARGE SCREENS */
+@media (min-width: 696px) {
+  #community-nav {
+    width: calc(20vw + 650px);
+  }
+}
+
+/* DESKTOPS */
+@media (min-width: 696px) {
+  #community-nav {
+    width: calc(20vw + 650px);
+  }
+}
