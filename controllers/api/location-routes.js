@@ -33,23 +33,36 @@ router.get('countries/:id/provinces', async (req,res) => {
 
 router.get('provinces/:id/towns', async(req, res) => {
   try {
-    const townData = await Province.findByPk(req.params.id, {
+    const ProvinceData = await Province.findByPk(req.params.id, {
       include:[{model:Town}]
     });
-    res.status(200).json(townData);
+    res.status(200).json(ProvinceData);
   } catch(err){
     res.status(500).json(err);
   }
-
 });
 
+/*Get all towns available */
 
-
-router.get("/provinces", async (req, res) => {
+router.get('/towns', async(req,res)=> {
   try {
-    const provinceData = await Province.findAll();
-    res.status(200).json(provinceData);
-  } catch (err) {
-    res.status(500).json(err);
+    const townsData = await Town.findAll();
+    res.status(200).json(townsData);
+  }catch(err){
+    res.status(500).json(err)
+  }
+});
+
+/* Get route to get all towns plus sites associated with them */
+router.get('towns/:id', async (req,res) => {
+  try{ 
+    const townData = await Town.findByPk(req.params.id, {
+      include:[{model:Site}]
+    });
+    if(!townData){
+      res.status(404).json({message:"No such town exists as community"})
+    }
+  } catch(err){
+    res.status(500).json(err)
   }
 });
