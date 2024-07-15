@@ -54,6 +54,14 @@ Town.hasMany(Site, {
 
 Site.belongsTo(Town, {
   foreignKey:'town_id'
+});
+
+Community.hasMany( Site, {
+  foreignKey:'community_id',
+  onDelete: 'CASCADE'
+});
+Site.belongsTo(Community, {
+  foreignKey: 'community_id'
 })
 
 module.exports = {
