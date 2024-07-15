@@ -141,15 +141,14 @@ Site.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // Commented until Community is created
-    // community_id: {
-    //   type: DataTypes.INTEGER,
-    //   unique: false,
-    //   references: {
-    //     model: "community",
-    //     key: "id",
-    //   },
-    // },
+    community_id: {
+      type: DataTypes.INTEGER,
+      unique: false,
+      references: {
+        model: "community",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
