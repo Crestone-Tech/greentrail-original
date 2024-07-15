@@ -15,29 +15,33 @@ router.get("/countries", async (req, res) => {
     res.status(500).json(err);
   }
 });
-/*get countries with associated Provinces*/
 
-router.get('/countries/provinces', async (req,res) => {
+/*get country with associated Provinces*/
+
+router.get('countries/:id/provinces', async (req,res) => {
   try {
     const countryData = await Country.findByPk(req.params.id, {
       include: [{model:Province}]
-    }
-    );
+    });
     res.status(200).json(countryData);
 } catch(err) {
   res.status(500).json(err)
 }
 }); 
 
-router.get('/towns', async(req, res) => {
-  try {
-    const townData = await Town.findAll({
+/*Get provinces with associated towns */
 
-    })
+router.get('provinces/:id/towns', async(req, res) => {
+  try {
+    const townData = await Province.findByPk(req.params.id, {
+      include:[{model:Town}]
+    });
+    res.status(200).json(townData);
+  } catch(err){
+    res.status(500).json(err);
   }
 
-}
-)
+});
 
 
 
