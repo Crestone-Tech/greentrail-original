@@ -17,7 +17,7 @@ router.get("/countries", async (req, res) => {
 });
 
 /*get country with associated Provinces*/
-
+//works
 router.get('/countries/:id', async (req,res) => {
   try {
     const countryData = await Country.findByPk(req.params.id,
@@ -33,12 +33,12 @@ router.get('/countries/:id', async (req,res) => {
 }); 
 
 /*Get provinces with associated towns */
-
-router.get('/provinces/:id/towns', async(req, res) => {
+//works
+router.get('/provinces/:id', async(req, res) => {
   try {
-    const ProvinceData = await Province.findByPk(req.params.id, [{
+    const ProvinceData = await Province.findByPk(req.params.id, {
       include: [{model:Town}]
-    }]);
+    });
     res.status(200).json(ProvinceData);
   } catch(err){
     res.status(500).json(err);
@@ -46,7 +46,7 @@ router.get('/provinces/:id/towns', async(req, res) => {
 });
 
 /*Get all towns available */
-
+//works
 router.get('/towns', async(req,res)=> {
   try {
     const townsData = await Town.findAll();
