@@ -74,7 +74,7 @@ nav {
 
 nav a {
   display: none;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0.35vw 10px;
 }
 
 nav i {
@@ -118,5 +118,31 @@ footer {
 
   nav i {
     display: none !important;
+  }
+}
+
+/* COMMUNITY */
+#community-nav-div {
+  display: flex;
+  justify-content: center;
+}
+
+#community-nav {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--dark-text);
+  border-radius: 20px;
+}
+
+#community-nav a {
+  color: var(--dark-text);
+  padding: 10px;
+  font-size: 20px;
+}
+
+/* LARGE SCREENS */
+@media (min-width: 696px) {
+  #community-nav {
+    width: 650px;
   }
 }
