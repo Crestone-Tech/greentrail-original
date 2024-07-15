@@ -21,6 +21,16 @@ Tag.belongsToMany(Provider, {
   },
 });
 
+Event.hasOne(Community, {
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
+});
+
+Community.hasMany(Event, {
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
+});
+
 Country.hasMany(Province, {
   foreignKey: 'country_id',
   onDelete: 'CASCADE'
