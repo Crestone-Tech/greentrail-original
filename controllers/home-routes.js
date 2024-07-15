@@ -9,6 +9,7 @@ router.get("/", async (req, res) => {
   try {
     // Render
     res.render("home", {
+      loggedIn: req.session.loggedIn,
       darkText: false,
     });
   } catch (err) {
@@ -21,6 +22,7 @@ router.get("/locations", async (req, res) => {
   try {
     // Render
     res.render("locations", {
+      loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
@@ -33,6 +35,7 @@ router.get("/community", async (req, res) => {
   try {
     // Render
     res.render("community", {
+      loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
@@ -49,6 +52,7 @@ router.get("/login", async (req, res) => {
     }
     // Render
     res.render("login", {
+      loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
