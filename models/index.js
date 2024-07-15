@@ -35,6 +35,19 @@ Province.hasMany(Town, {
   onDelete: 'CASCADE'
 });
 
+Town.belongsTo(Province, {
+  foreignKey:'province_id'
+});
+
+Town.hasOne(Community, {
+  foreignKey:'town_id', 
+  onDelete: 'CASCADE'
+});
+Community.belongsTo(Town, {
+  foreignKey:'town_id'
+
+});
+
 module.exports = {
   Community,
   Country,
