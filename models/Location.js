@@ -145,7 +145,7 @@ Site.init(
       type: DataTypes.INTEGER,
       unique: false,
       references: {
-        model: "community",
+        model: TABLES.COMMUNITY,
         key: "id",
       },
     },
