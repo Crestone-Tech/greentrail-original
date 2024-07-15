@@ -2,7 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Country, Province, Town, Site, Community } = require("../../models");
 
-router.get('Community/:id', async (req,res) => {
+router.get('community/:id', async (req,res) => {
     try{ 
       const townData = await Town.findByPk(req.params.id, {
         include:[{model:Site, model: Community}]
@@ -14,3 +14,4 @@ router.get('Community/:id', async (req,res) => {
       res.status(500).json(err)
     }
   });
+  module.exports = router;

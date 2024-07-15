@@ -18,12 +18,14 @@ router.get("/countries", async (req, res) => {
 
 /*get country with associated Provinces*/
 
-router.get('countries/:id/', async (req,res) => {
+router.get('/countries/:id', async (req,res) => {
   try {
-    const countryData = await Country.findByPk(req.params.id, {
-      include: [{model:Province},
+    const countryData = await Country.findByPk(req.params.id,
+      {
+      include: [{model:Province}
       ]
-    });
+    }
+  );
     res.status(200).json(countryData);
 } catch(err) {
   res.status(500).json(err)
@@ -32,11 +34,11 @@ router.get('countries/:id/', async (req,res) => {
 
 /*Get provinces with associated towns */
 
-router.get('provinces/:id/towns', async(req, res) => {
+router.get('/provinces/:id/towns', async(req, res) => {
   try {
-    const ProvinceData = await Province.findByPk(req.params.id, {
-      include:[{model:Town}]
-    });
+    const ProvinceData = await Province.findByPk(req.params.id, [{
+      include: [{model:Town}]
+    }]);
     res.status(200).json(ProvinceData);
   } catch(err){
     res.status(500).json(err);

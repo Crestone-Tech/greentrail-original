@@ -1,6 +1,6 @@
 const Community = require("./Community");
 const { Event, EventSeries } = require("./Event");
-const { Country, Province, Town, Site, Location } = require("./Location");
+const { Country, Province, Town, Site,  } = require("./Location");
 const Provider = require("./Provider");
 const ProviderTag = require("./ProviderTag");
 const Tag = require("./Tag");
@@ -21,6 +21,20 @@ Tag.belongsToMany(Provider, {
   },
 });
 
+Country.hasMany(Province, {
+  foreignKey: 'country_id',
+  onDelete: 'CASCADE'
+});
+
+Province.belongsTo(Country, {
+  foreignKey: 'country_id'
+});
+
+Province.hasMany(Town, {
+  foreignKey: 'province_id', 
+  onDelete: 'CASCADE'
+});
+
 module.exports = {
   Community,
   Country,
@@ -31,5 +45,5 @@ module.exports = {
   Site,
   Town,
   Traveler,
-  Location
+  
 };
