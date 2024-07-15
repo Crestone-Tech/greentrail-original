@@ -15,10 +15,11 @@ router.get("/countries", async (req, res) => {
     res.status(500).json(err);
   }
 });
+/*get countries with associated Provinces*/
 
 router.get('/countries/provinces', async (req,res) => {
   try {
-    const countryData = await Country.findAll( {
+    const countryData = await Country.findByPk(req.params.id, {
       include: [{model:Province}]
     }
     );
@@ -26,12 +27,12 @@ router.get('/countries/provinces', async (req,res) => {
 } catch(err) {
   res.status(500).json(err)
 }
-});
+}); 
 
 router.get('/towns', async(req, res) => {
   try {
     const townData = await Town.findAll({
-      
+
     })
   }
 
