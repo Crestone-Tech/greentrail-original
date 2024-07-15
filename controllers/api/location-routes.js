@@ -21,3 +21,6 @@ router.get("countries/provinces", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+/* EXPORTS */
+module.exports = router;

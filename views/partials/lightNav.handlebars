@@ -3,10 +3,14 @@
 <nav class="inter light">
   <i class="fa-solid fa-bars"></i>
   <a href="/locations">Locations</a>
-  <a href="/">Add</a>
+  {{#if loggedIn}}
+    <a href="/">Add</a>
+  {{/if}}
   <a href="/">About</a>
   {{#if loggedIn}}
     <a href="/logout" id="logout">Logout</a>
+    {{! JAVASCRIPT }}
+    <script src="./js/home.js"></script>
   {{else}}
     <a href="/login" id="login">Login</a>
   {{/if}}
