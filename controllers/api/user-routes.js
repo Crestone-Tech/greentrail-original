@@ -1,12 +1,12 @@
 /* DEPENDENCIES */
 const router = require("express").Router();
-const { User } = require("../../models");
+const { Traveler } = require("../../models");
 
 /* ROUTES */
 /* Post route to /api/users, signs up a new user */
 router.post("/", async (req, res) => {
   try {
-    const user = await User.create({
+    const user = await Traveler.create({
       first: req.body.first,
       last: req.body.last,
       email: req.body.email,
@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
 /* Post route to api/users/login, signs an existing user in */
 router.post("/login", async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await Traveler.findOne({
       where: {
         email: req.body.email,
       },
@@ -35,7 +35,7 @@ router.post("/login", async (req, res) => {
     // If email is valid, check the password
     let validPassword = false;
     if (user) {
-      validPassword = await dbUserData.checkPassword(req.body.password);
+      validPassword = await user.checkPassword(req.body.password);
     }
 
     // If email or password were invalid, return message
@@ -46,7 +46,6 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
-
       res.status(200).json({ user: user });
     });
   } catch (err) {

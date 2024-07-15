@@ -1,5 +1,7 @@
+/* DEPENDENCIES */
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
+const bcrypt = require("bcrypt");
 
 class Traveler extends Model {}
 
@@ -22,9 +24,9 @@ Traveler.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isEmail: true,
-      },
+      // validate: {
+      //   isEmail: true,
+      // },
     },
     password: {
       type: DataTypes.STRING,
@@ -56,4 +58,6 @@ Traveler.init(
     modelName: "traveler",
   }
 );
+
+/* EXPORTS */
 module.exports = Traveler;
