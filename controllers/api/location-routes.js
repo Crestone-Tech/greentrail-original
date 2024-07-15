@@ -1,12 +1,12 @@
 /* DEPENDENCIES */
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const { Country, Province, Town, Site } = require("../../models");
+const { Country, Province, Town, Site, Location} = require("../../models");
 
 /* ROUTES */
 
 /*get all countries*/
-
+//works
 router.get("/countries", async (req, res) => {
   try {
     const countryData = await Country.findAll();
@@ -21,7 +21,8 @@ router.get("/countries", async (req, res) => {
 router.get('countries/:id/provinces', async (req,res) => {
   try {
     const countryData = await Country.findByPk(req.params.id, {
-      include: [{model:Province}]
+      include: [{model:Province, through: Location},
+      ]
     });
     res.status(200).json(countryData);
 } catch(err) {

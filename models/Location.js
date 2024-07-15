@@ -159,4 +159,4 @@ Site.init(
   }
 );
 
-module.exports = { Country, Province, Town, Site };
+module.exports = { Country, Province, Town, Site, Location};

@@ -1,6 +1,6 @@
 const Community = require("./Community");
 const { Event, EventSeries } = require("./Event");
-const { Country, Province, Town, Site } = require("./Location");
+const { Country, Province, Town, Site, Location } = require("./Location");
 const Provider = require("./Provider");
 const ProviderTag = require("./ProviderTag");
 const Tag = require("./Tag");
@@ -31,4 +31,5 @@ module.exports = {
   Site,
   Town,
   Traveler,
+  Location
 };
