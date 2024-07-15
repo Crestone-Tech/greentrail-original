@@ -3,7 +3,7 @@ const {Event} = require("../models/Event");
 const eventData = [
   {
     event_name: "Dia de Los Muertos",
-    date: 11 / 1 / 2024 - 11 / 2 / 2024,
+    date: "2024-11-01",
     community_id: 1,
     site_id: null,
     category: "Annual Festivals",
