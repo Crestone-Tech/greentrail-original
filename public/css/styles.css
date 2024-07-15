@@ -4,7 +4,8 @@
   --dark-text: black;
   --light-text: white;
   --accent: #092325;
-  --hover: #7bb1b2;
+  --dark-hover: #488073;
+  --light-hover: #78a99e;
   --transparent: #ffffff00;
 }
 
@@ -28,16 +29,22 @@ html {
 /* DARK AND LIGHT */
 .light,
 .light:hover,
-.light a,
-.light a:hover {
+.light a {
   color: var(--light-text);
+}
+
+.light a:hover {
+  color: var(--light-hover);
 }
 
 .dark,
 .dark:hover,
-.dark a,
-.dark a:hover {
+.dark a {
   color: var(--dark-text);
+}
+
+.dark a:hover {
+  color: var(--dark-hover);
 }
 
 .dark-background {
@@ -72,8 +79,13 @@ nav {
   margin: 0px 0px 0.35vw 0px;
 }
 
-nav a {
+#nav-links {
   display: none;
+}
+
+#nav-links a {
+  display: flex;
+  flex-direction: column;
   padding: 0px 10px 0.35vw 10px;
 }
 
@@ -112,7 +124,12 @@ footer {
 
 /* LARGE SCREENS */
 @media (min-width: 696px) {
-  nav a {
+  #nav-links {
+    display: inline;
+    flex-direction: row;
+  }
+
+  #nav-links a {
     display: inline;
   }
 

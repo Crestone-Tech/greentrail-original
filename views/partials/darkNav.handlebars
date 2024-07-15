@@ -1,16 +1,21 @@
 <a href="/" class="grotesque dark" id="nav-title">GreenTrail</a>
 <nav class="inter dark">
-  <i class="fa-solid fa-bars"></i>
-  <a href="/locations">Locations</a>
-  {{#if loggedIn}}
-    <a href="/">Add</a>
-  {{/if}}
-  <a href="/">About</a>
-  {{#if loggedIn}}
-    <a href="/" id="logout">Logout</a>
-    {{! JAVASCRIPT }}
-    <script src="./js/logout.js"></script>
-  {{else}}
-    <a href="/login" id="login">Login</a>
-  {{/if}}
+  <i class="fa-solid fa-bars" id="hamburger-menu"></i>
+  <div id="nav-links">
+    <a href="/locations">Locations</a>
+    {{#if loggedIn}}
+      <a href="/">Add</a>
+    {{/if}}
+    <a href="/">About</a>
+    {{#if loggedIn}}
+      <a href="/" id="logout">Logout</a>
+      {{! JAVASCRIPT }}
+      <script src="./js/logout.js"></script>
+    {{else}}
+      <a href="/login" id="login">Login</a>
+    {{/if}}
+  </div>
 </nav>
+
+{{! JAVASCRIPT }}
+<script src="./js/hamburger-menu.js"></script>
