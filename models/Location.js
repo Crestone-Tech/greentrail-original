@@ -141,15 +141,14 @@ Site.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // Commented until Community is created
-    // community_id: {
-    //   type: DataTypes.INTEGER,
-    //   unique: false,
-    //   references: {
-    //     model: "community",
-    //     key: "id",
-    //   },
-    // },
+    community_id: {
+      type: DataTypes.INTEGER,
+      unique: false,
+      references: {
+        model: TABLES.COMMUNITY,
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
@@ -160,4 +159,4 @@ Site.init(
   }
 );
 
-module.exports = { Country, Province, Town, Site };
+module.exports = { Country, Province, Town, Site};
