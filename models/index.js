@@ -48,6 +48,14 @@ Community.belongsTo(Town, {
 
 });
 
+Town.hasMany(Site, {
+  foreignKey: 'town_id',
+  });
+
+Site.belongsTo(Town, {
+  foreignKey:'town_id'
+})
+
 module.exports = {
   Community,
   Country,
