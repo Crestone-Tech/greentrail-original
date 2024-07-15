@@ -21,6 +21,8 @@ Tag.belongsToMany(Provider, {
   },
 });
 
+
+
 module.exports = {
   Community,
   Country,

@@ -21,7 +21,7 @@ Event.init(
       },
     },
     date: {
-      type: DataTypes.RANGE(DataTypes.DATE),
+      type: DataTypes.DATEONLY,
       allowNull: false,
       verification: {
         isDate: true,
@@ -37,7 +37,7 @@ Event.init(
     },
     site_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: "site",
         key: "id",
@@ -96,18 +96,26 @@ EventSeries.init(
     },
     site_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: "site",
         key: "id",
       },
     },
     date: {
-      type: DataTypes.RANGE(DataTypes.DATE),
-      allowNull: false,
+      type: DataTypes.DATEONLY,
+      allowNull: true,
       verification: {
         isDate: true,
       },
+    },
+    day_of_week: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    time: {
+      type: DataTypes.TIME,
+      allowNull: true,
     },
     description: {
       type: DataTypes.TEXT,
