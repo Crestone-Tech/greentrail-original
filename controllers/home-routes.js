@@ -117,7 +117,7 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-router.get("/provider");
+// router.get("/provider");
 
 /* Get request for login page */
 router.get("/login", async (req, res) => {
