@@ -2,7 +2,7 @@
 const router = require("express").Router();
 // Import authentication middleware
 
-const { Community, Site, Country, Province, Town } = require("../models");
+const { Community, Site, Country, Province, Town, Provider} = require("../models");
 // Import models
 
 /* ROUTES */
@@ -60,16 +60,26 @@ router.get("/community/:name", async (req, res) => {
       include: [
         { 
         model: Town, 
-      attributes: ["town_name", "town_id"],
+      attributes: ["town_name"],
     include: [{
       model:Site,
-      attributes: ["site_name", 
+      attributes: [
+        "site_name", 
       "description",
        "town_id", 
        "street_address",
-        "map_link"]
+        "map_link"],
+        include: [{
+          model: Provider, 
+          attributes: [
+            "provider_name", 
+            "community_id", 
+            "site_id",
+            "service"]
+        }]
     }] }],
     });
+    //add provider model to also pull from
 
     // Ensure we have found a community
     if (!communityData) {
