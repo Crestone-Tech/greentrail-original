@@ -81,7 +81,7 @@
   padding: 8px;
 }
 
-#community-nav a {
+#community-nav p {
   color: var(--dark-text);
   padding: 10px;
   font-size: calc(0.5vw + 20px);
