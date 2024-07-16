@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const {TABLES } = require('./Constants');
+const { TABLES } = require("./Constants");
 const sequelize = require("../config/connection");
 
 class Community extends Model {}
