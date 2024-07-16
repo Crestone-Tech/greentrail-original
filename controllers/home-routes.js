@@ -1,6 +1,7 @@
 /* DEPENDECIES */
 const router = require("express").Router();
 // Import authentication middleware
+
 const { Community, Site, Country, Province, Town } = require("../models");
 // Import models
 
@@ -50,15 +51,29 @@ router.get("/locations", async (req, res) => {
   }
 });
 
-/* Get request for community page */
-router.get("/community", async (req, res) => {
+/* Get request for community page by name */
+router.get("/community/:name", async (req, res) => {
   try {
-    // Render
+    // Get community info
+    const communityData = await Community.findOne({
+      where: { community_name: req.params.name },
+      include: [{ model: Site, model: Town }],
+    });
+
+    // Ensure we have found a community
+    if (!communityData) {
+      res.status(404).json({ message: "No such town exists as community" });
+    }
+    const community = communityData.get({ plain: true });
+
+    // Render page
     res.render("community", {
+      community,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
