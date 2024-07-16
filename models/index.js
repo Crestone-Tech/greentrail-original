@@ -84,5 +84,6 @@ module.exports = {
   Site,
   Town,
   Traveler,
-  
+  Tag,
+  ProviderTag,
 };
