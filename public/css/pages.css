@@ -20,8 +20,22 @@
 #homepage-subtitle {
   font-weight: 400;
   position: relative;
-  top: -14px;
+  top: -20px;
   margin: 0px;
+}
+
+/* LOCATIONS PAGE */
+#featured {
+  margin: 0px 6vw 0px 6vw;
+}
+
+#featured-img-div {
+  display: flex;
+  justify-content: center;
+}
+
+#featured-img {
+  width: 30vw;
 }
 
 /* COMMUNITY PAGE */
