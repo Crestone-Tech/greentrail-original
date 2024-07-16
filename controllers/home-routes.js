@@ -57,7 +57,18 @@ router.get("/community/:name", async (req, res) => {
     // Get community info
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
-      include: [{ model: Site, model: Town }],
+      include: [
+        { 
+        model: Town, 
+      attributes: ["town_name", "town_id"],
+    include: [{
+      model:Site,
+      attributes: ["site_name", 
+      "description",
+       "town_id", 
+       "street_address",
+        "map_link"]
+    }] }],
     });
 
     // Ensure we have found a community
