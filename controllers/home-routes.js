@@ -19,6 +19,20 @@ router.get("/", async (req, res) => {
   }
 });
 
+/* Get request for add page */
+router.get("/add", async (req, res) => {
+  try {
+    // Render
+    res.render("add", {
+      loggedIn: req.session.loggedIn,
+      darkText: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 /* Get request for location page, gets all locations */
 router.get("/locations", async (req, res) => {
   try {
@@ -36,7 +50,7 @@ router.get("/locations", async (req, res) => {
         },
       ],
     });
-    // console.log(dbLocationData);
+    
     const countries = dbLocationData.map((country) =>
       country.get({ plain: true })
     );
