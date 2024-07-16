@@ -81,7 +81,7 @@ nav {
 
 #nav-links {
   display: none;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 #nav-links a {
@@ -94,7 +94,7 @@ nav i {
   position: relative;
   top: calc(-7px + 0.3vw);
   display: inline;
-  margin: 0px 10px 40px 20px;
+  margin: 0px 10px 8px 20px;
 }
 
 a:hover {
