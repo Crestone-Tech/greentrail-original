@@ -4,8 +4,8 @@
   --dark-text: black;
   --light-text: white;
   --accent: #092325;
-  --dark-hover: #367264;
-  --light-hover: #d0e6e2;
+  --dark-hover: #0b66a3;
+  --light-hover: #a9bfcd;
   --transparent: #ffffff00;
 }
 
@@ -127,6 +127,10 @@ a:hover {
 }
 
 /* CONTENT */
+.page {
+  margin: 0px 8vw 50px 8vw;
+}
+
 .page-title,
 .page-subtitle {
   text-align: center;
@@ -166,5 +170,16 @@ footer {
 
   nav i {
     display: none !important;
+  }
+
+  .page {
+    margin: 0px 11vw 50px 11vw;
+  }
+}
+
+/* DESKTOPS */
+@media (min-width: 924px) {
+  .page {
+    margin: 0px 14vw 50px 14vw;
   }
 }

@@ -25,60 +25,86 @@
 }
 
 /* LOCATIONS PAGE */
-#featured {
-  margin: 0px 6vw 0px 6vw;
-  padding: 15px 25px 15px 25px;
+
+/* FEATURED LOCATION */
+.location-subtitle {
+  font-size: calc(1.2vw + 20px);
+  color: var(--dark-hover) !important;
 }
 
-#featured-text {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+#featured {
+  padding: 10px 15px 15px 15px; /* Add padding within borders */
+}
+
+#featured-name {
+  font-size: calc(1.2vw + 20px);
 }
 
 #featured-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid; /* Make two divs */
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
 }
 
-#featured-img-div {
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
+#featured-content-inner {
+  margin-top: 12px;
+  display: grid; /* Div for two bottom elements */
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-#featured-vid-div {
-  margin-right: 10px;
+.featured-elem {
+  border-radius: 30px;
 }
 
-#featured-img {
-  width: 30vw;
+#featured-img-turtle {
+  height: 100%;
+  object-fit: cover;
+}
+
+#featured-img-aerial {
+  height: 55%;
+  object-fit: cover;
+}
+
+#featured-video {
+  height: 100%;
+  object-fit: cover;
 }
 
 #see-more {
-  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
   padding: 5px 10px 5px 10px;
+  line-height: 0.8;
+}
+
+/* ALL LOCATIONS */
+#locations-title {
+  margin-top: 30px;
 }
 
 #country-name {
-  font-weight: bold; 
+  font-weight: bold;
   font-size: 30px;
-  text-align:center;
-  margin-top:40px;
-
+  text-align: center;
+  margin-top: 40px;
 }
+
 #province-name {
-  font-size:25px;
-  
-  margin-left:300px; 
-  margin-top:20px;
+  font-size: 25px;
+  margin-left: 300px;
+  margin-top: 20px;
   margin-bottom: 30px;
 }
+
 #town-name {
   font-size: 20px;
   text-decoration: underline;
-  text-align:center;
+  text-align: center;
   padding: 10px;
 }
 
@@ -145,14 +171,40 @@
 
 /* LARGE SCREENS */
 @media (min-width: 696px) {
+  #featured {
+    padding: 15px 25px 25px 25px; /* Add padding within borders */
+  }
+
+  #featured-content {
+    gap: 15px;
+  }
+
+  #featured-content-inner {
+    margin-top: 15px;
+    gap: 15px;
+  }
+
+  #see-more {
+    font-size: 22px;
+  }
+
   #community-nav {
     width: calc(20vw + 650px);
   }
 }
 
 /* DESKTOPS */
-@media (min-width: 696px) {
-  #community-nav {
-    width: calc(20vw + 650px);
+@media (min-width: 924px) {
+  #featured-content {
+    gap: 20px;
+  }
+
+  #featured-content-inner {
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  #see-more {
+    font-size: calc(1vw + 20px);
   }
 }
