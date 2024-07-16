@@ -4,8 +4,8 @@
   --dark-text: black;
   --light-text: white;
   --accent: #092325;
-  --dark-hover: #488073;
-  --light-hover: #78a99e;
+  --dark-hover: #367264;
+  --light-hover: #d0e6e2;
   --transparent: #ffffff00;
 }
 
@@ -133,7 +133,7 @@ a:hover {
   font-size: calc(1.2vw + 20px);
 }
 
-.bordered-elem {
+.borders {
   border: 1px solid var(--dark-text);
   border-radius: 20px;
 }
