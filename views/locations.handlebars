@@ -30,3 +30,16 @@
 <section>
   <h2 class="grotesque page-subtitle" id="featured-title">Locations</h2>
 </section>
+<section class="locations">
+  {{#each countries as |country|}}
+    <h2>{{country.country_name}}</h2>
+
+    {{#each country.provinces as |province|}}
+      <h3>{{province.province_name}}</h3>
+      {{#each province.towns as |town|}}
+      <a href="/community/{{town.town_name}}">{{town.town_name}}</a>
+      {{/each}}
+    {{/each}}
+  {{/each}}
+
+</section>
