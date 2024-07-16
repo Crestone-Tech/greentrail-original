@@ -1,6 +1,6 @@
 const Community = require("./Community");
 const { Event, EventSeries } = require("./Event");
-const { Country, Province, Town, Site,  } = require("./Location");
+const { Country, Province, Town, Site } = require("./Location");
 const Provider = require("./Provider");
 const ProviderTag = require("./ProviderTag");
 const Tag = require("./Tag");
@@ -32,47 +32,55 @@ Community.hasMany(Event, {
 });
 
 Country.hasMany(Province, {
-  foreignKey: 'country_id',
-  onDelete: 'CASCADE'
+  foreignKey: "country_id",
+  onDelete: "CASCADE",
 });
 
 Province.belongsTo(Country, {
-  foreignKey: 'country_id'
+  foreignKey: "country_id",
 });
 
 Province.hasMany(Town, {
-  foreignKey: 'province_id', 
-  onDelete: 'CASCADE'
+  foreignKey: "province_id",
+  onDelete: "CASCADE",
 });
 
 Town.belongsTo(Province, {
-  foreignKey:'province_id'
+  foreignKey: "province_id",
 });
 
 Town.hasOne(Community, {
-  foreignKey:'town_id', 
-  onDelete: 'CASCADE'
+  foreignKey: "town_id",
+  onDelete: "CASCADE",
 });
 Community.belongsTo(Town, {
-  foreignKey:'town_id'
-
+  foreignKey: "town_id",
 });
 
 Town.hasMany(Site, {
-  foreignKey: 'town_id',
-  });
+  foreignKey: "town_id",
+});
 
 Site.belongsTo(Town, {
-  foreignKey:'town_id'
+  foreignKey: "town_id",
 });
 
-Community.hasMany( Site, {
-  foreignKey:'community_id',
-  onDelete: 'CASCADE'
+Community.hasMany(Site, {
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
 });
 Site.belongsTo(Community, {
-  foreignKey: 'community_id'
-})
+  foreignKey: "community_id",
+});
+
+Site.hasMany(Provider, {
+  foreignKey: "site_id",
+});
+
+Provider.belongsTo(Site, {
+  foreignKey: "site_id",
+  onDelete: "CASCADE",
+});
 
 module.exports = {
   Community,

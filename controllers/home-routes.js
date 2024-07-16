@@ -2,7 +2,16 @@
 const router = require("express").Router();
 // Import authentication middleware
 
-const { Community, Site, Country, Province, Town, Provider, Tag, ProviderTag } = require("../models");
+const {
+  Community,
+  Site,
+  Country,
+  Province,
+  Town,
+  Provider,
+  Tag,
+  ProviderTag,
+} = require("../models");
 // Import models
 
 /* ROUTES */
@@ -30,7 +39,7 @@ router.get("/locations", async (req, res) => {
           include: [
             {
               model: Town,
-                  attributes: ["town_name", "province_id"],
+              attributes: ["town_name", "province_id"],
             },
           ],
         },
@@ -58,26 +67,34 @@ router.get("/community/:name", async (req, res) => {
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
       include: [
-        { 
-        model: Town, 
-      attributes: ["town_name"],
-    include: [{
-      model:Site,
-      attributes: [
-        "site_name", 
-      "description",
-       "town_id", 
-       "street_address",
-        "map_link"],
-        include: [{
-          model: Provider, 
-          attributes: [
-            "provider_name", 
-            "community_id", 
-            "site_id",
-            "service"]
-        }]
-    }] }],
+        {
+          model: Town,
+          attributes: ["town_name"],
+          include: [
+            {
+              model: Site,
+              attributes: [
+                "site_name",
+                "description",
+                "town_id",
+                "street_address",
+                "map_link",
+              ],
+              include: [
+                {
+                  model: Provider,
+                  attributes: [
+                    "provider_name",
+                    "community_id",
+                    "site_id",
+                    "service",
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
     });
     //add provider model to also pull from
 
@@ -100,8 +117,7 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-router.get("/provider")
-
+router.get("/provider");
 
 /* Get request for login page */
 router.get("/login", async (req, res) => {
