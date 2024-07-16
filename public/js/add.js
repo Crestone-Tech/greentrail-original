@@ -21,10 +21,24 @@ const TAGS = {
   };
 
 // FUNCTIONS
+// adds a Provider and associated AMENITY Tag
 function handleSaveAmenityProvider() {
     return addProviderAndTag(TAGS.AMENITY);
 }
+// adds a Provider and associated EAT Tag
+function handleSaveEatProvider() {
+  return addProviderAndTag(TAGS.EAT);
+}
+// adds a Provider and associated STAY Tag
+function handleSaveStayProvider() {
+  return addProviderAndTag(TAGS.STAY);
+}
+// adds a Provider and associated EXPLORE Tag
+function handleSaveExploreProvider() {
+  return addProviderAndTag(TAGS.EXPLORE);
+}
 
+// adds a Provider and associated Tag of specified type
 const addProviderAndTag = async (event, tagId) => {
   const community_id = $("#serviceCommunityInput").val();
   const provider_name = $("#serviceNameInput").val();
