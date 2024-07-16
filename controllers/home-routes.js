@@ -32,7 +32,6 @@ router.get("/add", async (req, res) => {
   }
 });
 
-
 /* Get request for location page, gets all locations */
 router.get("/locations", async (req, res) => {
   try {
