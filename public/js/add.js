@@ -30,21 +30,30 @@ const handleSaveServiceProvider = async (event) => {
     const serviceType = $("#serviceTypeInput").val();
     const serviceDescription = $("#serviceDescriptionInput").val();
 
-    if (
-        !(
-            serviceCommunity &&
-            serviceDescription &&
-            serviceName &&
-            serviceType
-        )
-    ) {
-        alert("All fields are required");
-        return;
-    }
+    // if (
+    //     !(
+    //         serviceCommunity &&
+    //         serviceDescription &&
+    //         serviceName &&
+    //         serviceType
+    //     )
+    // ) {
+    //     alert("All fields are required");
+    //     return;
+    // }
     console.log("serviceCommunity", serviceCommunity);
     console.log("serviceDescription", serviceDescription);
     console.log("serviceName", serviceName);
     console.log("serviceType", serviceType);
+
+    const response = await fetch("/api/communities/community/Chacala", {
+      method: "GET",
+    });  
+    if (response.ok) {
+        console.log(response);
+    } else {
+        alert("response failed");
+    }
 
 
 }
