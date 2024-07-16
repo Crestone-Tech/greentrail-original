@@ -1,7 +1,7 @@
 /* DEPENDECIES */
 const router = require("express").Router();
 // Import authentication middleware
-const { Country, Province, Town } = require("../models");
+const { Community, Site, Country, Province, Town } = require("../models");
 // Import models
 
 /* ROUTES */
