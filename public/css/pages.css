@@ -65,11 +65,35 @@
 }
 
 /* LOGIN PAGE */
+#sign-in-button,
+#sign-up-button {
+  margin: 0px 15px 0px 15px; /* space out sign up and sign in buttons */
+  border-bottom: 1px solid var(--dark-text);
+}
+
+#signup-signin-box {
+  display: flex;
+  justify-content: center;
+  margin: 30px 30px 0px 30px;
+  font-size: 16px;
+  min-width: 150px;
+}
+
 #sign-up {
   display: none;
 }
 
+#sign-up,
+#sign-in {
+  padding: 20px;
+}
+
 /* MOBILE */
+@media (min-width: 450px) {
+  #signup-signin-box {
+    font-size: 22px;
+  }
+}
 
 /* LARGE SCREENS */
 @media (min-width: 696px) {
