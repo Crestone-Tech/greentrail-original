@@ -27,15 +27,38 @@
 /* LOCATIONS PAGE */
 #featured {
   margin: 0px 6vw 0px 6vw;
+  padding: 15px 25px 15px 25px;
+}
+
+#featured-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#featured-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #featured-img-div {
   display: flex;
   justify-content: center;
+  margin-right: 10px;
+}
+
+#featured-vid-div {
+  margin-right: 10px;
 }
 
 #featured-img {
   width: 30vw;
+}
+
+#see-more {
+  font-size: 22px;
+  padding: 5px 10px 5px 10px;
 }
 
 /* COMMUNITY PAGE */
@@ -86,6 +109,10 @@
 #sign-up,
 #sign-in {
   padding: 20px;
+}
+
+#signup-signin-box input {
+  padding: 4px;
 }
 
 /* MOBILE */
