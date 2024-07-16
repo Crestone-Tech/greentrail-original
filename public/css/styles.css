@@ -61,7 +61,7 @@ header {
   justify-content: space-between;
   margin: 18px 22px 18px 22px;
   align-items: flex-end;
-  height: 50px;
+  height: 60px;
 }
 
 #nav-title {
@@ -81,23 +81,42 @@ nav {
 
 #nav-links {
   display: none;
+  margin-bottom: 7px;
 }
 
 #nav-links a {
   display: flex;
   flex-direction: column;
-  padding: 0px 10px 0.35vw 10px;
+  padding: 0px 10px 0px 10px;
 }
 
 nav i {
   position: relative;
   top: calc(-7px + 0.3vw);
   display: inline;
-  margin: 0px 10px 0.35vw 20px;
+  margin: 0px 10px 40px 20px;
 }
 
 a:hover {
   color: var(--hover);
+}
+
+#login,
+#logout {
+  border-radius: 25px;
+  margin-left: 4px;
+}
+
+.dark #login,
+.dark #logout {
+  border: 1px solid var(--dark-text);
+  padding: 6px 15px 6px 15px;
+}
+
+.light #login,
+.light #logout {
+  border: 1px solid var(--light-text);
+  padding: 6px 15px 6px 15px;
 }
 
 /* CONTENT */
@@ -112,6 +131,11 @@ a:hover {
 
 .page-subtitle {
   font-size: calc(1.2vw + 20px);
+}
+
+.bordered-elem {
+  border: 1px solid var(--dark-text);
+  border-radius: 20px;
 }
 
 /* FOOTER */
