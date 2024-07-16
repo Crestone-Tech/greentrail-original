@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-/* Post route to api/users/login, signs an existing user in */
+/* Post route to /api/users/login, signs an existing user in */
 router.post("/login", async (req, res) => {
   try {
     const user = await Traveler.findOne({
@@ -54,7 +54,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-/* Post route to api/users/logout, signs an existing user out */
+/* Post route to /api/users/logout, signs an existing user out */
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
