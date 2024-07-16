@@ -25,26 +25,26 @@ const userSignIn = async (event) => {
 
 
 const handleSaveServiceProvider = async (event) => {
-    const serviceCommunityInput = $("#serviceCommunityInput");
-    const serviceNameInput = $("#serviceNameInput");
-    const serviceTypeInput = $("#serviceTypeInput");
-    const serviceDescriptionInput = $("#serviceDescriptionInput");
+    const serviceCommunity = $("#serviceCommunityInput").val();
+    const serviceName = $("#serviceNameInput").val();
+    const serviceType = $("#serviceTypeInput").val();
+    const serviceDescription = $("#serviceDescriptionInput").val();
 
     if (
         !(
-            serviceCommunityInput.val() &&
-            serviceDescriptionInput.val() &&
-            serviceNameInput.val() &&
-            serviceTypeInput.val()
+            serviceCommunity &&
+            serviceDescription &&
+            serviceName &&
+            serviceType
         )
     ) {
         alert("All fields are required");
         return;
     }
-    console.log("serviceCommunityInput", serviceCommunityInput.val());
-    console.log("serviceDescriptionInput", serviceDescriptionInput.val());
-    console.log("serviceNameInput", serviceNameInput.val());
-    console.log("serviceTypeInputa", serviceTypeInput.val());
+    console.log("serviceCommunity", serviceCommunity);
+    console.log("serviceDescription", serviceDescription);
+    console.log("serviceName", serviceName);
+    console.log("serviceType", serviceType);
 
 
 }
