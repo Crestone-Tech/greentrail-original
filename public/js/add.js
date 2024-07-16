@@ -1,61 +1,62 @@
+// DEPENDENCIES
+
+// ELEMENTS
 const addServiceModal = $("#addServiceModal");
 const saveNewServiceProviderBtn = $("#saveNewServiceProviderBtn");
 
-const userSignIn = async (event) => {
-  event.preventDefault();
+// DATA
+const TAGS = {
+    AMENITY: 1,
+    COFFEE: 2,
+    COOKING_LESSONS: 3,
+    EAT: 4,
+    EXPLORE: 5,
+    FLORA_AND_FAUNA: 6,
+    GROCERIES: 7,
+    HISTORY: 8,
+    LANGUAGE_LESSONS: 9,
+    LEARN: 10,
+    MASSAGE: 11,
+    STAY: 12,
+  };
 
-  const email = document.querySelector("#sign-in-email").value;
-  const password = document.querySelector("#sign-in-password").value;
+// FUNCTIONS
+function handleSaveAmenityProvider() {
+    return addProviderAndTag(TAGS.AMENITY);
+}
 
-  if (email && password) {
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+const addProviderAndTag = async (event, tagId) => {
+  const community_id = $("#serviceCommunityInput").val();
+  const provider_name = $("#serviceNameInput").val();
+  const site_id = 14;
+  //const service = $("#serviceTypeInput").val();
+  const service = $("#serviceDescriptionInput").val();
 
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Failed to log in.");
-    }
+  if (!(serviceCommunity && serviceDescription && serviceName && serviceType)) {
+    alert("All fields are required");
+    return;
+  }
+  console.log("community_id", community_id);
+  console.log("provider_name", provider_name);
+  console.log("site_id", site_id);
+  console.log("service", service);
+
+  const response = await fetch("/api/providers", {
+    method: "POST",
+    body: JSON.stringify({
+      community_id,
+      provider_name,
+      site_id,
+      service,
+      tag_id: tagId,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+  if (response.ok) {
+    console.log(response);
+  } else {
+    alert("response failed");
   }
 };
-
-
-
-const handleSaveServiceProvider = async (event) => {
-    const serviceCommunity = $("#serviceCommunityInput").val();
-    const serviceName = $("#serviceNameInput").val();
-    const serviceType = $("#serviceTypeInput").val();
-    const serviceDescription = $("#serviceDescriptionInput").val();
-
-    // if (
-    //     !(
-    //         serviceCommunity &&
-    //         serviceDescription &&
-    //         serviceName &&
-    //         serviceType
-    //     )
-    // ) {
-    //     alert("All fields are required");
-    //     return;
-    // }
-    console.log("serviceCommunity", serviceCommunity);
-    console.log("serviceDescription", serviceDescription);
-    console.log("serviceName", serviceName);
-    console.log("serviceType", serviceType);
-
-    const response = await fetch("/api/communities/community/Chacala", {
-      method: "GET",
-    });  
-    if (response.ok) {
-        console.log(response);
-    } else {
-        alert("response failed");
-    }
-
-
-}
 
 saveNewServiceProviderBtn.on('click', handleSaveServiceProvider);
