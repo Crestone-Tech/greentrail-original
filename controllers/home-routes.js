@@ -31,6 +31,19 @@ router.get("/locations", async (req, res) => {
 });
 
 /* Get request for community page */
+router.get("/add", async (req, res) => {
+  try {
+    // Render
+    res.render("add", {
+      loggedIn: req.session.loggedIn,
+      darkText: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/* Get request for community page */
 router.get("/community", async (req, res) => {
   try {
     // Render
