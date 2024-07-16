@@ -57,11 +57,18 @@ html {
 
 /* HEADER */
 header {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
-  margin: 18px 22px 18px 22px;
+  padding: 0px 22px 6px 22px;
   align-items: flex-end;
-  height: 60px;
+  height: 78px;
+  z-index: 1;
+}
+
+.light-background header {
+  background-color: white !important; /* set background color for nav */
 }
 
 #nav-title {
