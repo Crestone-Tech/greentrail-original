@@ -61,6 +61,27 @@
   padding: 5px 10px 5px 10px;
 }
 
+#country-name {
+  font-weight: bold; 
+  font-size: 30px;
+  text-align:center;
+  margin-top:40px;
+
+}
+#province-name {
+  font-size:25px;
+  
+  margin-left:300px; 
+  margin-top:20px;
+  margin-bottom: 30px;
+}
+#town-name {
+  font-size: 20px;
+  text-decoration: underline;
+  text-align:center;
+  padding: 10px;
+}
+
 /* COMMUNITY PAGE */
 #community {
   margin: 20px;

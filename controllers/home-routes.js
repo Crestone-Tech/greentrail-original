@@ -1,7 +1,9 @@
 /* DEPENDECIES */
 const router = require("express").Router();
 // Import authentication middleware
-const { Community, Site, Town } = require("../models");
+
+const { Community, Site, Country, Province, Town } = require("../models");
+// Import models
 
 /* ROUTES */
 /* Get request for homepage */
@@ -20,8 +22,27 @@ router.get("/", async (req, res) => {
 /* Get request for location page, gets all locations */
 router.get("/locations", async (req, res) => {
   try {
+    dbLocationData = await Country.findAll({
+      include: [
+        {
+          model: Province,
+          attributes: ["province_name", "country_id"],
+          include: [
+            {
+              model: Town,
+                  attributes: ["town_name", "province_id"],
+            },
+          ],
+        },
+      ],
+    });
+    // console.log(dbLocationData);
+    const countries = dbLocationData.map((country) =>
+      country.get({ plain: true })
+    );
     // Render
     res.render("locations", {
+      countries,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
