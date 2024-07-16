@@ -1,8 +1,12 @@
-<section class="grotesque page-subtitle" id="featured-title">Where to Eat in {{community.community-name}}</section>
-<section class = "restaurants borders">
-    {{#each restaurants as |restaurant|}}
-    <h3 class = "grotesque" id=""></h3>
-</section>
 <section>
-    {{#each restaurants.restaurant_name as |}}
+    <h2>Places to Eat!</h2>
+    {{#if community.town.site.description = "restaurant"}}
+    {{#each community.town.site as |site|}}
+    <h3>{{site.site_name}}</h3>
+    <h4>{{site.street_address}}</h4>
+    <p>Try some excellent local cuisine <a href="{{site.map_link}}">here!</a></p>
+    {{/each}}
+    {{else}}
+    <p>No information right now!</p>
+    {{/if}}
 </section>
