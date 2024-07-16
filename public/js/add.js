@@ -22,7 +22,7 @@ const TAGS = {
 
 // FUNCTIONS
 // adds a Provider and associated AMENITY Tag
-function handleSaveAmenityProvider() {
+function handleSaveServiceProvider() {
     return addProviderAndTag(TAGS.AMENITY);
 }
 // adds a Provider and associated EAT Tag
@@ -39,14 +39,14 @@ function handleSaveExploreProvider() {
 }
 
 // adds a Provider and associated Tag of specified type
-const addProviderAndTag = async (event, tagId) => {
+const addProviderAndTag = async (tagId) => {
   const community_id = $("#serviceCommunityInput").val();
   const provider_name = $("#serviceNameInput").val();
   const site_id = 14;
   //const service = $("#serviceTypeInput").val();
   const service = $("#serviceDescriptionInput").val();
 
-  if (!(serviceCommunity && serviceDescription && serviceName && serviceType)) {
+  if (!(community_id && provider_name && site_id && service)) {
     alert("All fields are required");
     return;
   }
@@ -54,6 +54,7 @@ const addProviderAndTag = async (event, tagId) => {
   console.log("provider_name", provider_name);
   console.log("site_id", site_id);
   console.log("service", service);
+  console.log("tagId", tagId);
 
   const response = await fetch("/api/providers", {
     method: "POST",
@@ -73,4 +74,4 @@ const addProviderAndTag = async (event, tagId) => {
   }
 };
 
-saveNewServiceProviderBtn.on('click', handleSaveServiceProvider);
+saveNewServiceProviderBtn.on("click", handleSaveServiceProvider);
