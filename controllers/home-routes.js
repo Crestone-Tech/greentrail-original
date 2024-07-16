@@ -1,6 +1,8 @@
 /* DEPENDECIES */
 const router = require("express").Router();
 // Import authentication middleware
+
+const { Community, Site, Country, Province, Town, Provider} = require("../models");
 // Import models
 
 /* ROUTES */
@@ -20,8 +22,27 @@ router.get("/", async (req, res) => {
 /* Get request for location page, gets all locations */
 router.get("/locations", async (req, res) => {
   try {
+    dbLocationData = await Country.findAll({
+      include: [
+        {
+          model: Province,
+          attributes: ["province_name", "country_id"],
+          include: [
+            {
+              model: Town,
+                  attributes: ["town_name", "province_id"],
+            },
+          ],
+        },
+      ],
+    });
+    // console.log(dbLocationData);
+    const countries = dbLocationData.map((country) =>
+      country.get({ plain: true })
+    );
     // Render
     res.render("locations", {
+      countries,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
@@ -30,28 +51,50 @@ router.get("/locations", async (req, res) => {
   }
 });
 
-/* Get request for community page */
-router.get("/add", async (req, res) => {
+/* Get request for community page by name */
+router.get("/community/:name", async (req, res) => {
   try {
-    // Render
-    res.render("add", {
-      loggedIn: req.session.loggedIn,
-      darkText: true,
+    // Get community info
+    const communityData = await Community.findOne({
+      where: { community_name: req.params.name },
+      include: [
+        { 
+        model: Town, 
+      attributes: ["town_name"],
+    include: [{
+      model:Site,
+      attributes: [
+        "site_name", 
+      "description",
+       "town_id", 
+       "street_address",
+        "map_link"],
+        include: [{
+          model: Provider, 
+          attributes: [
+            "provider_name", 
+            "community_id", 
+            "site_id",
+            "service"]
+        }]
+    }] }],
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    //add provider model to also pull from
 
-/* Get request for community page */
-router.get("/community", async (req, res) => {
-  try {
-    // Render
+    // Ensure we have found a community
+    if (!communityData) {
+      res.status(404).json({ message: "No such town exists as community" });
+    }
+    const community = communityData.get({ plain: true });
+
+    // Render page
     res.render("community", {
+      community,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

@@ -13,13 +13,39 @@
 
   <div id="community-features">
     <div class="grotesque" id="community-nav">
-      <a href="#">Stay</a>
-      <a href="#">Eat</a>
-      <a href="#">Explore</a>
-      <a href="#">Events</a>
-      <a href="#">Flora &amp; Fauna</a>
-      <a href="#">Amenities</a>
-      <a href="#">About</a>
+      <p href="#" id="stay">Stay</p>
+      <p href="#" id="eat">Eat</p>
+      <p href="#" id="explore">Explore</p>
+      <p href="#" id="events">Events</p> 
+      <p href="#" id="flora">Flora &amp; Fauna</p>
+      <p href="#" id="amenities">Amenities</p>
+      <p href="#" id="about">About</p>
+    </div>
+    <div>
+      <div class="hidden", id="stay-details">
+          {{> stay-details}}
+        </div>
+      <div class="hidden", id="eat-details">
+          {{> eat-details}}
+        </div>
+      <div id="explore-details">
+          {{> explore-details}}
+        </div>
+      <div class="hidden", id="event-details">
+          {{> events-details}}
+        </div>
+      <div class="hidden", id="flora-details">
+          {{> flora-details}}
+        </div>
+      <div class="hidden", id="amenities-details">
+          {{> amenities-details}}
+        </div>
+      <div class="hidden", id="about-details">
+          {{> about-details}}
+        </div>
     </div>
   </div>
 </section>
+
+{{! JAVASCRIPT }}
+<script src="/js/community.js"></script>
