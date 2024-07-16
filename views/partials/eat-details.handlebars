@@ -1,12 +1,17 @@
-{{!-- <section>
-    <h2>Places to Eat!</h2>
-    {{#if community.town.site.description = "restaurant"}}
-    {{#each community.town.site as |site|}}
-    <h3>{{site.site_name}}</h3>
-    <h4>{{site.street_address}}</h4>
-    <p>Try some excellent local cuisine <a href="{{site.map_link}}">here!</a></p>
-    {{/each}}
+<section>
+<h1>Restaurants</h1>
+    {{#if restaurants}}
+      <ul>
+        {{#each restaurants}}
+          <li>
+            <h2>{{site_name}}</h2>
+            <p><strong>Community:</strong> {{community.community_name}}</p>
+            {{!-- <p><strong>Description:</strong> {{description}}</p> --}}
+            <a href="{{map_link}}">View on Map</a>
+          </li>
+        {{/each}}
+      </ul>
     {{else}}
-    <p>No information right now!</p>
+      <p>No restaurants found.</p>
     {{/if}}
-</section> --}}
+</section>

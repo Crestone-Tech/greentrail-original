@@ -41,7 +41,6 @@ router.get("/add", async (req, res) => {
   }
 });
 
-
 /* Get request for location page, gets all locations */
 router.get("/locations", async (req, res) => {
   try {
@@ -59,7 +58,7 @@ router.get("/locations", async (req, res) => {
         },
       ],
     });
-    
+
     const countries = dbLocationData.map((country) =>
       country.get({ plain: true })
     );
@@ -131,7 +130,50 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-// router.get("/provider");
+router.get("/restaurants", async (req, res) => {
+  try {
+    // Fetch providers categorized as restaurants
+    const restaurantProviders = await Provider.findAll({
+      where: {
+        service: "restaurant",
+      },
+      include: [
+        {
+          model: Community,
+          attributes: ["community_name"],
+        },
+        {
+          model: Site,
+          attributes: [
+            "site_name",
+            // "description",
+            "map_link",
+          ],
+        },
+      ],
+    });
+
+    // Ensure providers are found
+    if (!restaurantProviders) {
+      res.status(404).json({ message: "No restaurants found" });
+      return;
+    }
+
+    const restaurants = restaurantProviders.map((provider) =>
+      provider.get({ plain: true })
+    );
+
+    // Render the restaurants view
+    res.render("restaurants", {
+      restaurants,
+      loggedIn: req.session.loggedIn,
+      darkText: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 /* Get request for login page */
 router.get("/login", async (req, res) => {
