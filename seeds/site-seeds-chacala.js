@@ -3,6 +3,7 @@ const { Site } = require("../models/Location");
 const siteData = [
   {
     site_name: "Abarrotes Jorge II",
+    category: "Explore",
     description: "Storefront",
     town_id: 1,
     street_address: "Av. Chacalilla",
@@ -12,6 +13,7 @@ const siteData = [
   },
   {
     site_name: "Abarrotes Sarahi",
+    category:"Explore",
     description: "Storefront",
     town_id: 1,
     street_address: "Av. Chacalilla",
@@ -22,6 +24,7 @@ const siteData = [
   {
     site_name: "Cafe Palmar",
     description: "Coffee and Ice Cream",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Islas Canarias 7",
     latitude: "21.165148833429846",
@@ -31,6 +34,7 @@ const siteData = [
   {
     site_name: "Casa Caballito Del Mar",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Av. Islas Marias 14",
     latitude: "21.169007818281493",
@@ -40,6 +44,7 @@ const siteData = [
   {
     site_name: "Casa Cascada de Flores",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Golfo de Mexico Privado",
     latitude: "21.168145740846192",
@@ -49,6 +54,7 @@ const siteData = [
   {
     site_name: "Casa Estrella del Mar",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Oceano Atlántico",
     latitude: "21.165595910275798",
@@ -58,6 +64,7 @@ const siteData = [
   {
     site_name: "Casa Liquen",
     description: "",
+    category:"outdoor",
     town_id: 1,
     street_address: "Atlantico 2",
     latitude: "21.165784443329635",
@@ -67,6 +74,7 @@ const siteData = [
   {
     site_name: "Casa Monarca",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Oceano Atlántico 15",
     latitude: "21.166304415728877",
@@ -76,6 +84,7 @@ const siteData = [
   {
     site_name: "Fresh Breeze Inn",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Golfo de Mexico Privado 21",
     latitude: "21.16780926124279",
@@ -85,6 +94,7 @@ const siteData = [
   {
     site_name: "Hotel Paraíso Escondido",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Golfo de Mexico Privado 307",
     latitude: "21.165875227877624",
@@ -94,6 +104,7 @@ const siteData = [
   {
     site_name: "Lalaxtli",
     description: "Bakery and restaurant",
+    category:"Eat",
     town_id: 1,
     street_address: "Av. Santa Socorro 100",
     latitude: "21.16580257750813",
@@ -103,6 +114,7 @@ const siteData = [
   {
     site_name: "Minisuper Rules",
     description: "Storefront",
+    category: "Explore",
     town_id: 1,
     street_address: "Av. Chacalilla 6",
     latitude: "21.16377591302987",
@@ -112,6 +124,7 @@ const siteData = [
   {
     site_name: "Pila del Rey Site",
     description: "Historical site, with petroglyphs, and swimming",
+    category:"outdoor",
     town_id: 1,
     street_address: "",
     latitude: "21.087978452776646",
@@ -121,6 +134,7 @@ const siteData = [
   {
     site_name: "Plaza de Chacala",
     description: "",
+    category:"outdoor",
     town_id: 1,
     street_address: "Av. Chalilla 23",
     latitude: "21.165258238540986",
@@ -130,6 +144,7 @@ const siteData = [
   {
     site_name: "Quinta Mar y Selva",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Calle Los Corchos 18",
     latitude: "21.1699914322035",
@@ -139,6 +154,7 @@ const siteData = [
   {
     site_name: "Sewage Ponds of Las Varas",
     description: "Natural site",
+    category:"outdoor",
     town_id: 1,
     street_address: "",
     latitude: "21.178415331247148",
@@ -148,6 +164,7 @@ const siteData = [
   {
     site_name: "Trailhead for Cerro de Tetila",
     description: "Hiking trailhead",
+    category:"outdoor",
     town_id: 1,
     street_address: "",
     latitude: "21.008079945654224",
@@ -157,6 +174,7 @@ const siteData = [
   {
     site_name: "Villa Celeste",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Av. Pacifico Sur 12",
     latitude: "21.16560278876398",
@@ -166,6 +184,7 @@ const siteData = [
   {
     site_name: "Villas Pura Chacala",
     description: "Hotel",
+    category: "Stay",
     town_id: 1,
     street_address: "Calle Golfo de Mexico 7",
     latitude: "21.16709308066621",
@@ -175,6 +194,7 @@ const siteData = [
   {
     site_name: "Acela's",
     description: "Tacos",
+    category:"Eat",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.164574314457717",
@@ -184,6 +204,7 @@ const siteData = [
   {
     site_name: "Bungalows Chacala Maria Jose",
     description: "Hotel",
+    category:"Stay",
     town_id: 1,
     street_address: "Santa Socorro 49",
     latitude: "21.16665321533934",
@@ -193,6 +214,7 @@ const siteData = [
   {
     site_name: "Casa Cantera",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Av. Isla Santa Isabel 5",
     latitude: "21.16668066133414",
@@ -202,6 +224,7 @@ const siteData = [
   {
     site_name: "Casa del Caballo Sonador",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Calle Ecuador 13",
     latitude: "21.16767563838913",
@@ -211,6 +234,7 @@ const siteData = [
   {
     site_name: "Casa Mágica",
     description: "Hotel",
+    category: "Stay",
     town_id: 1,
     street_address: "Av. Santa Socorro",
     latitude: "21.166018936839748",
@@ -220,6 +244,7 @@ const siteData = [
   {
     site_name: "Chac Mool",
     description: "Restaurant",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Chacalilla 3",
     latitude: "21.16506931378742",
@@ -229,6 +254,7 @@ const siteData = [
   {
     site_name: "Chicos",
     description: "Restaurant",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.163460835136473",
@@ -238,6 +264,7 @@ const siteData = [
   {
     site_name: "Conny's",
     description: "Storefront",
+    category: "Explore",
     town_id: 1,
     street_address: "Av. Islas Canarias",
     latitude: "21.164990064666892",
@@ -247,6 +274,7 @@ const siteData = [
   {
     site_name: "La Roca",
     description: "Storefront",
+    category: "Explore",
     town_id: 1,
     street_address: "Av. Islas Canarias",
     latitude: "21.165091342778325",
@@ -256,6 +284,7 @@ const siteData = [
   {
     site_name: "Las Brisas",
     description: "Restaurant and hotel",
+    category: "Stay, Eat",
     town_id: 1,
     street_address: "Av. Chacalilla 4",
     latitude: "21.164364747765603",
@@ -265,6 +294,7 @@ const siteData = [
   {
     site_name: "Las Ramadas de Alvaro",
     description: "Restaurant",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.165088464403727",
@@ -274,6 +304,7 @@ const siteData = [
   {
     site_name: "Lavandería Naye",
     description: "Storefront",
+    category:"Explore",
     town_id: 1,
     street_address: "Av. Islas Marias",
     latitude: "21.166498729191066",
@@ -283,6 +314,7 @@ const siteData = [
   {
     site_name: "Lavandería Nashelly",
     description: "Storefront",
+    category: "Explore",
     town_id: 1,
     street_address: "Av. Isla Santa Isabel",
     latitude: "21.16569157656037",
@@ -292,6 +324,7 @@ const siteData = [
   {
     site_name: "Palapa de Don Isidro",
     description: "Restaurant",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.16393244069311",
@@ -301,6 +334,7 @@ const siteData = [
   {
     site_name: "Surfer's Pizza",
     description: "Restaurant",
+    category :"Eat",
     town_id: 1,
     street_address: "Av. Chacalilla 23",
     latitude: "21.165263998029932",
@@ -310,6 +344,7 @@ const siteData = [
   {
     site_name: "Tacos Kicha",
     description: "Tacos and water office ",
+    category: "Eat",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.164851243587226",
@@ -319,6 +354,7 @@ const siteData = [
   {
     site_name: "Tapas Bar de Majahua",
     description: "Restaurant",
+    category: "Eat",
     town_id: 1,
     street_address: "Camino Majahua y Mar de Jade",
     latitude: "21.159322784012645",
@@ -328,6 +364,7 @@ const siteData = [
   {
     site_name: "Visita Chacala",
     description: "Storefront",
+    cateogry: "Explore",
     town_id: 1,
     street_address: "Av. Chacalilla 5",
     latitude: "21.164492221094118",
@@ -337,6 +374,7 @@ const siteData = [
   {
     site_name: "Casa Melina",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Av. Islas Marias",
     latitude: "21.168833752251256",
@@ -346,6 +384,7 @@ const siteData = [
   {
     site_name: "Chacala Casitas",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Av. Islas Marias 19",
     latitude: "21.166488973009105",
@@ -355,6 +394,7 @@ const siteData = [
   {
     site_name: "Villa Tutu",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Marina Chacala",
     latitude: "21.167055706354827",
@@ -364,6 +404,7 @@ const siteData = [
   {
     site_name: "Casa Maya",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Marina Chacala",
     latitude: "21.167676961038058",
@@ -373,6 +414,7 @@ const siteData = [
   {
     site_name: "Casa Alegria",
     description: "Vacation rental",
+    category:"Stay",
     town_id: 1,
     street_address: "Av. Pacifico 12",
     latitude: "21.165570272263263",
@@ -382,6 +424,7 @@ const siteData = [
   {
     site_name: "Casa Guitarra",
     description: "Vacation rental",
+    category: "Stay",
     town_id: 1,
     street_address: "Av. Santa Socorro 19",
     latitude: "21.16620653137661",
@@ -390,6 +433,7 @@ const siteData = [
   },
   {
     site_name: "Chacala Pier",
+    category:"outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -399,6 +443,7 @@ const siteData = [
   },
   {
     site_name: "Lake Mastranzo",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -408,6 +453,7 @@ const siteData = [
   },
   {
     site_name: "Volcano Durón Ivanna",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -417,6 +463,7 @@ const siteData = [
   },
   {
     site_name: "Chacala Beach",
+    category:"outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -426,6 +473,7 @@ const siteData = [
   },
   {
     site_name: "Little Chacala Beach",
+    category:"outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -435,6 +483,7 @@ const siteData = [
   },
   {
     site_name: "Playa Las Cuevas",
+    category:"outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -444,6 +493,7 @@ const siteData = [
   },
   {
     site_name: "Playa La Caleta",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -453,6 +503,7 @@ const siteData = [
   },
   {
     site_name: "Trail to Playa La Caleta",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -462,6 +513,7 @@ const siteData = [
   },
   {
     site_name: "Trail to Volcano Durón Ivanna",
+    category: "outdoor", 
     description: "",
     town_id: 1,
     street_address: "",
@@ -471,6 +523,7 @@ const siteData = [
   },
   {
     site_name: "Estuary of River de Chila",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",
@@ -480,6 +533,7 @@ const siteData = [
   },
   {
     site_name: "Jammurca Hot Springs",
+    category: "outdoor",
     description: "",
     town_id: 1,
     street_address: "",

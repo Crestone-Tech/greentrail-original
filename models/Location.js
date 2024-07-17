@@ -113,6 +113,10 @@ Site.init(
         isAlpha: true,
       },
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: true,
