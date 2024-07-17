@@ -1,17 +1,13 @@
- <section>
-<h1>Restaurants</h1>
-    {{#if restaurants}}
-      <ul>
-        {{#each restaurants}}
-          <li>
-            <h2>{{site_name}}</h2>
-            <p><strong>{{provider_name}}</strong> </p>
-            {{!-- <p><strong>Description:</strong> {{description}}</p> --}}
-            <a href="{{map_link}}">View on Map</a>
-          </li>
-        {{/each}}
-      </ul>
-    {{else}}
-      <p>No restaurants found.</p>
-    {{/if}}
-</section> 
+<section>
+    <h2>Places to Eat in this Community!</h2>
+    {{#each community.providers as |provider|}}
+    {{#ifvalue provider.service value='restaurant'}}
+    Restaurant Name:
+    <h3>{{provider.provider_name}}</h3>
+    <h4>{{provider.site.description}}</h4>
+    Located At:
+    <h4>{{provider.site.street_address}}</h4>
+    <p>Enjoy your meal! <a href="{{provider.site.map_link}}">here!</a></p>
+    {{/ifvalue}}
+    {{/each}}
+</section>
