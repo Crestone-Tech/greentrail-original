@@ -9,6 +9,8 @@ const {
   Province,
   Town,
   Provider,
+  Event,
+  EventSeries,
   Tag,
   ProviderTag,
 } = require("../models");
@@ -103,19 +105,56 @@ router.get("/community/:name", async (req, res) => {
             },
           ],
         },
+        {
+          model: Event,
+          attributes: [
+            "event_name",
+            "community_id",
+            "site_id",
+            "date",
+            "category",
+            "description",
+          ],
+          include: [
+            {
+              model: EventSeries,
+              attributes: [
+                "event_series_name",
+                "date",
+                "day_of_week",
+                "time",
+                "category",
+                "description",
+              ],
+            },
+          ],
+        },
       ],
     });
-    //add provider model to also pull from
+    const eventData = await Event.findAll({
+      where: {
+        community_id: communityData.id,
+      },
+      include: [
+        {
+          model: EventSeries,
+        }, 
+      ],
+    });
 
     // Ensure we have found a community
     if (!communityData) {
       res.status(404).json({ message: "No such town exists as community" });
     }
     const community = communityData.get({ plain: true });
+    const events = eventData.map((event) => event.get({ plain: true }));
+    console.log(events);
+    console.log(community);
     console.dir(community, { depth: null });
     // Render page
     res.render("community", {
       community,
+      events,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
