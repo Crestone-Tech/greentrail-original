@@ -3,7 +3,8 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
-const helper = require("./utils/helper");
+const { logDBConnectionDetails } = require("./utils/helper");
+const handlebarshelp = require("./utils/handlebars-helper");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const passport = require("./config/passport");
@@ -28,7 +29,11 @@ const sess = {
 app.use(session(sess));
 
 /* HANDLEBARS */
-const hbs = exphbs.create({});
+console.log("handlebarshelp", handlebarshelp);
+const hbs = exphbs.create({
+  helpers: handlebarshelp,
+});
+
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
@@ -68,7 +73,7 @@ app.get(
 /* SEQUELIZE */
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
-    helper.logDBConnectionDetails();
+    logDBConnectionDetails();
     console.log(`Now listening at http://localhost:${PORT}/`);
   });
 });

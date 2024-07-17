@@ -1,11 +1,11 @@
-<section>
+ <section>
 <h1>Restaurants</h1>
     {{#if restaurants}}
       <ul>
         {{#each restaurants}}
           <li>
             <h2>{{site_name}}</h2>
-            <p><strong>Community:</strong> {{community.community_name}}</p>
+            <p><strong>{{provider_name}}</strong> </p>
             {{!-- <p><strong>Description:</strong> {{description}}</p> --}}
             <a href="{{map_link}}">View on Map</a>
           </li>
@@ -14,4 +14,4 @@
     {{else}}
       <p>No restaurants found.</p>
     {{/if}}
-</section>
+</section> 
