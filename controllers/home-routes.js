@@ -84,12 +84,19 @@ router.get("/community/:name", async (req, res) => {
       include: [
         {
           model: Provider,
-          attributes: ["provider_name", "community_id", "site_id", "service"],
+          attributes: [
+            "provider_name",
+            "community_id",
+            "site_id",
+            "service",
+            "description",
+          ],
           include: [
             {
               model: Site,
               attributes: [
                 "site_name",
+                "category",
                 "description",
                 "town_id",
                 "street_address",
@@ -97,7 +104,6 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
-
         },
         {
           model: Event,

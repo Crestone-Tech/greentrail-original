@@ -195,6 +195,111 @@ const providerData = [
     community_id: 1,
     site_id: 19,
   },
+  {
+    provider_name: "Abarrotes Jorge II",
+    service: "amenities",
+    community_id: 1,
+    site_id: 1,
+    description: "Grocery Store",
+  },
+  {
+    provider_name: "Abarrotes Sarahi",
+    service: "amenities",
+    community_id: 1,
+    site_id: 2,
+    description: "Grocery Store"
+  },
+  {
+    provider_name: "La Roca",
+    service: "amenities",
+    community_id: 1,
+    site_id: 28,
+    description: "Grocery Store, ATM"
+  },
+  {
+    provider_name: "Minisuper Rules",
+    service: "amenities",
+    community_id: 1,
+    site_id: 12,
+    description: "Grocery Store, ATM"
+  },
+  {
+    provider_name: "Lavandería Nashelly",
+    service: "amenities",
+    community_id: 1,
+    site_id: 32,
+    description: "Laundry"
+  },
+  {
+    provider_name: "Lavandería Naye",
+    service: "amenities",
+    community_id: 1,
+    site_id: 31,
+    description: "Laundry"
+  },
+  {
+    provider_name: "Lalaxtli",
+    service: "amenities",
+    community_id: 1,
+    site_id: 11,
+    description: "Bakery, ATM"
+  },
+  {
+    provider_name: "Lavandería Nashelly",
+    service: "amenities",
+    community_id: 1,
+    site_id: 32,
+    description: "Laundry"
+  },
+  {
+    provider_name: "Trini Moya",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Spanish Lessons"
+  },
+  {
+    provider_name: "Iliana Becerra",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Spanish Lessons"
+  },
+  {
+    provider_name: "Marina Buendia",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Cooking Lessons"
+  },
+  {
+    provider_name: "Emilia Robinson",
+    service: "amenities",
+    community_id: 1,
+    site_id: 7,
+    description: "Yoga Classes"
+  },
+  {
+    provider_name: "Jewls Gardner",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Massage"
+  },
+  {
+    provider_name: "Heather Riddle",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Massage"
+  },
+  {
+    provider_name: "Monroe Massage",
+    service: "amenities",
+    community_id: 1,
+    site_id: 14,
+    description: "Massage"
+  },
 ];
 
 const seedProvider = () => Provider.bulkCreate(providerData);
