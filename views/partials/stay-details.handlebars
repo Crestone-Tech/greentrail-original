@@ -1,12 +1,12 @@
 <section>
-    <h2>Places to Stay!</h2>
+    <h2>Places to Stay in this Community!</h2>
     {{#each community.providers as |provider|}}
     {{#ifvalue provider.service value='accommodation'}}
+    Accommodation Name:
     <h3>{{provider.provider_name}}</h3>
-    
+    Located At:
     <h4>{{provider.site.street_address}}</h4>
-    <p>Enjoy a beautiful stay<a href="{{provider.site.map_link}}">here!</a></p>
-    
+    <p>Enjoy a beautiful stay <a href="{{provider.site.map_link}}">here!</a></p>
     {{/ifvalue}}
     {{/each}}
 </section>
