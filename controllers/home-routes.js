@@ -119,8 +119,9 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-router.get("/community/restaurants", async (req, res) => {
+router.get("/community/:name/restaurants", async (req, res) => {
   try {
+    console.log("Fetching restaurant providers...");
     // Fetch providers categorized as restaurants
     const restaurantProviders = await Provider.findAll({
       where: {
@@ -142,10 +143,12 @@ router.get("/community/restaurants", async (req, res) => {
       ],
     });
 
+    console.log("Restaurant providers fetched.", restaurantProviders);
+
     // Ensure providers are found
-    if (!restaurantProviders) {
-      res.status(404).json({ message: "No restaurants found" });
-      return;
+    if (!restaurantProviders || restaurantProviders.length === 0) {
+      console.log("No restaurants found.");
+      return res.status(404).json({ message: "No restaurants found" });
     }
 
     const restaurants = restaurantProviders.map((provider) =>
@@ -153,13 +156,14 @@ router.get("/community/restaurants", async (req, res) => {
     );
 
     // Render the restaurants view
+    console.log("Rendering restaurants view with data:", restaurants);
     res.render("restaurants", {
       restaurants,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
-    console.log(err);
+    console.log("Error occurred:", err);
     res.status(500).json(err);
   }
 });
