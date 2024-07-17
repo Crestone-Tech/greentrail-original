@@ -119,6 +119,10 @@ EventSeries.init(
       type: DataTypes.TIME,
       allowNull: true,
     },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false,

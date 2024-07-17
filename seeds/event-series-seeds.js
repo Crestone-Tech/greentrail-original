@@ -9,6 +9,7 @@ const eventSeriesData = [
     date: null,
     day_of_week: "Mondays",
     time: "09:00",
+    category: "event series",
     description: "Weekly yoga classes offered on Mondays at 9:00am.",
   },
   {
@@ -19,6 +20,7 @@ const eventSeriesData = [
     date: null,
     day_of_week: "Sundays",
     time: "12:00",
+    category: "event series",
     description:
       "Join us every Sunday for Learn_2_Code, a free online event series for those looking to break into tech.",
   },
