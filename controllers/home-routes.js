@@ -157,7 +157,7 @@ router.get("/community/:name/eat", async (req, res) => {
 
     // Render the restaurants view
     console.log("Rendering restaurants view with data:", restaurants);
-    res.render("eat-details", {
+    res.render("community", {
       restaurants,
       loggedIn: req.session.loggedIn,
       darkText: true,
