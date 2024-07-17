@@ -118,9 +118,8 @@
 
 #community-features {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
-
 }
 
 #community-nav {
@@ -149,9 +148,11 @@
 #signup-signin-box {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 30px 30px 0px 30px;
   font-size: 16px;
   min-width: 150px;
+  width: 100%;
 }
 
 #sign-up {
@@ -159,8 +160,11 @@
 }
 
 #sign-up,
-#sign-in {
+#sign-in,
+#google-auth {
   padding: 20px;
+  min-width: 150px;
+  width: calc(2vw + 150px);
 }
 
 #signup-signin-box input {
