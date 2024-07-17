@@ -81,6 +81,7 @@ EventSeries.init(
     },
     event_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       unique: false,
       references: {
         model: TABLES.EVENT,
