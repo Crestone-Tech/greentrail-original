@@ -106,6 +106,7 @@ nav i {
 
 a:hover {
   color: var(--hover);
+  cursor: pointer;
 }
 
 #login,

@@ -13,79 +13,75 @@
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img
-              src='/images/hotel-pura-chacala.jpg'
-              class="borders"
-              id="featured-img"
-              alt="Facade of a hotel"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addStayModal">
+              <img
+                src='/images/hotel-pura-chacala.jpg'
+                class="borders"
+                id="featured-img"
+                alt="Facade of a hotel"
+              />
+            </a>
           </div>
         </div>
       </div>
+      {{!-- add Provider-Stay --}}
+      {{> addProvider/modalAddStay}}
       <div class="col">
         <div id="featured-text">
           <h2 class="grotesque page-subtitle" id="featured-title">A Place to Eat</h2>
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img
-              src="/images/tacos.jpg"
-              class="borders"
-              id="featured-img"
-              alt="Tacos on a wooden board"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addEatModal">
+              <img
+                src="/images/tacos.jpg"
+                class="borders"
+                id="featured-img"
+                alt="Tacos on a wooden board"
+              />
+            </a>
           </div>
         </div>
       </div>
+      {{!-- add Provider-Eat --}}
+      {{> addProvider/modalAddEat}}
     </div>
-        <div class="row">
+    <div class="row">
       <div class="col">
         <div id="featured-text">
           <h2 class="grotesque page-subtitle" id="featured-title">Something to Do</h2>
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img id="exploreImg"
-              src="/images/birdwatching.jpg"
-              class="borders"
-              id="featured-img"
-              alt="Person with binoculars watching a flock of birds flying at sunset"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addExploreModal">
+              <img
+                src="/images/birdwatching.jpg"
+                class="borders"
+                alt="Person with binoculars watching a flock of birds flying at sunset"
+              />
+            </a>
           </div>
         </div>
       </div>
+      {{!-- add Provider-Explore --}}
+      {{> addProvider/modalAddExplore}}
       <div class="col">
-        <div id="featured-text">
-          <h2 class="grotesque page-subtitle" id="featured-title">A Service to Provide</h2>
+        <div>
+          <h2 class="grotesque page-subtitle">A Service to Provide</h2>
         </div>
         <div id="featured-content">
-          <button
-          class="btn"
-          data-bs-toggle="modal"
-          data-bs-target="#addServiceModal"
-          id="add-task-btn"
-        >
-            <img id="serviceImg"
-              src='/images/lavanderia.jpg'
-              class="borders"
-              id="featured-img"
-              alt="Person holding folded laundry in a laundromat"
-            />
-          
-        </button>
-          {{!-- <div id="featured-img-div" data-bs-toggle="modal" data-bs-target="#addServiceModal">
+          <div id="featured-img-div">
+          <a data-bs-toggle="modal" data-bs-target="#addServiceModal">
             <img
               src='/images/lavanderia.jpg'
               class="borders"
-              id="featured-img"
               alt="Person holding folded laundry in a laundromat"
             />
-          </div> --}}
+          </a>
         </div>
       </div>
-      {{!-- add Service --}}
-      {{> modalService}}
-</div>
+      {{!-- add Provider-Service --}}
+      {{> addProvider/modalAddService}}
     </div>
   </div>
 </section>
