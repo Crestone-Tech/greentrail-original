@@ -80,63 +80,23 @@ router.get("/community/:name", async (req, res) => {
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
       include: [
-// <<<<<<< eat_details
-//         {
-//           model: Town,
-//           attributes: ["town_name"],
-//           include: [
-//             {
-//               model: Site,
-//               attributes: [
-//                 "site_name",
-//                 "description",
-//                 "town_id",
-//                 "street_address",
-//                 "map_link",
-//               ],
-//               include: [
-//                 {
-//                   model: Provider,
-//                   attributes: [
-//                     "provider_name",
-//                     "community_id",
-//                     "site_id",
-//                     "service",
-//                   ],
-//                 },
-//               ],
-//             },
-//           ],
-//         },
-//       ],
-// =======
-        { model: Provider, 
-            attributes: [
-              "provider_name", 
-              "community_id", 
-              "site_id",
-              "service"],
-    include: [{
-      model:Site,
-      attributes: [
-        "site_name", 
-      "description",
-       "town_id", 
-       "street_address",
-        "map_link"],
-       
-    }] },
-  // { include: [
-  //   {
-  //   model: Provider, 
-  //   attributes: [
-  //     "provider_name", 
-  //     "community_id", 
-  //     "site_id",
-  //     "service"]
-  // }]}
-  ],
-// >>>>>>> main
+        {
+          model: Provider,
+          attributes: ["provider_name", "community_id", "site_id", "service"],
+          include: [
+            {
+              model: Site,
+              attributes: [
+                "site_name",
+                "description",
+                "town_id",
+                "street_address",
+                "map_link",
+              ],
+            },
+          ],
+        },
+      ],
     });
     //add provider model to also pull from
 
@@ -159,8 +119,9 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-router.get("/restaurants", async (req, res) => {
+router.get("/community/:name/eat", async (req, res) => {
   try {
+    console.log("Fetching restaurant providers...");
     // Fetch providers categorized as restaurants
     const restaurantProviders = await Provider.findAll({
       where: {
@@ -182,10 +143,12 @@ router.get("/restaurants", async (req, res) => {
       ],
     });
 
+    console.log("Restaurant providers fetched.", restaurantProviders);
+
     // Ensure providers are found
-    if (!restaurantProviders) {
-      res.status(404).json({ message: "No restaurants found" });
-      return;
+    if (!restaurantProviders || restaurantProviders.length === 0) {
+      console.log("No restaurants found.");
+      return res.status(404).json({ message: "No restaurants found" });
     }
 
     const restaurants = restaurantProviders.map((provider) =>
@@ -193,13 +156,14 @@ router.get("/restaurants", async (req, res) => {
     );
 
     // Render the restaurants view
-    res.render("restaurants", {
+    console.log("Rendering restaurants view with data:", restaurants);
+    res.render("community", {
       restaurants,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
   } catch (err) {
-    console.log(err);
+    console.log("Error occurred:", err);
     res.status(500).json(err);
   }
 });
