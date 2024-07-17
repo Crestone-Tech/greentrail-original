@@ -1,14 +1,14 @@
 // DEPENDENCIES
 
 // ELEMENTS
-const addEatModal = $("#addEatModal");
-const saveNewEatProviderBtn = $("#saveNewEatProviderBtn");
+// const addEatModal = $("#addEatModal");
+// const saveNewEatProviderBtn = $("#saveNewEatProviderBtn");
 const addExploreModal = $("#addExploreModal");
 const saveNewExploreProviderBtn = $("#saveNewExploreProviderBtn");
 const addServiceModal = $("#addServiceModal");
 const saveNewServiceProviderBtn = $("#saveNewServiceProviderBtn");
-const addStayModal = $("#addStayModal");
-const saveNewStayProviderBtn = $("#saveNewStayProviderBtn");
+// const addStayModal = $("#addStayModal");
+// const saveNewStayProviderBtn = $("#saveNewStayProviderBtn");
 
 // DATA
 const TAGS = {
@@ -29,38 +29,51 @@ const TAGS = {
 // FUNCTIONS
 
 // adds a Provider and associated EAT Tag
-function handleSaveEatProvider() {
-  return addProviderAndTag(TAGS.EAT);
-}
+// function handleSaveEatProvider() {
+//   return addProviderAndTag(TAGS.EAT);
+// }
 // adds a Provider and associated EXPLORE Tag
 function handleSaveExploreProvider() {
-  return addProviderAndTag(TAGS.EXPLORE);
+    const communityId = $("#exploreCommunityInput").val();
+    const providerName = $("#exploreNameInput").val();
+    const providerDescription = $("#exploreDescriptionInput").val();
+    return addProviderAndTag(
+      TAGS.EXPLORE,
+      communityId,
+      providerName,
+      providerDescription
+    );
 }
 // adds a Provider and associated AMENITY Tag
 function handleSaveServiceProvider() {
-    return addProviderAndTag(TAGS.AMENITY);
+    const communityId = $("#serviceCommunityInput").val();
+    const providerName = $("#serviceNameInput").val();
+    const providerDescription = $("#serviceDescriptionInput").val();
+    return addProviderAndTag(
+      TAGS.AMENITY,
+      communityId,
+      providerName,
+      providerDescription
+    );
 }
 // adds a Provider and associated STAY Tag
-function handleSaveStayProvider() {
-  return addProviderAndTag(TAGS.STAY);
-}
+// function handleSaveStayProvider() {
+//   return addProviderAndTag(TAGS.STAY);
+// }
 
 // adds a Provider and associated Tag of specified type
-const addProviderAndTag = async (tagId) => {
-  const community_id = $("#serviceCommunityInput").val();
-  const provider_name = $("#serviceNameInput").val();
+const addProviderAndTag = async (tagId, community_id, provider_name, providerDescription) => {
   const site_id = 14;
-  //const service = $("#serviceTypeInput").val();
-  const service = $("#serviceDescriptionInput").val();
-
-  if (!(community_id && provider_name && site_id && service)) {
+  const service = providerDescription; // name change from service to providerDescription is WIP
+  
+  if (!(community_id && provider_name && site_id && providerDescription)) {
     alert("All fields are required");
     return;
   }
   console.log("community_id", community_id);
   console.log("provider_name", provider_name);
   console.log("site_id", site_id);
-  console.log("service", service);
+  console.log("providerDescription", providerDescription);
   console.log("tagId", tagId);
 
   const response = await fetch("/api/providers", {
@@ -81,7 +94,7 @@ const addProviderAndTag = async (tagId) => {
   }
 };
 
-saveNewEatProviderBtn.on("click", handleSaveEatProvider);
+// saveNewEatProviderBtn.on("click", handleSaveEatProvider);
 saveNewExploreProviderBtn.on("click", handleSaveExploreProvider);
 saveNewServiceProviderBtn.on("click", handleSaveServiceProvider);
-saveNewStayProviderBtn.on("click", handleSaveStayProvider);
+// saveNewStayProviderBtn.on("click", handleSaveStayProvider);

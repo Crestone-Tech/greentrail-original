@@ -49,32 +49,31 @@
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img id="exploreImg"
-              src="/images/birdwatching.jpg"
-              class="borders"
-              id="featured-img"
-              alt="Person with binoculars watching a flock of birds flying at sunset"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addExploreModal">
+              <img
+                src="/images/birdwatching.jpg"
+                class="borders"
+                alt="Person with binoculars watching a flock of birds flying at sunset"
+              />
+            </a>
           </div>
         </div>
       </div>
       {{!-- add Provider-Explore --}}
-      {{!-- {{> addProvider/modalAddExplore}} --}}
+      {{> addProvider/modalAddExplore}}
       <div class="col">
         <div>
           <h2 class="grotesque page-subtitle">A Service to Provide</h2>
         </div>
-        <div>
-          <a
-            data-bs-toggle="modal"
-            data-bs-target="#addServiceModal"
-          >
+        <div id="featured-content">
+          <div id="featured-img-div">
+          <a data-bs-toggle="modal" data-bs-target="#addServiceModal">
             <img
               src='/images/lavanderia.jpg'
               class="borders"
               alt="Person holding folded laundry in a laundromat"
             />
-        </a>
+          </a>
         </div>
       </div>
       {{!-- add Provider-Service --}}
