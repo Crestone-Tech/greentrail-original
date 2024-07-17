@@ -21,7 +21,7 @@ const siteData = [
   },
   {
     site_name: "Cafe Palmar",
-    description: "storefront",
+    description: "Coffee and Ice Cream",
     town_id: 1,
     street_address: "Av. Islas Canarias 7",
     latitude: "21.165148833429846",
@@ -93,7 +93,7 @@ const siteData = [
   },
   {
     site_name: "Lalaxtli",
-    description: "storefront",
+    description: "Bakery and restaurant",
     town_id: 1,
     street_address: "Av. Santa Socorro 100",
     latitude: "21.16580257750813",
@@ -111,7 +111,7 @@ const siteData = [
   },
   {
     site_name: "Pila del Rey Site",
-    description: "historical site, petroglyphs, swimming",
+    description: "Historical site, with petroglyphs, and swimming",
     town_id: 1,
     street_address: "",
     latitude: "21.087978452776646",
@@ -174,7 +174,7 @@ const siteData = [
   },
   {
     site_name: "Acela's",
-    description: "tacos",
+    description: "Tacos",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.164574314457717",
@@ -309,7 +309,7 @@ const siteData = [
   },
   {
     site_name: "Tacos Kicha",
-    description: "storefront",
+    description: "Tacos and water office ",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.164851243587226",
