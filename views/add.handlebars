@@ -30,17 +30,19 @@
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img
-              src="/images/tacos.jpg"
-              class="borders"
-              id="featured-img"
-              alt="Tacos on a wooden board"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addEatModal">
+              <img
+                src="/images/tacos.jpg"
+                class="borders"
+                id="featured-img"
+                alt="Tacos on a wooden board"
+              />
+            </a>
           </div>
         </div>
       </div>
       {{!-- add Provider-Eat --}}
-      {{!-- {{> addProvider/modalAddEat}} --}}
+      {{> addProvider/modalAddEat}}
     </div>
     <div class="row">
       <div class="col">

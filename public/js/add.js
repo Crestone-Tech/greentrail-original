@@ -1,8 +1,8 @@
 // DEPENDENCIES
 
 // ELEMENTS
-// const addEatModal = $("#addEatModal");
-// const saveNewEatProviderBtn = $("#saveNewEatProviderBtn");
+const addEatModal = $("#addEatModal");
+const saveNewEatProviderBtn = $("#saveNewEatProviderBtn");
 const addExploreModal = $("#addExploreModal");
 const saveNewExploreProviderBtn = $("#saveNewExploreProviderBtn");
 const addServiceModal = $("#addServiceModal");
@@ -29,9 +29,17 @@ const TAGS = {
 // FUNCTIONS
 
 // adds a Provider and associated EAT Tag
-// function handleSaveEatProvider() {
-//   return addProviderAndTag(TAGS.EAT);
-// }
+function handleSaveEatProvider() {
+    const communityId = $("#eatCommunityInput").val();
+    const providerName = $("#eatNameInput").val();
+    const providerDescription = $("#eatDescriptionInput").val();
+    return addProviderAndTag(
+    TAGS.EAT,
+    communityId,
+    providerName,
+    providerDescription
+  );
+}
 // adds a Provider and associated EXPLORE Tag
 function handleSaveExploreProvider() {
     const communityId = $("#exploreCommunityInput").val();
@@ -94,7 +102,7 @@ const addProviderAndTag = async (tagId, community_id, provider_name, providerDes
   }
 };
 
-// saveNewEatProviderBtn.on("click", handleSaveEatProvider);
+saveNewEatProviderBtn.on("click", handleSaveEatProvider);
 saveNewExploreProviderBtn.on("click", handleSaveExploreProvider);
 saveNewServiceProviderBtn.on("click", handleSaveServiceProvider);
 // saveNewStayProviderBtn.on("click", handleSaveStayProvider);
