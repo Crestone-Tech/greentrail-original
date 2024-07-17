@@ -1,8 +1,14 @@
 // DEPENDENCIES
 
 // ELEMENTS
+const addEatModal = $("#addEatModal");
+const saveNewEatProviderBtn = $("#saveNewEatProviderBtn");
+const addExploreModal = $("#addExploreModal");
+const saveNewExploreProviderBtn = $("#saveNewExploreProviderBtn");
 const addServiceModal = $("#addServiceModal");
 const saveNewServiceProviderBtn = $("#saveNewServiceProviderBtn");
+const addStayModal = $("#addStayModal");
+const saveNewStayProviderBtn = $("#saveNewStayProviderBtn");
 
 // DATA
 const TAGS = {
@@ -21,21 +27,22 @@ const TAGS = {
   };
 
 // FUNCTIONS
-// adds a Provider and associated AMENITY Tag
-function handleSaveServiceProvider() {
-    return addProviderAndTag(TAGS.AMENITY);
-}
+
 // adds a Provider and associated EAT Tag
 function handleSaveEatProvider() {
   return addProviderAndTag(TAGS.EAT);
 }
-// adds a Provider and associated STAY Tag
-function handleSaveStayProvider() {
-  return addProviderAndTag(TAGS.STAY);
-}
 // adds a Provider and associated EXPLORE Tag
 function handleSaveExploreProvider() {
   return addProviderAndTag(TAGS.EXPLORE);
+}
+// adds a Provider and associated AMENITY Tag
+function handleSaveServiceProvider() {
+    return addProviderAndTag(TAGS.AMENITY);
+}
+// adds a Provider and associated STAY Tag
+function handleSaveStayProvider() {
+  return addProviderAndTag(TAGS.STAY);
 }
 
 // adds a Provider and associated Tag of specified type
@@ -74,4 +81,7 @@ const addProviderAndTag = async (tagId) => {
   }
 };
 
+saveNewEatProviderBtn.on("click", handleSaveEatProvider);
+saveNewExploreProviderBtn.on("click", handleSaveExploreProvider);
 saveNewServiceProviderBtn.on("click", handleSaveServiceProvider);
+saveNewStayProviderBtn.on("click", handleSaveStayProvider);
