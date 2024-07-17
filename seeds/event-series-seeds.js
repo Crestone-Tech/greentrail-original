@@ -14,7 +14,7 @@ const eventSeriesData = [
   },
   {
     event_series_name: "Learn_2_Code",
-    event_id: null,
+    event_id: 1,
     community_id: 1,
     site_id: null,
     date: null,
