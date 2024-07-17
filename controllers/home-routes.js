@@ -95,7 +95,7 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
-        },
+        }, 
       ],
     });
     //add provider model to also pull from
