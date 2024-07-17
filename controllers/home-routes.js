@@ -97,6 +97,7 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
+
         },
         {
           model: Event,
@@ -131,7 +132,7 @@ router.get("/community/:name", async (req, res) => {
       include: [
         {
           model: EventSeries,
-        },
+        }, 
       ],
     });
 
