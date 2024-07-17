@@ -12,7 +12,7 @@ N/A
 
 ## Usage
 
-The website can be visited at https://boombastic-froggy.onrender.com/.
+The website can be visited at https://greentrail.onrender.com/.
 
 From the Home page, users can choose to navigate to a "Locations" page or a "Login" page.
 
