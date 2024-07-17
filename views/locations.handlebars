@@ -1,47 +1,53 @@
 <h1 class="page-title grotesque" id="location-title">Where to next?</h1>
 
-<section class="borders" id="featured">
-  <div id="featured-text">
-    <h2 class="grotesque page-subtitle" id="featured-title">Featured Location:</h2>
-    <h2 class="grotesque page-subtitle" id="featured-name">Chacala, Mexico</h2>
-  </div>
-  <div id="featured-content">
-    <div id="featured-img-div">
+<div class="page">
+  <h2 class="grotesque location-subtitle" id="featured-title">Featured Location:</h2>
+  <section class="borders" id="featured">
+    <h2 class="grotesque" id="featured-name">Chacala, Mexico</h2>
+    <div id="featured-content">
       <img
-        src="/images/chacala.jpg"
-        class="borders"
-        id="featured-img"
+        src="/images/chacala-turtle.jpg"
+        class="featured-elem"
+        id="featured-img-turtle"
         alt="Turtle in clear water"
       />
-    </div>
-    <div id="featured-vid-div">
-      <video autoplay muted loop class="borders" id="featured-video">
-        <source
-          src="/images/chacala.mp4"
-          type="video/mp4"
-          alt="Video of children on a surfboard in the water"
+      <div>
+        <img
+          src="/images/chacala-island.jpg"
+          id="featured-img-aerial"
+          class="featured-elem"
+          alt="Aerial view of Chacala"
         />
-      </video>
-      <a href="/community/Chacala" class="borders inter" id="see-more">See more</a>
+        <div id="featured-content-inner">
+          <a href="/community/Chacala" class="borders inter featured-elem" id="see-more">See more</a>
+          <video autoplay muted loop class="featured-elem" id="featured-video">
+            <source
+              src="/images/chacala.mp4"
+              type="video/mp4"
+              alt="Video of children on a surfboard in the water"
+            />
+          </video>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <h2 class="grotesque page-subtitle" id="featured-title">Locations</h2>
-</section>
-<section class="locations borders">
-  {{#each countries as |country|}}
-    <h2 class ="grotesque" id="country-name">{{country.country_name}}</h2>
+  <h2 class="grotesque location-subtitle" id="locations-title">All Locations:</h2>
+  <section class="locations borders">
+    {{#each countries as |country|}}
+      <h2 class="grotesque" id="country-name">{{country.country_name}}</h2>
 
-    {{#each country.provinces as |province|}}
-      <h3 class="grotesque" id="province-name">{{province.province_name}}</h3>
-      {{#each province.towns as |town|}}
-      <ul id="town-name">
-      <li><a class="grotesque" href="/community/{{town.town_name}}">{{town.town_name}}</a></li>
-      </ul>
+      {{#each country.provinces as |province|}}
+        <h3 class="grotesque" id="province-name">{{province.province_name}}</h3>
+        {{#each province.towns as |town|}}
+          <ul id="town-name">
+            <li><a
+                class="grotesque"
+                href="/community/{{town.town_name}}"
+              >{{town.town_name}}</a></li>
+          </ul>
+        {{/each}}
       {{/each}}
     {{/each}}
-  {{/each}}
-
-</section>
+  </section>
+<div>
