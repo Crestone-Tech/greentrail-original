@@ -119,7 +119,7 @@ router.get("/community/:name", async (req, res) => {
 });
 
 /* Get request for restaurants */
-router.get("/community/:name/restaurants", async (req, res) => {
+router.get("/community/:name/eat", async (req, res) => {
   try {
     console.log("Fetching restaurant providers...");
     // Fetch providers categorized as restaurants
@@ -157,7 +157,7 @@ router.get("/community/:name/restaurants", async (req, res) => {
 
     // Render the restaurants view
     console.log("Rendering restaurants view with data:", restaurants);
-    res.render("restaurants", {
+    res.render("eat-details", {
       restaurants,
       loggedIn: req.session.loggedIn,
       darkText: true,
