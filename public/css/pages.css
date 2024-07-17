@@ -25,7 +25,6 @@
 }
 
 /* LOCATIONS PAGE */
-
 /* FEATURED LOCATION */
 .location-subtitle {
   font-size: calc(1.2vw + 20px);
@@ -83,29 +82,33 @@
 }
 
 /* ALL LOCATIONS */
+#locations {
+  padding: 10px 15px 10px 15px; /* Add padding within borders */
+}
+
 #locations-title {
   margin-top: 30px;
 }
 
-#country-name {
+.toggle-icon {
+  color: var(--dark-hover);
+  margin: 0px 0px 0px 6px;
+}
+
+.country-name {
   font-weight: bold;
-  font-size: 30px;
-  text-align: center;
-  margin-top: 40px;
+  font-size: calc(1.2vw + 20px);
 }
 
-#province-name {
-  font-size: 25px;
-  margin-left: 300px;
-  margin-top: 20px;
-  margin-bottom: 30px;
+.province-name {
+  font-size: calc(0.8vw + 20px);
+  margin-left: 35px;
 }
 
-#town-name {
-  font-size: 20px;
+.town-name {
+  font-size: calc(0.3vw + 20px);
   text-decoration: underline;
-  text-align: center;
-  padding: 10px;
+  margin-left: 70px;
 }
 
 /* COMMUNITY PAGE */
@@ -190,6 +193,10 @@
 
   #community-nav {
     width: calc(20vw + 650px);
+  }
+
+  #locations {
+    padding: 15px 25px 15px 25px; /* Add padding within borders */
   }
 }
 

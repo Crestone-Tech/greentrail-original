@@ -1,6 +1,6 @@
-<h1 class="page-title grotesque" id="location-title">Where to next?</h1>
+<h1 class="page-title grotesque fade-in" id="location-title">Where to next?</h1>
 
-<div class="page">
+<div class="page fade-in">
   <h2 class="grotesque location-subtitle" id="featured-title">Featured Location:</h2>
   <section class="borders" id="featured">
     <h2 class="grotesque" id="featured-name">Chacala, Mexico</h2>
@@ -33,21 +33,26 @@
   </section>
 
   <h2 class="grotesque location-subtitle" id="locations-title">All Locations:</h2>
-  <section class="locations borders">
+  <section class="borders" id="locations">
     {{#each countries as |country|}}
-      <h2 class="grotesque" id="country-name">{{country.country_name}}</h2>
+      <h2 class="grotesque country-name">{{country.country_name}}<i class="fa-solid fa-angle-down toggle-icon"></i></h2>
 
-      {{#each country.provinces as |province|}}
-        <h3 class="grotesque" id="province-name">{{province.province_name}}</h3>
-        {{#each province.towns as |town|}}
-          <ul id="town-name">
-            <li><a
-                class="grotesque"
-                href="/community/{{town.town_name}}"
-              >{{town.town_name}}</a></li>
-          </ul>
+      <div class="hidden">
+        {{#each country.provinces as |province|}}
+          <h3 class="grotesque province-name">{{province.province_name}}</h3>
+          {{#each province.towns as |town|}}
+            <ul class="town-name">
+              <li><a
+                  class="inter"
+                  href="/community/{{town.town_name}}"
+                >{{town.town_name}}</a></li>
+            </ul>
+          {{/each}}
         {{/each}}
-      {{/each}}
+      </div>
     {{/each}}
   </section>
 <div>
+
+{{! JAVASCRIPT }}
+<script src="/js/locations.js"></script>

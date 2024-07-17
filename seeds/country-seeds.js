@@ -1,4 +1,4 @@
-const { Country } = require('../models/Location');
+const { Country } = require("../models/Location");
 
 const countryData = [
   {
@@ -8,7 +8,7 @@ const countryData = [
     country_name: "Mexico",
   },
   {
-    country_name: "United Status of America",
+    country_name: "United States of America",
   },
 ];
 
