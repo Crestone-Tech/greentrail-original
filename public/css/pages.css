@@ -171,6 +171,14 @@
   padding: 4px;
 }
 
+/* 404 PAGE */
+#error-page-content {
+  height: 82%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* MOBILE */
 @media (min-width: 450px) {
   #signup-signin-box {

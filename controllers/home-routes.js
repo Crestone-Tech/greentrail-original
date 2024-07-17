@@ -97,7 +97,6 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
-
         },
         {
           model: Event,
@@ -132,7 +131,7 @@ router.get("/community/:name", async (req, res) => {
       include: [
         {
           model: EventSeries,
-        }, 
+        },
       ],
     });
 
@@ -221,6 +220,19 @@ router.get("/login", async (req, res) => {
     res.render("login", {
       loggedIn: req.session.loggedIn,
       darkText: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+/* Get request for login page */
+router.get("*", async (req, res) => {
+  try {
+    // Render
+    res.render("404", {
+      loggedIn: req.session.loggedIn,
+      darkText: false,
     });
   } catch (err) {
     res.status(500).json(err);
