@@ -15,23 +15,23 @@ Provider.belongsToMany(Tag, {
 });
 
 Community.hasMany(Provider, {
-  foreignKey: 'community_id', 
-  onDelete: 'CASCADE'
+  foreignKey: "community_id",
+  onDelete: "CASCADE",
 });
 
 Provider.hasOne(Community, {
-  foreignKey:'community_id'
+  foreignKey: "community_id",
 });
 
 Site.hasOne(Provider, {
-  foreignKey: 'site_id',
-  onDelete: 'CASCADE'
+  foreignKey: "site_id",
+  onDelete: "CASCADE",
 });
 
 Provider.hasOne(Site, {
-  foreignKey: 'site_id', 
-  onDelete:'CASCADE'
-})
+  foreignKey: "site_id",
+  onDelete: "CASCADE",
+});
 
 Tag.belongsToMany(Provider, {
   through: {
@@ -48,6 +48,14 @@ Event.hasOne(Community, {
 Community.hasMany(Event, {
   foreignKey: "community_id",
   onDelete: "CASCADE",
+});
+
+EventSeries.belongsTo(Event, {
+  foreignKey: "event_id",
+});
+
+Event.hasMany(EventSeries, {
+  foreignKey: "event_id",
 });
 
 Country.hasMany(Province, {
