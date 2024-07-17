@@ -3,7 +3,7 @@ const { EventSeries } = require("../models/Event");
 const eventSeriesData = [
   {
     event_series_name: "Yoga Class",
-    event_id: null,
+    event_id: 1,
     community_id: 1,
     site_id: null,
     date: null,
