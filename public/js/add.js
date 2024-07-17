@@ -7,8 +7,8 @@ const addExploreModal = $("#addExploreModal");
 const saveNewExploreProviderBtn = $("#saveNewExploreProviderBtn");
 const addServiceModal = $("#addServiceModal");
 const saveNewServiceProviderBtn = $("#saveNewServiceProviderBtn");
-// const addStayModal = $("#addStayModal");
-// const saveNewStayProviderBtn = $("#saveNewStayProviderBtn");
+const addStayModal = $("#addStayModal");
+const saveNewStayProviderBtn = $("#saveNewStayProviderBtn");
 
 // DATA
 const TAGS = {
@@ -65,9 +65,17 @@ function handleSaveServiceProvider() {
     );
 }
 // adds a Provider and associated STAY Tag
-// function handleSaveStayProvider() {
-//   return addProviderAndTag(TAGS.STAY);
-// }
+function handleSaveStayProvider() {
+    const communityId = $("#stayCommunityInput").val();
+    const providerName = $("#stayNameInput").val();
+    const providerDescription = $("#stayDescriptionInput").val();
+    return addProviderAndTag(
+    TAGS.STAY,
+    communityId,
+    providerName,
+    providerDescription
+  );
+}
 
 // adds a Provider and associated Tag of specified type
 const addProviderAndTag = async (tagId, community_id, provider_name, providerDescription) => {
@@ -105,4 +113,4 @@ const addProviderAndTag = async (tagId, community_id, provider_name, providerDes
 saveNewEatProviderBtn.on("click", handleSaveEatProvider);
 saveNewExploreProviderBtn.on("click", handleSaveExploreProvider);
 saveNewServiceProviderBtn.on("click", handleSaveServiceProvider);
-// saveNewStayProviderBtn.on("click", handleSaveStayProvider);
+saveNewStayProviderBtn.on("click", handleSaveStayProvider);

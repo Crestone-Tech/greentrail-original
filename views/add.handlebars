@@ -13,17 +13,19 @@
         </div>
         <div id="featured-content">
           <div id="featured-img-div">
-            <img
-              src='/images/hotel-pura-chacala.jpg'
-              class="borders"
-              id="featured-img"
-              alt="Facade of a hotel"
-            />
+            <a data-bs-toggle="modal" data-bs-target="#addStayModal">
+              <img
+                src='/images/hotel-pura-chacala.jpg'
+                class="borders"
+                id="featured-img"
+                alt="Facade of a hotel"
+              />
+            </a>
           </div>
         </div>
       </div>
       {{!-- add Provider-Stay --}}
-      {{!-- {{> addProvider/modalAddStay}} --}}
+      {{> addProvider/modalAddStay}}
       <div class="col">
         <div id="featured-text">
           <h2 class="grotesque page-subtitle" id="featured-title">A Place to Eat</h2>
