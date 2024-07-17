@@ -112,8 +112,22 @@
 }
 
 /* COMMUNITY PAGE */
-#community {
-  margin: 20px;
+#community-img-div {
+  width: 90vw;
+  margin: 40px 5vw 30px 5vw;
+}
+
+#community-name {
+  position: absolute;
+  color: var(--light-text);
+  margin: 10px 20px 0px 20px;
+}
+
+#community-description {
+  font-size: calc(0.8vw + 16px);
+  margin: 18px 0px 18px 0px;
+  line-height: 0.8;
+  text-align: center;
 }
 
 #community-features {

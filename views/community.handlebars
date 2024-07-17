@@ -1,14 +1,8 @@
-<section class="page fade-in" id="community">
-    <div>
-      <h1 class="grotesque" id="community-name">{{community.community_name}}</h1>
-    </div>
-    <div>
-      <img src="/images/{{community.community_name}}.jpg" alt="Image of {{community_name}}"/>
-    </div>
-  </header>
-
-  <div class="inter" id="community-description">
-    <p>{{community.description}}</p>
+<section class="fade-in" id="community">
+  <div id="community-img-div">
+    <h1 class="grotesque page-title" id="community-name">{{community.community_name}}</h1>
+    <img id="community-img" src="/images/{{community.community_name}}.jpg" alt="Image of {{community_name}}"/>
+    <p class="inter" id="community-description">{{community.description}}</p>
   </div>
 
   <div id="community-features">
