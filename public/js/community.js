@@ -47,9 +47,7 @@ selector.forEach((elem, index) => {
   });
 });
 
-
-
-handlebars.registerHelper('ifvalue', function (conditional, options) {
+handlebars.registerHelper("ifvalue", function (conditional, options) {
   if (options.hash.value === conditional) {
     return options.fn(this); // Render the block if condition is true
   } else {

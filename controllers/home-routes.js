@@ -2,7 +2,14 @@
 const router = require("express").Router();
 // Import authentication middleware
 
-const { Community, Site, Country, Province, Town, Provider} = require("../models");
+const {
+  Community,
+  Site,
+  Country,
+  Province,
+  Town,
+  Provider,
+} = require("../models");
 // Import models
 
 /* ROUTES */
@@ -43,13 +50,13 @@ router.get("/locations", async (req, res) => {
           include: [
             {
               model: Town,
-                  attributes: ["town_name", "province_id"],
+              attributes: ["town_name", "province_id"],
             },
           ],
         },
       ],
     });
-    
+
     const countries = dbLocationData.map((country) =>
       country.get({ plain: true })
     );
@@ -71,32 +78,32 @@ router.get("/community/:name", async (req, res) => {
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
       include: [
-        { model: Provider, 
-            attributes: [
-              "provider_name", 
-              "community_id", 
-              "site_id",
-              "service"],
-    include: [{
-      model:Site,
-      attributes: [
-        "site_name", 
-      "description",
-       "town_id", 
-       "street_address",
-        "map_link"],
-       
-    }] },
-  // { include: [
-  //   {
-  //   model: Provider, 
-  //   attributes: [
-  //     "provider_name", 
-  //     "community_id", 
-  //     "site_id",
-  //     "service"]
-  // }]}
-  ],
+        {
+          model: Provider,
+          attributes: ["provider_name", "community_id", "site_id", "service"],
+          include: [
+            {
+              model: Site,
+              attributes: [
+                "site_name",
+                "description",
+                "town_id",
+                "street_address",
+                "map_link",
+              ],
+            },
+          ],
+        },
+        // { include: [
+        //   {
+        //   model: Provider,
+        //   attributes: [
+        //     "provider_name",
+        //     "community_id",
+        //     "site_id",
+        //     "service"]
+        // }]}
+      ],
     });
     //add provider model to also pull from
 
@@ -122,7 +129,7 @@ router.get("/community/:name", async (req, res) => {
 router.get("/login", async (req, res) => {
   try {
     if (req.session.loggedIn) {
-      res.redirect("/");
+      res.redirect("/locations");
       return;
     }
     // Render
