@@ -81,6 +81,7 @@ EventSeries.init(
     },
     event_id: {
       type: DataTypes.INTEGER,
+      allowNull: true,
       unique: false,
       references: {
         model: TABLES.EVENT,
@@ -117,6 +118,10 @@ EventSeries.init(
     time: {
       type: DataTypes.TIME,
       allowNull: true,
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
