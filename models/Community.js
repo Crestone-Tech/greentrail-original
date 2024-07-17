@@ -19,6 +19,10 @@ Community.init(
         isAlpha: true,
       },
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     town_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

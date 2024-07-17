@@ -41,12 +41,21 @@
         {{#each country.provinces as |province|}}
           <h3 class="grotesque province-name">{{province.province_name}}</h3>
           {{#each province.towns as |town|}}
-            <ul class="town-name">
-              <li><a
-                  class="inter"
-                  href="/community/{{town.town_name}}"
-                >{{town.town_name}}</a></li>
-            </ul>
+            {{#ifvalue town.town_name value="Chacala"}}
+              <ul class="town-name">
+                <li><a
+                    class="inter"
+                    href="/community/{{town.town_name}}"
+                  >{{town.town_name}}</a></li>
+              </ul>
+            {{else}}
+              <ul class="town-name">
+                <li><a
+                    class="inter"
+                    href="/community"
+                  >{{town.town_name}}</a></li>
+              </ul>
+            {{/ifvalue}}
           {{/each}}
         {{/each}}
       </div>

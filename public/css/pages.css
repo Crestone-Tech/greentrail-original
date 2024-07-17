@@ -112,13 +112,33 @@
 }
 
 /* COMMUNITY PAGE */
-#community {
-  margin: 20px;
+#community-img-div {
+  width: 90vw;
+  margin: 40px 5vw 30px 5vw;
+}
+
+#community-img {
+  min-height: 250px;
+  object-fit: cover;
+}
+
+#community-name {
+  position: absolute;
+  color: var(--light-text);
+  margin: 10px 20px 0px 28px;
+}
+
+#community-description {
+  font-size: calc(0.5vw + 16px);
+  margin: 18px 0px 18px 0px;
+  line-height: 0.8;
+  text-align: center;
 }
 
 #community-features {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -128,8 +148,9 @@
   justify-content: center;
   line-height: 0.5;
   border: 1px solid var(--dark-text);
-  border-radius: 20px;
+  border-radius: 25px;
   padding: 8px;
+  margin: 0px 5vw 0px 5vw;
 }
 
 #community-nav p {
@@ -137,6 +158,8 @@
   padding: 10px;
   font-size: calc(0.5vw + 20px);
 }
+
+/* STAY DETAILS */
 
 /* LOGIN PAGE */
 #sign-in-button,
@@ -171,10 +194,22 @@
   padding: 4px;
 }
 
+/* 404 PAGE */
+#error-page-content {
+  height: 82%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* MOBILE */
 @media (min-width: 450px) {
   #signup-signin-box {
     font-size: 22px;
+  }
+
+  #community-nav {
+    padding: 8px 28px 8px 28px;
   }
 }
 
@@ -198,7 +233,7 @@
   }
 
   #community-nav {
-    width: calc(20vw + 650px);
+    max-width: calc(20vw + 700px);
   }
 
   #locations {

@@ -1,14 +1,8 @@
-<section class="page fade-in" id="community">
-    <div>
-      <h1 class="grotesque" id="community-name">{{community_name}}</h1>
-    </div>
-    <div>
-      <img src="/images/{{community_name}}.jpg" alt="Image of {{community_name}}"/>
-    </div>
-  </header>
-
-  <div class="inter" id="community-description">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt...</p>
+<section class="fade-in" id="community">
+  <div id="community-img-div">
+    <h1 class="grotesque page-title" id="community-name">{{community.community_name}}</h1>
+    <img id="community-img" src="/images/{{community.community_name}}.jpg" alt="Image of {{community_name}}"/>
+    <p class="inter" id="community-description">{{community.description}}</p>
   </div>
 
   <div id="community-features">
@@ -17,12 +11,11 @@
       <p href="#" id="eat">Eat</p>
       <p href="#" id="explore">Explore</p>
       <p href="#" id="events">Events</p> 
-      <p href="#" id="flora">Flora &amp; Fauna</p>
       <p href="#" id="amenities">Amenities</p>
       <p href="#" id="about">About</p>
     </div>
     <div>
-      <div class="hidden", id="stay-details">
+      <div class="hidden page", id="details-title">
           {{> stay-details}}
         </div>
       <div class="hidden", id="eat-details">
@@ -33,9 +26,6 @@
         </div>
       <div class="hidden", id="event-details">
           {{> events-details}}
-        </div>
-      <div class="hidden", id="flora-details">
-          {{> flora-details}}
         </div>
       <div class="hidden", id="amenities-details">
           {{> amenities-details}}

@@ -1,0 +1,10 @@
+/* STAY */
+#details-title {
+  color: var(--dark-hover);
+  margin: 20px 0px 20px 0px;
+}
+
+.stay-div {
+  padding: 20px;
+  width: 200px;
+}
