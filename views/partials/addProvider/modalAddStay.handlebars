@@ -1,8 +1,8 @@
-<div class="modal" tabindex="-1" id="addServiceModal">
+<div class="modal" tabindex="-1" id="addStayModal">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Add Service for community: <select name="serviceCommunity" id="serviceCommunityInput" ></h5>
+              <h5 class="modal-title">Add Lodging for community: <select name="stayCommunity" id="stayCommunityInput" ></h5>
                     <option value="1">Chacala</option>
                   </select>
               <button
@@ -14,33 +14,32 @@
             </div>
             <div class="modal-body container">
               <div class="row">
-                <div class="col-5">Service Name</div>
-                <div class="col-5">Type of Service Offered</div>
+                <div class="col-5">Lodging Name</div>
+                <div class="col-5">Type of Lodging Offered</div>
                 <div class="col-5 border">
                   <input
                     type="text"
-                    name="serviceNameInput"
-                    id="serviceNameInput"
+                    name="stayNameInput"
+                    id="stayNameInput"
                   />
                 </div>
                 <div class="col-5">
-                  <select name="serviceType" id="serviceTypeInput" class="border">
-                    <option value="ATM">ATM</option>
-                    <option value="child-care">Child Care</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="language-lessons">Language Lessons</option>
-                    <option value="laundry">Laundry</option>
-                    <option value="massage">Massage</option>
-                    <option value="taxi">Taxi</option>
-                    <option value="yoga-class">Yoga Class</option>
+                  <select name="stayType" id="stayTypeInput" class="border">
+                    <option value="">B&B</option>
+                    <option value="">Home Stay</option>
+                    <option value="">Hotel</option>
+                    <option value="">Resort</option>
+                    <option value="">Retreat Center</option>
+                    <option value="">Rental - House</option>
+                    <option value="">Rental - Apartment</option>
                   </select>
                 </div>
                 <div class="col-10">Description</div>
                 <div class="col-10 border">
                   <textarea
-                    name="serviceDescriptionInput"
+                    name="stayDescriptionInput"
                     cols="44"
-                    id="serviceDescriptionInput"
+                    id="stayDescriptionInput"
                   ></textarea>
                 </div>
               </div>
@@ -53,7 +52,7 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-primary" id="saveTaskBtn">
+              <button type="button" class="btn btn-primary" id="saveNewStayProviderBtn">
                 Save
               </button>
             </div>

@@ -80,34 +80,63 @@ router.get("/community/:name", async (req, res) => {
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
       include: [
-        {
-          model: Town,
-          attributes: ["town_name"],
-          include: [
-            {
-              model: Site,
-              attributes: [
-                "site_name",
-                "description",
-                "town_id",
-                "street_address",
-                "map_link",
-              ],
-              include: [
-                {
-                  model: Provider,
-                  attributes: [
-                    "provider_name",
-                    "community_id",
-                    "site_id",
-                    "service",
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
+// <<<<<<< eat_details
+//         {
+//           model: Town,
+//           attributes: ["town_name"],
+//           include: [
+//             {
+//               model: Site,
+//               attributes: [
+//                 "site_name",
+//                 "description",
+//                 "town_id",
+//                 "street_address",
+//                 "map_link",
+//               ],
+//               include: [
+//                 {
+//                   model: Provider,
+//                   attributes: [
+//                     "provider_name",
+//                     "community_id",
+//                     "site_id",
+//                     "service",
+//                   ],
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       ],
+// =======
+        { model: Provider, 
+            attributes: [
+              "provider_name", 
+              "community_id", 
+              "site_id",
+              "service"],
+    include: [{
+      model:Site,
+      attributes: [
+        "site_name", 
+      "description",
+       "town_id", 
+       "street_address",
+        "map_link"],
+       
+    }] },
+  // { include: [
+  //   {
+  //   model: Provider, 
+  //   attributes: [
+  //     "provider_name", 
+  //     "community_id", 
+  //     "site_id",
+  //     "service"]
+  // }]}
+  ],
+// >>>>>>> main
     });
     //add provider model to also pull from
 
