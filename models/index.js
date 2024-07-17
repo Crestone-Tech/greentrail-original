@@ -14,6 +14,25 @@ Provider.belongsToMany(Tag, {
   },
 });
 
+Community.hasMany(Provider, {
+  foreignKey: 'community_id', 
+  onDelete: 'CASCADE'
+});
+
+Provider.hasOne(Community, {
+  foreignKey:'community_id'
+});
+
+Site.hasOne(Provider, {
+  foreignKey: 'site_id',
+  onDelete: 'CASCADE'
+});
+
+Provider.hasOne(Site, {
+  foreignKey: 'site_id', 
+  onDelete:'CASCADE'
+})
+
 Tag.belongsToMany(Provider, {
   through: {
     model: ProviderTag,
