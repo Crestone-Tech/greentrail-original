@@ -226,7 +226,7 @@ router.get("/login", async (req, res) => {
   }
 });
 
-/* Get request for login page */
+/* Get request: if not found above, route to 404 page */
 router.get("*", async (req, res) => {
   try {
     // Render
