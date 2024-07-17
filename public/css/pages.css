@@ -118,7 +118,9 @@
 
 #community-features {
   display: flex;
+  flex-direction:column;
   justify-content: center;
+
 }
 
 #community-nav {
