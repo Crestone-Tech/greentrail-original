@@ -20,6 +20,9 @@
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-oauth": "^1.0.0",
     "pg": "^8.11.3",
     "sequelize": "^6.33.0"
   },

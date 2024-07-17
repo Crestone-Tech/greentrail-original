@@ -34,24 +34,32 @@ Traveler.init(
     },
     password: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
       // validate: len[6],
+    },
+    googleId: {
+      type: DataTypes.STRING,
+      allowNull: true, // Only OAuth users will have this field populated
     },
   },
   {
     hooks: {
       beforeCreate: async (newTravelerData) => {
-        newTravelerData.password = await bcrypt.hash(
-          newTravelerData.password,
-          10
-        );
+        if (newTravelerData.password) {
+          newTravelerData.password = await bcrypt.hash(
+            newTravelerData.password,
+            10
+          );
+        }
         return newTravelerData;
       },
       beforeUpdate: async (updatedTravelerData) => {
-        updatedTravelerData.password = await bcrypt.hash(
-          updatedTravelerData.password,
-          10
-        );
+        if (newTravelerData.password) {
+          updatedTravelerData.password = await bcrypt.hash(
+            updatedTravelerData.password,
+            10
+          );
+        }
         return updatedTravelerData;
       },
     },
