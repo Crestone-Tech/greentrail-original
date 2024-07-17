@@ -42,6 +42,13 @@ Provider.init(
         isAlpha: true,
       },
     },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      verification: {
+        isAlpha: true,
+      },
+    },
     
    
   },

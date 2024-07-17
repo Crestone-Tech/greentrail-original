@@ -82,12 +82,19 @@ router.get("/community/:name", async (req, res) => {
       include: [
         {
           model: Provider,
-          attributes: ["provider_name", "community_id", "site_id", "service"],
+          attributes: [
+            "provider_name",
+            "community_id",
+            "site_id",
+            "service",
+            "description",
+          ],
           include: [
             {
               model: Site,
               attributes: [
                 "site_name",
+                "category",
                 "description",
                 "town_id",
                 "street_address",
@@ -95,7 +102,7 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
-        }, 
+        },
       ],
     });
     //add provider model to also pull from
@@ -121,54 +128,54 @@ router.get("/community/:name", async (req, res) => {
 // router.get()
 
 /* Get request for restaurants */
-router.get("/community/:name/eat", async (req, res) => {
-  try {
-    console.log("Fetching restaurant providers...");
-    // Fetch providers categorized as restaurants
-    const restaurantProviders = await Provider.findAll({
-      where: {
-        service: "restaurant",
-      },
-      include: [
-        {
-          model: Community,
-          attributes: ["community_name"],
-        },
-        {
-          model: Site,
-          attributes: [
-            "site_name",
-            // "description",
-            "map_link",
-          ],
-        },
-      ],
-    });
+// router.get("/community/:name/eat", async (req, res) => {
+//   try {
+//     console.log("Fetching restaurant providers...");
+//     // Fetch providers categorized as restaurants
+//     const restaurantProviders = await Provider.findAll({
+//       where: {
+//         service: "restaurant",
+//       },
+//       include: [
+//         {
+//           model: Community,
+//           attributes: ["community_name"],
+//         },
+//         {
+//           model: Site,
+//           attributes: [
+//             "site_name",
+//             // "description",
+//             "map_link",
+//           ],
+//         },
+//       ],
+//     });
 
-    console.log("Restaurant providers fetched.", restaurantProviders);
+//     console.log("Restaurant providers fetched.", restaurantProviders);
 
-    // Ensure providers are found
-    if (!restaurantProviders || restaurantProviders.length === 0) {
-      console.log("No restaurants found.");
-      return res.status(404).json({ message: "No restaurants found" });
-    }
+//     // Ensure providers are found
+//     if (!restaurantProviders || restaurantProviders.length === 0) {
+//       console.log("No restaurants found.");
+//       return res.status(404).json({ message: "No restaurants found" });
+//     }
 
-    const restaurants = restaurantProviders.map((provider) =>
-      provider.get({ plain: true })
-    );
+//     const restaurants = restaurantProviders.map((provider) =>
+//       provider.get({ plain: true })
+//     );
 
-    // Render the restaurants view
-    console.log("Rendering restaurants view with data:", restaurants);
-    res.render("community", {
-      restaurants,
-      loggedIn: req.session.loggedIn,
-      darkText: true,
-    });
-  } catch (err) {
-    console.log("Error occurred:", err);
-    res.status(500).json(err);
-  }
-});
+//     // Render the restaurants view
+//     console.log("Rendering restaurants view with data:", restaurants);
+//     res.render("community", {
+//       restaurants,
+//       loggedIn: req.session.loggedIn,
+//       darkText: true,
+//     });
+//   } catch (err) {
+//     console.log("Error occurred:", err);
+//     res.status(500).json(err);
+//   }
+// });
 
 /* Get request for login page */
 router.get("/login", async (req, res) => {

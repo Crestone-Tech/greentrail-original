@@ -3,8 +3,8 @@ const { Site } = require("../models/Location");
 const siteData = [
   {
     site_name: "Abarrotes Jorge II",
-    category: "Explore",
-    description: "Storefront",
+    category: "amenities",
+    description: "Grocery Store",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.16385939389479",
@@ -13,8 +13,8 @@ const siteData = [
   },
   {
     site_name: "Abarrotes Sarahi",
-    category:"Explore",
-    description: "Storefront",
+    category:"amenities",
+    description: "Grocery Store",
     town_id: 1,
     street_address: "Av. Chacalilla",
     latitude: "21.16496587867884",
@@ -64,7 +64,7 @@ const siteData = [
   {
     site_name: "Casa Liquen",
     description: "",
-    category:"outdoor",
+    category:"amenities",
     town_id: 1,
     street_address: "Atlantico 2",
     latitude: "21.165784443329635",
@@ -113,8 +113,8 @@ const siteData = [
   },
   {
     site_name: "Minisuper Rules",
-    description: "Storefront",
-    category: "Explore",
+    description: "Grocery Store",
+    category: "amenities",
     town_id: 1,
     street_address: "Av. Chacalilla 6",
     latitude: "21.16377591302987",
@@ -134,7 +134,7 @@ const siteData = [
   {
     site_name: "Plaza de Chacala",
     description: "",
-    category:"outdoor",
+    category:"amenities",
     town_id: 1,
     street_address: "Av. Chalilla 23",
     latitude: "21.165258238540986",
@@ -273,8 +273,8 @@ const siteData = [
   },
   {
     site_name: "La Roca",
-    description: "Storefront",
-    category: "Explore",
+    description: "Grocery Store",
+    category: "amenities",
     town_id: 1,
     street_address: "Av. Islas Canarias",
     latitude: "21.165091342778325",
@@ -303,8 +303,8 @@ const siteData = [
   },
   {
     site_name: "Lavandería Naye",
-    description: "Storefront",
-    category:"Explore",
+    description: "Laundry",
+    category:"amenities",
     town_id: 1,
     street_address: "Av. Islas Marias",
     latitude: "21.166498729191066",
@@ -313,8 +313,8 @@ const siteData = [
   },
   {
     site_name: "Lavandería Nashelly",
-    description: "Storefront",
-    category: "Explore",
+    description: "Laundry",
+    category: "amenities",
     town_id: 1,
     street_address: "Av. Isla Santa Isabel",
     latitude: "21.16569157656037",
