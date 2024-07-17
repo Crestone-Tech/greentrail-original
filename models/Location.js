@@ -115,7 +115,7 @@ Site.init(
     },
     category: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,
