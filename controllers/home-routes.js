@@ -2,7 +2,16 @@
 const router = require("express").Router();
 // Import authentication middleware
 
-const { Community, Site, Country, Province, Town, Provider} = require("../models");
+const {
+  Community,
+  Site,
+  Country,
+  Province,
+  Town,
+  Provider,
+  Tag,
+  ProviderTag,
+} = require("../models");
 // Import models
 
 /* ROUTES */
@@ -43,13 +52,13 @@ router.get("/locations", async (req, res) => {
           include: [
             {
               model: Town,
-                  attributes: ["town_name", "province_id"],
+              attributes: ["town_name", "province_id"],
             },
           ],
         },
       ],
     });
-    
+
     const countries = dbLocationData.map((country) =>
       country.get({ plain: true })
     );
@@ -71,6 +80,36 @@ router.get("/community/:name", async (req, res) => {
     const communityData = await Community.findOne({
       where: { community_name: req.params.name },
       include: [
+// <<<<<<< eat_details
+//         {
+//           model: Town,
+//           attributes: ["town_name"],
+//           include: [
+//             {
+//               model: Site,
+//               attributes: [
+//                 "site_name",
+//                 "description",
+//                 "town_id",
+//                 "street_address",
+//                 "map_link",
+//               ],
+//               include: [
+//                 {
+//                   model: Provider,
+//                   attributes: [
+//                     "provider_name",
+//                     "community_id",
+//                     "site_id",
+//                     "service",
+//                   ],
+//                 },
+//               ],
+//             },
+//           ],
+//         },
+//       ],
+// =======
         { model: Provider, 
             attributes: [
               "provider_name", 
@@ -97,6 +136,7 @@ router.get("/community/:name", async (req, res) => {
   //     "service"]
   // }]}
   ],
+// >>>>>>> main
     });
     //add provider model to also pull from
 
@@ -109,6 +149,52 @@ router.get("/community/:name", async (req, res) => {
     // Render page
     res.render("community", {
       community,
+      loggedIn: req.session.loggedIn,
+      darkText: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+/* Get request for restaurants */
+router.get("/restaurants", async (req, res) => {
+  try {
+    // Fetch providers categorized as restaurants
+    const restaurantProviders = await Provider.findAll({
+      where: {
+        service: "restaurant",
+      },
+      include: [
+        {
+          model: Community,
+          attributes: ["community_name"],
+        },
+        {
+          model: Site,
+          attributes: [
+            "site_name",
+            // "description",
+            "map_link",
+          ],
+        },
+      ],
+    });
+
+    // Ensure providers are found
+    if (!restaurantProviders) {
+      res.status(404).json({ message: "No restaurants found" });
+      return;
+    }
+
+    const restaurants = restaurantProviders.map((provider) =>
+      provider.get({ plain: true })
+    );
+
+    // Render the restaurants view
+    res.render("restaurants", {
+      restaurants,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });

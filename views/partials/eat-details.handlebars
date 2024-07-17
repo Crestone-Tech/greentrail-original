@@ -1,11 +1,17 @@
-<h1>Hello! Let's eat!</h1>
-{{!-- <section class="card">
-  <a href="/community/{{id}}">
-    <header>Where to eat in {{community-name}}</header>
-
-    <div class="card-body">
-      {{!-- <img src="/images/{{filename}}" alt="{{description}}"> --}}
-      {{!-- <p>{{}}</p>
-    </div>
-  </a>
-</section> --}}
+<section>
+<h1>Restaurants</h1>
+    {{#if restaurants}}
+      <ul>
+        {{#each restaurants}}
+          <li>
+            <h2>{{site_name}}</h2>
+            <p><strong>Community:</strong> {{community.community_name}}</p>
+            {{!-- <p><strong>Description:</strong> {{description}}</p> --}}
+            <a href="{{map_link}}">View on Map</a>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No restaurants found.</p>
+    {{/if}}
+</section>
