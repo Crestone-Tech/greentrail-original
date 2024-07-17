@@ -105,7 +105,7 @@ router.get("/community/:name", async (req, res) => {
       res.status(404).json({ message: "No such town exists as community" });
     }
     const community = communityData.get({ plain: true });
-
+    console.dir(community, { depth: null });
     // Render page
     res.render("community", {
       community,
@@ -117,6 +117,8 @@ router.get("/community/:name", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.get()
 
 /* Get request for restaurants */
 router.get("/community/:name/eat", async (req, res) => {

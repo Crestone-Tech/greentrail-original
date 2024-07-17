@@ -12,4 +12,10 @@ function logDBConnectionDetails() {
     console.log();
 }
 
-module.exports = { logDBConnectionDetails };
+
+
+
+
+
+
+module.exports = { logDBConnectionDetails};

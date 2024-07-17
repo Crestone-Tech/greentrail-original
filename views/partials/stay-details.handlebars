@@ -1,12 +1,13 @@
-{{!-- <section>
+<section>
     <h2>Places to Stay!</h2>
-    {{#if community.town.site.description value = "hotel"}}
-    {{#each community.town.site as |site|}}
-    <h3>{{site.site_name}}</h3>
+    {{#ifvalue provider service= "hotel"}}
+    {{#each provider as |provider|}}
+    <h3>{{provider.provider_name}}</h3>
+    {{#each provider.site as |site|}}
     <h4>{{site.street_address}}</h4>
     <p>Enjoy a beautiful stay<a href="{{site.map_link}}">here!</a></p>
     {{/each}}
-    {{else}}
+    {{/each}}
     <p>No information right now!</p>
-    {{/if}}
-</section> --}}
+    {{/ifvalue}}
+</section>
