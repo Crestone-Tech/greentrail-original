@@ -4,8 +4,9 @@
   --dark-text: black;
   --light-text: white;
   --accent: #092325;
-  --dark-hover: #0b66a3;
-  --light-hover: #a9bfcd;
+  /* --dark-hover: #0b66a3; */
+  --dark-hover: #3e6e73;
+  --light-hover: #8dbdbc;
   --transparent: #ffffff00;
 }
 
@@ -87,7 +88,6 @@ nav {
 }
 
 #nav-links {
-  display: none;
   margin-bottom: 6px;
 }
 
@@ -123,8 +123,37 @@ a:hover {
 
 .light #login,
 .light #logout {
-  border: 1px solid var(--light-text);
+  border: 1px solid var(--light-text) !important;
   padding: 6px 15px 6px 15px;
+}
+
+#nav-display {
+  color: var(--light-text);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #092325db;
+  z-index: 1;
+}
+
+#nav-display-inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+#nav-display-inner a {
+  padding: 20px;
+}
+
+#hamburger-menu,
+#close-menu {
+  z-index: 2;
 }
 
 /* CONTENT */
@@ -161,16 +190,11 @@ footer {
 /* LARGE SCREENS */
 @media (min-width: 696px) {
   #nav-links {
-    display: inline;
     flex-direction: row;
   }
 
   #nav-links a {
     display: inline;
-  }
-
-  nav i {
-    display: none !important;
   }
 
   .page {

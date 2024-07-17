@@ -174,7 +174,7 @@ router.get("/community/:name/eat", async (req, res) => {
 router.get("/login", async (req, res) => {
   try {
     if (req.session.loggedIn) {
-      res.redirect("/");
+      res.redirect("/locations");
       return;
     }
     // Render

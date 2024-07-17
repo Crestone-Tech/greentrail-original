@@ -12,9 +12,8 @@
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-.fade-late {
-  animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: 1s;
+.fade-in-quick {
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
