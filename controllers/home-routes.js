@@ -9,6 +9,8 @@ const {
   Province,
   Town,
   Provider,
+  Event,
+  EventSeries,
   Tag,
   ProviderTag,
 } = require("../models");
@@ -95,20 +97,58 @@ router.get("/community/:name", async (req, res) => {
               ],
             },
           ],
+
+        },
+        {
+          model: Event,
+          attributes: [
+            "event_name",
+            "community_id",
+            "site_id",
+            "date",
+            "category",
+            "description",
+          ],
+          include: [
+            {
+              model: EventSeries,
+              attributes: [
+                "event_series_name",
+                "date",
+                "day_of_week",
+                "time",
+                "category",
+                "description",
+              ],
+            },
+          ],
+        },
+      ],
+    });
+    const eventData = await Event.findAll({
+      where: {
+        community_id: communityData.id,
+      },
+      include: [
+        {
+          model: EventSeries,
         }, 
       ],
     });
-    //add provider model to also pull from
 
     // Ensure we have found a community
     if (!communityData) {
       res.status(404).json({ message: "No such town exists as community" });
     }
     const community = communityData.get({ plain: true });
+    const events = eventData.map((event) => event.get({ plain: true }));
+    console.log(events);
+    console.log(community);
     console.dir(community, { depth: null });
     // Render page
     res.render("community", {
       community,
+      events,
       loggedIn: req.session.loggedIn,
       darkText: true,
     });
@@ -121,54 +161,54 @@ router.get("/community/:name", async (req, res) => {
 // router.get()
 
 /* Get request for restaurants */
-router.get("/community/:name/eat", async (req, res) => {
-  try {
-    console.log("Fetching restaurant providers...");
-    // Fetch providers categorized as restaurants
-    const restaurantProviders = await Provider.findAll({
-      where: {
-        service: "restaurant",
-      },
-      include: [
-        {
-          model: Community,
-          attributes: ["community_name"],
-        },
-        {
-          model: Site,
-          attributes: [
-            "site_name",
-            // "description",
-            "map_link",
-          ],
-        },
-      ],
-    });
+// router.get("/community/:name/eat", async (req, res) => {
+//   try {
+//     console.log("Fetching restaurant providers...");
+//     // Fetch providers categorized as restaurants
+//     const restaurantProviders = await Provider.findAll({
+//       where: {
+//         service: "restaurant",
+//       },
+//       include: [
+//         {
+//           model: Community,
+//           attributes: ["community_name"],
+//         },
+//         {
+//           model: Site,
+//           attributes: [
+//             "site_name",
+//             // "description",
+//             "map_link",
+//           ],
+//         },
+//       ],
+//     });
 
-    console.log("Restaurant providers fetched.", restaurantProviders);
+//     console.log("Restaurant providers fetched.", restaurantProviders);
 
-    // Ensure providers are found
-    if (!restaurantProviders || restaurantProviders.length === 0) {
-      console.log("No restaurants found.");
-      return res.status(404).json({ message: "No restaurants found" });
-    }
+//     // Ensure providers are found
+//     if (!restaurantProviders || restaurantProviders.length === 0) {
+//       console.log("No restaurants found.");
+//       return res.status(404).json({ message: "No restaurants found" });
+//     }
 
-    const restaurants = restaurantProviders.map((provider) =>
-      provider.get({ plain: true })
-    );
+//     const restaurants = restaurantProviders.map((provider) =>
+//       provider.get({ plain: true })
+//     );
 
-    // Render the restaurants view
-    console.log("Rendering restaurants view with data:", restaurants);
-    res.render("community", {
-      restaurants,
-      loggedIn: req.session.loggedIn,
-      darkText: true,
-    });
-  } catch (err) {
-    console.log("Error occurred:", err);
-    res.status(500).json(err);
-  }
-});
+//     // Render the restaurants view
+//     console.log("Rendering restaurants view with data:", restaurants);
+//     res.render("community", {
+//       restaurants,
+//       loggedIn: req.session.loggedIn,
+//       darkText: true,
+//     });
+//   } catch (err) {
+//     console.log("Error occurred:", err);
+//     res.status(500).json(err);
+//   }
+// });
 
 /* Get request for login page */
 router.get("/login", async (req, res) => {
