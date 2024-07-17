@@ -31,16 +31,16 @@ Thank you to our teaching team, Ben, Allen, and Max. You have been invaluable in
 ## Contributors
 
 Violet Stanziani
-(Github)[https://github.com/floweringvi]
+[Github](https://github.com/floweringvi)
 
 Adam Mathis
-(Github)[https://github.com/adammathis05]
+[Github](https://github.com/adammathis05)
 
 Elliot Davis
-(Github)[https://github.com/crestonesoftware]
+[Github](https://github.com/crestonesoftware)
 
 Gabrielle Belanger
-(Github)[https://github.com/gcbel]
+[Github](https://github.com/gcbel)
 
 ## License
 
