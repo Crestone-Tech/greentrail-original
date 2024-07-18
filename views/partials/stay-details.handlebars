@@ -1,15 +1,20 @@
 <section>
-  <h2 class="grotesque page-subtitle">Places to Stay in
+  <h2 class="grotesque page-subtitle feature-title">Places to Stay in
     {{community.community_name}}</h2>
-  {{#each community.providers as |provider|}}
-    {{#ifvalue provider.service value="accommodation"}}
-      <div class="borders stay-div">
-        <h3>{{provider.provider_name}}</h3>
-        Located At:
-        <h4>{{provider.site.street_address}}</h4>
-        <p>Enjoy a beautiful stay
-          <a href="{{provider.site.map_link}}">here!</a></p>
-      </div>
-    {{/ifvalue}}
-  {{/each}}
+  <div class="small-com-features-div">
+    {{#each community.providers as |provider|}}
+      {{#ifvalue provider.service value="accommodation"}}
+        <div class="borders stay-div small-com-features">
+          <h3>{{provider.provider_name}}</h3>
+          <h4>
+            <i class="fa-solid fa-location-dot"></i>
+            <a
+              href="{{provider.site.map_link}}"
+              class="map-link"
+            >{{provider.site.street_address}}</a>
+          </h4>
+        </div>
+      {{/ifvalue}}
+    {{/each}}
+  </div>
 </section>

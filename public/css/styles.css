@@ -4,7 +4,7 @@
   --dark-text: black;
   --light-text: white;
   --accent: #092325;
-  --dark-hover: #3e6e73;
+  --dark-hover: #3774b6;
   --light-hover: #8dbdbc;
   --transparent: #ffffff00;
 }
@@ -124,6 +124,11 @@ a:hover {
 .light #logout {
   border: 1px solid var(--light-text) !important;
   padding: 6px 15px 6px 15px;
+}
+
+#login:hover,
+#logout:hover {
+  box-shadow: inset 0px 0px 6px #a2cbeb, 0 0 4px #70a5de;
 }
 
 #nav-display {
