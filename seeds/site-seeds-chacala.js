@@ -126,7 +126,7 @@ const siteData = [
     description: "Historical site, with petroglyphs, and swimming",
     category:"outdoor",
     town_id: 1,
-    street_address: "",
+    street_address: "Carr. A Altavista",
     latitude: "21.087978452776646",
     longitude: "-105.16682985788222",
     map_link: "https://maps.app.goo.gl/V8dGgkaXzJYfjmATA",
