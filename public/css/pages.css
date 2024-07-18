@@ -166,7 +166,7 @@
 .selected-feature {
   color: white !important;
   border-radius: 25px;
-  background: var(--dark-text);
+  background: var(--dark-hover);
 }
 
 /* LOGIN PAGE */
