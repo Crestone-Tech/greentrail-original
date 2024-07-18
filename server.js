@@ -48,28 +48,6 @@ app.use(routes);
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* Route to start OAuth2 authentication */
-app.get(
-  "/auth/google",
-  passport.authenticate("google", {
-    scope: ["https://www.googleapis.com/auth/plus.login", "email"],
-  })
-);
-
-/* Callback route for OAuth2 authentication */
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication
-    console.log(req.user);
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      res.redirect("/locations");
-    });
-  }
-);
-
 /* SEQUELIZE */
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
