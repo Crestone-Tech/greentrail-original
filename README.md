@@ -32,15 +32,19 @@ Thank you to our teaching team, Ben, Allen, and Max. You have been invaluable in
 
 Violet Stanziani
 [Github](https://github.com/floweringvi)
+Models, routes, handlebars
 
 Adam Mathis
 [Github](https://github.com/adammathis05)
+Models, routes, handlebars
 
 Elliot Davis
 [Github](https://github.com/crestonesoftware)
+Data design, seed data, Render deployment, 'add' page
 
 Gabrielle Belanger
 [Github](https://github.com/gcbel)
+Front-end, authentication and login functionality, Google OAuth 2.0
 
 ## License
 
