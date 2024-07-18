@@ -1,7 +1,5 @@
 /* DEPENDECIES */
 const router = require("express").Router();
-// Import authentication middleware
-
 const {
   Community,
   Site,
@@ -14,7 +12,6 @@ const {
   Tag,
   ProviderTag,
 } = require("../models");
-// Import models
 
 /* ROUTES */
 /* Get request for homepage */

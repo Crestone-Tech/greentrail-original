@@ -26,12 +26,13 @@ const details = [
 let lastUnhidden = 2;
 
 /* FUNCTIONS */
+/* Hide last shown */
 function hideOther() {
   details[lastUnhidden].classList.add("hidden");
 }
 
+/* Show selected section */
 function showSection(index) {
-  console.log(`Showing ${index}, hiding ${lastUnhidden}`);
   hideOther();
   details[index].classList.remove("hidden");
   lastUnhidden = index;
