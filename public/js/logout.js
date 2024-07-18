@@ -1,5 +1,5 @@
 /* VARIABLES */
-const logout = document.querySelector("#logout");
+const logoutButton = document.querySelector("#logout");
 
 /* FUNCTIONS */
 /* Logs user out on click of logout button */
@@ -17,4 +17,4 @@ const userLogOut = async () => {
 };
 
 /* EVENT LISTENERS */
-logout.addEventListener("click", userLogOut);
+logoutButton.addEventListener("click", userLogOut);
