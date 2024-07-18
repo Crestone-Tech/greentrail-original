@@ -6,6 +6,15 @@ const signUpSection = document.getElementById("sign-up");
 const signup = document.querySelector("#go-sign-up");
 const signin = document.querySelector("#go-sign-in");
 
+const signinEmailAlert = document.querySelector("#signin-email-alert");
+const signinPasswordAlert = document.querySelector("#signin-password-alert");
+const signinAlert = document.querySelector("#signin-alert");
+
+const emailAlert = document.querySelector("#signup-email-alert");
+const firstAlert = document.querySelector("#signup-first-alert");
+const lastAlert = document.querySelector("#signup-last-alert");
+const passwordAlert = document.querySelector("#signup-password-alert");
+
 /* FUNCTIONS */
 /* Show sign in and hide sign up */
 function showSignIn() {
@@ -26,6 +35,18 @@ const userSignIn = async (event) => {
   const email = document.querySelector("#sign-in-email").value;
   const password = document.querySelector("#sign-in-password").value;
 
+  if (!email) {
+    signinEmailAlert.classList.remove("hidden");
+  } else {
+    signinEmailAlert.classList.add("hidden");
+  }
+
+  if (!password) {
+    signinPasswordAlert.classList.remove("hidden");
+  } else {
+    signinPasswordAlert.classList.add("hidden");
+  }
+
   if (email && password) {
     const response = await fetch("/api/users/login", {
       method: "POST",
@@ -36,7 +57,7 @@ const userSignIn = async (event) => {
     if (response.ok) {
       document.location.replace("/locations");
     } else {
-      alert("Failed to log in.");
+      signinAlert.classList.remove("hidden");
     }
   }
 };
@@ -49,32 +70,31 @@ const userSignUp = async (event) => {
   const last = document.querySelector("#sign-up-last").value;
   const email = document.querySelector("#sign-up-email").value;
   const password = document.querySelector("#sign-up-password").value;
-  const emailAlert = document.querySelector('#emailAlert');
-  const firstAlert = document.querySelector('#firstAlert');
-  const lastAlert = document.querySelector('#lastAlert');
-  const passwordAlert = document.querySelector('#passwordAlert')
 
-  if(!email){
+  const validEmail = isValidEmail(email);
+
+  if (!email || !validEmail) {
     emailAlert.classList.remove("hidden");
-  };
-
-  if(!first){
-    firstAlert.classList.remove("hidden");
-
-  };
-
-  if(!last) {
-    lastAlert.classList.remove("hidden");
-  };
-
-  if(!password){
-    passwordAlert.classList.remove("hidden")
-  };
-
-  if (!email) {
-    emailAlert.classList.toggle("hidden");
   } else {
     emailAlert.classList.add("hidden");
+  }
+
+  if (!first) {
+    firstAlert.classList.remove("hidden");
+  } else {
+    firstAlert.classList.add("hidden");
+  }
+
+  if (!last) {
+    lastAlert.classList.remove("hidden");
+  } else {
+    lastAlert.classList.add("hidden");
+  }
+
+  if (!password || password.length < 6) {
+    passwordAlert.classList.remove("hidden");
+  } else {
+    passwordAlert.classList.add("hidden");
   }
 
   if (first && last && email && password) {
@@ -85,15 +105,35 @@ const userSignUp = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/"); // TODO change to user's dashboard
+      document.location.replace("/locations");
     } else {
-      alert("Failed to sign up.");
+      signupAlert.classList.remove("hidden");
     }
-  } // TODO add else with error messages
+  }
 };
+
+/* Check for submit key events */
+function keyPress(event) {
+  if (event.key === "Enter") {
+    if (window.getComputedStyle(signInSection).display !== "none") {
+      userSignIn(event);
+    }
+    // Check if #sign-up is visible
+    else if (window.getComputedStyle(signUpSection).display !== "none") {
+      userSignUp(event);
+    }
+  }
+}
+
+/* Checks for a valid email */
+function isValidEmail(email) {
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return emailRegex.test(email);
+}
 
 /* EVENT LISTENERS */
 showSignInSection.addEventListener("click", showSignIn);
 showSignUpSection.addEventListener("click", showSignUp);
 signin.addEventListener("click", userSignIn);
 signup.addEventListener("click", userSignUp);
+document.addEventListener("keydown", keyPress);

@@ -7,7 +7,8 @@
   <div class="inter" id="signup-signin-box">
     <section class="borders" id="sign-in">
       <p>Email:</p>
-
+      <p class="hidden signin-alert" id="signin-email-alert">Please enter your
+        email</p>
       <input
         type="text"
         class="borders"
@@ -15,19 +16,25 @@
         name="sign-in-email"
       />
       <p>Password:</p>
-
+      <p class="hidden signin-alert" id="signin-password-alert">Please enter
+        your password</p>
       <input
         type="password"
         class="borders"
         id="sign-in-password"
         name="sign-in-password"
       />
+      <p class="hidden signin-alert-important" id="signin-alert">Sorry, the
+        email or password you entered does not match any existing account.
+        Please try again!
+      </p>
       <button id="go-sign-in">Sign in</button>
     </section>
 
     <section class="borders" id="sign-up">
       <p>First name:</p>
-      <p class="hidden" id="firstAlert">Please Enter First Name</p>
+      <p class="hidden signin-alert" id="signup-first-alert">Please enter your
+        first name</p>
       <input
         type="text"
         class="borders"
@@ -35,7 +42,8 @@
         name="sign-up-first"
       />
       <p>Last name:</p>
-      <p class="hidden" id="lastAlert">Please Enter Last Name!</p>
+      <p class="hidden signin-alert" id="signup-last-alert">Please enter your
+        last name</p>
       <input
         type="text"
         class="borders"
@@ -43,7 +51,8 @@
         name="sign-up-last"
       />
       <p>Email:</p>
-      <p class="hidden" id="emailAlert">Please Enter Email!</p>
+      <p class="hidden signin-alert" id="signup-email-alert">Please enter a
+        valid email</p>
       <input
         type="text"
         class="borders"
@@ -51,7 +60,8 @@
         name="sign-up-email"
       />
       <p>Password:</p>
-      <p class="hidden" id="passwordAlert">Please Enter Password!</p>
+      <p class="hidden signin-alert" id="signup-password-alert">Please enter a
+        password longer than 6 characters</p>
       <input
         type="password"
         class="borders"
@@ -59,6 +69,9 @@
         name="sign-up-password"
       />
       <button id="go-sign-up">Sign Up</button>
+      <p class="hidden signin-alert-important" id="signin-alert">Sorry, we were
+        unable to create your account. Please try again.
+      </p>
     </section>
 
     <section class="borders" id="google-auth">
