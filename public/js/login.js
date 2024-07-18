@@ -49,6 +49,27 @@ const userSignUp = async (event) => {
   const last = document.querySelector("#sign-up-last").value;
   const email = document.querySelector("#sign-up-email").value;
   const password = document.querySelector("#sign-up-password").value;
+  const emailAlert = document.querySelector('#emailAlert');
+  const firstAlert = document.querySelector('#firstAlert');
+  const lastAlert = document.querySelector('#lastAlert');
+  const passwordAlert = document.querySelector('#passwordAlert')
+
+  if(!email){
+    emailAlert.classList.remove("hidden");
+  };
+
+  if(!first){
+    firstAlert.classList.remove("hidden");
+
+  };
+
+  if(!last) {
+    lastAlert.classList.remove("hidden");
+  };
+
+  if(!password){
+    passwordAlert.classList.remove("hidden")
+  };
 
   if (first && last && email && password) {
     const response = await fetch("/api/users", {
