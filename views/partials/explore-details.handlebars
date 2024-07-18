@@ -1,0 +1,11 @@
+<section>
+    <h2>Explore {{community.community_name}}!</h2>
+    {{#each community.providers as |provider|}}
+    {{#ifvalue provider.service value='explore'}}
+    <h3>{{provider.provider_name}}</h3>
+    <h4>{{provider.description}}</h4>
+    <h4>Located On: {{provider.site.street_address}}</h4>
+    <a href="{{provider.site.map_link}}">Map link</a>
+    {{/ifvalue}}
+    {{/each}}
+</section>

@@ -207,98 +207,189 @@ const providerData = [
     service: "amenities",
     community_id: 1,
     site_id: 2,
-    description: "Grocery Store"
+    description: "Grocery Store",
   },
   {
     provider_name: "La Roca",
     service: "amenities",
     community_id: 1,
     site_id: 28,
-    description: "Grocery Store, ATM"
+    description: "Grocery Store, ATM",
   },
   {
     provider_name: "Minisuper Rules",
     service: "amenities",
     community_id: 1,
     site_id: 12,
-    description: "Grocery Store, ATM"
+    description: "Grocery Store, ATM",
   },
   {
     provider_name: "Lavandería Nashelly",
     service: "amenities",
     community_id: 1,
     site_id: 32,
-    description: "Laundry"
+    description: "Laundry",
   },
   {
     provider_name: "Lavandería Naye",
     service: "amenities",
     community_id: 1,
     site_id: 31,
-    description: "Laundry"
+    description: "Laundry",
   },
   {
     provider_name: "Lalaxtli",
     service: "amenities",
     community_id: 1,
     site_id: 11,
-    description: "Bakery, ATM"
+    description: "Bakery, ATM",
   },
   {
     provider_name: "Lavandería Nashelly",
     service: "amenities",
     community_id: 1,
     site_id: 32,
-    description: "Laundry"
+    description: "Laundry",
   },
   {
     provider_name: "Trini Moya",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Spanish Lessons"
+    description: "Spanish Lessons",
   },
   {
     provider_name: "Iliana Becerra",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Spanish Lessons"
+    description: "Spanish Lessons",
   },
   {
     provider_name: "Marina Buendia",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Cooking Lessons"
+    description: "Cooking Lessons",
   },
   {
     provider_name: "Emilia Robinson",
     service: "amenities",
     community_id: 1,
     site_id: 7,
-    description: "Yoga Classes"
+    description: "Yoga Classes",
   },
   {
     provider_name: "Jewls Gardner",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Massage"
+    description: "Massage",
   },
   {
     provider_name: "Heather Riddle",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Massage"
+    description: "Massage",
   },
   {
     provider_name: "Monroe Massage",
     service: "amenities",
     community_id: 1,
     site_id: 14,
-    description: "Massage"
+    description: "Massage",
+  },
+  {
+    provider_name: "Pila del Rey Site",
+    service: "explore",
+    community_id: 1,
+    site_id: 13,
+    description: "Historical site, with petroglyphs, and swimming",
+  },
+  {
+    provider_name: "Sewage Ponds of Las Varas",
+    service: "explore",
+    community_id: 1,
+    site_id: 16,
+    description: "Natural site",
+  },
+  {
+    provider_name: "Trailhead for Cerro de Tetila",
+    service: "explore",
+    community_id: 1,
+    site_id: 17,
+    description: "Hiking Trailhead",
+  },
+  {
+    provider_name: "Restaurante Antojitos Mexicanos Jade",
+    service: "restaurants",
+    community_id: 1,
+    site_id: 27,
+  },
+  {
+    provider_name: "Visita Chacala",
+    service: "explore",
+    community_id: 1,
+    site_id: 37,
+    description: "Sightseeing Tour Agency",
+  },
+  {
+    provider_name: "Chacala Pier",
+    service: "explore",
+    community_id: 1,
+    site_id: 44,
+    description: "Beautiful beach and pier",
+  },
+  {
+    provider_name: "Lake Mastranzo",
+    service: "explore",
+    community_id: 1,
+    site_id: 45,
+    description:
+      "Mostly flat route that's great for hiking. Beautiful views of Laguna Mastranzo.",
+  },
+  {
+    provider_name: "Volcano Durón Ivanna",
+    service: "explore",
+    community_id: 1,
+    site_id: 46,
+    description: "Amazing hike from Chacala.",
+  },
+  {
+    provider_name: "Chacala Beach",
+    service: "explore",
+    community_id: 1,
+    site_id: 47,
+    description: "Beautiful beach with golden sand and crystal clear water.",
+  },
+  {
+    provider_name: "Playa Las Cuevas",
+    service: "explore",
+    community_id: 1,
+    site_id: 49,
+    description: "A great secluded beach. Nice and clean.",
+  },
+  {
+    provider_name: "Playa La Caleta",
+    service: "explore",
+    community_id: 1,
+    site_id: 50,
+    description: "Nice local beach.",
+  },
+  {
+    provider_name: "Estuary of River de Chila",
+    service: "explore",
+    community_id: 1,
+    site_id: 53,
+    description: "",
+  },
+  {
+    provider_name: "Jammurca Aguas Termales",
+    service: "explore",
+    community_id: 1,
+    site_id: 54,
+    description: "Relaxing hot springs",
   },
 ];
 
