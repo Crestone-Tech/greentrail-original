@@ -7,6 +7,18 @@
   display: none;
 }
 
+/* HOVER */
+#go-sign-up:hover,
+#go-sign-in:hover,
+#google-auth:hover,
+#see-more:hover,
+#login:hover,
+#logout:hover,
+.large-com-features:hover,
+.small-com-features:hover {
+  box-shadow: inset 0px 0px 6px #a2cbeb, 0 0 4px #70a5de;
+}
+
 /* FADE IN */
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
