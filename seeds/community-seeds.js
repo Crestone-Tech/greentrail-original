@@ -4,7 +4,7 @@ const communityData = [
   {
     community_name: "Chacala",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut mi scelerisque, rutrum libero eu, bibendum quam. Mauris eu arcu orci. Sed viverra sodales nisi, a varius urna pharetra sit amet. Donec rutrum volutpat urna eu hendrerit. Aenean nec viverra diam, in dictum arcu. Sed dictum lectus nec justo accumsan malesuada. Morbi eu dapibus odio.",
+      "Chacala is a coastal village, in the state of Nayarit, 60 miles north of Puerto Vallarta. Visitors tend to fall in love with the warm community; visitors on their 6th or 10th visit are more common than first-timers. There is nothing here that you 'have to do' - no obligatory tourist destinations, postcard moments that you have to check off - and so there is nothing to do but explore, enjoy and connect.",
     town_id: 1,
     community_center_site_id: 2,
   },
