@@ -81,10 +81,6 @@
   line-height: 0.8;
 }
 
-#see-more:hover {
-  box-shadow: inset 0px 0px 6px #a2cbeb, 0 0 4px #70a5de;
-}
-
 /* ALL LOCATIONS */
 #locations {
   padding: 10px 15px 10px 15px; /* Add padding within borders */
@@ -172,12 +168,13 @@
 
 #signup-signin-box {
   display: flex;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 30px 30px 0px 30px;
-  font-size: 16px;
+  margin: 30px 10% 0px 10%;
+  font-size: 22px;
   min-width: 150px;
-  width: 100%;
+  width: 80%;
 }
 
 #sign-up {
@@ -188,12 +185,30 @@
 #sign-in,
 #google-auth {
   padding: 20px;
-  min-width: 150px;
-  width: calc(2vw + 150px);
+  max-width: 310px;
+}
+
+#google-auth {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 #signup-signin-box input {
   padding: 4px;
+}
+
+input {
+  width: 98%;
+}
+
+#go-sign-up,
+#go-sign-in {
+  margin-top: 10px;
+  border: 1px solid var(--dark-text);
+  padding: 6px 15px 6px 15px;
+  border-radius: 25px;
 }
 
 /* 404 PAGE */
@@ -206,8 +221,11 @@
 
 /* MOBILE */
 @media (min-width: 450px) {
-  #signup-signin-box {
-    font-size: 22px;
+  #sign-up,
+  #sign-in,
+  #google-auth {
+    padding: 20px;
+    width: 310px;
   }
 
   #community-nav {

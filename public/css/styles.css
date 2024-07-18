@@ -126,11 +126,6 @@ a:hover {
   padding: 6px 15px 6px 15px;
 }
 
-#login:hover,
-#logout:hover {
-  box-shadow: inset 0px 0px 6px #a2cbeb, 0 0 4px #70a5de;
-}
-
 #nav-display {
   color: var(--light-text);
   position: fixed;

@@ -6,14 +6,14 @@
   <i class="fa-solid fa-bars hidden fade-in" id="hamburger-menu"></i>
   <i class="fa-solid fa-x hidden" id="close-menu"></i>
   <div id="nav-links">
-    <a href="/locations" class="fade-in">Locations</a>
+    <a href="/locations">Locations</a>
     {{#if loggedIn}}
-      <a href="/add" class="fade-in">Add</a>
-      <a href="/" class="fade-in" id="logout">Logout</a>
+      <a href="/add">Add</a>
+      <a href="/" id="logout">Logout</a>
       {{! JAVASCRIPT }}
       <script src="/js/logout.js"></script>
     {{else}}
-      <a href="/login" class="fade-in" id="login">Login</a>
+      <a href="/login" id="login">Login</a>
     {{/if}}
   </div>
 </nav>
