@@ -152,15 +152,21 @@
   justify-content: center;
   line-height: 0.5;
   border: 1px solid var(--dark-text);
-  border-radius: 25px;
+  border-radius: 30px;
   padding: 8px;
   margin: 0px 5vw 0px 5vw;
 }
 
 #community-nav p {
   color: var(--dark-text);
-  padding: 10px;
+  padding: 14px;
   font-size: calc(0.5vw + 20px);
+}
+
+.selected-feature {
+  color: white !important;
+  border-radius: 25px;
+  background: var(--dark-text);
 }
 
 /* LOGIN PAGE */

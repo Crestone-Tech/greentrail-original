@@ -26,12 +26,14 @@ let lastUnhidden = 0;
 /* Hide last shown */
 function hideOther() {
   details[lastUnhidden].classList.add("hidden");
+  selector[lastUnhidden].classList.remove("selected-feature");
 }
 
 /* Show selected section */
 function showSection(index) {
   hideOther();
   details[index].classList.remove("hidden");
+  selector[index].classList.add("selected-feature");
   lastUnhidden = index;
 }
 
