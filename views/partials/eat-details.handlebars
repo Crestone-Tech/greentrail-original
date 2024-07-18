@@ -1,13 +1,17 @@
 <section>
-    <h2>Places to Eat in this Community!</h2>
+  <h2 class="grotesque page-subtitle feature-title">Places to Eat in this
+    Community!</h2>
+  <div class="small-com-features-div">
     {{#each community.providers as |provider|}}
-    {{#ifvalue provider.service value='restaurant'}}
-    Restaurant Name:
-    <h3>{{provider.provider_name}}</h3>
-    <h4>{{provider.site.description}}</h4>
-    Located At:
-    <h4>{{provider.site.street_address}}</h4>
-    <p>Enjoy your meal! <a href="{{provider.site.map_link}}">here!</a></p>
-    {{/ifvalue}}
+      {{#ifvalue provider.service value="restaurant"}}
+        <div class="borders stay-div small-com-features">
+          <h3>{{provider.provider_name}}</h3>
+          <p>{{provider.site.description}}</p>
+          <h4><i class="fa-solid fa-location-dot"></i><a
+              href="{{provider.site.map_link}}"
+            > {{provider.site.street_address}}</a></h4>
+        </div>
+      {{/ifvalue}}
     {{/each}}
+  </div>
 </section>

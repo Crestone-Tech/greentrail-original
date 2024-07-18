@@ -7,31 +7,27 @@
 
   <div id="community-features">
     <div class="grotesque" id="community-nav">
+      <p href="#" id="explore">Explore</p>
       <p href="#" id="stay">Stay</p>
       <p href="#" id="eat">Eat</p>
-      <p href="#" id="explore">Explore</p>
       <p href="#" id="events">Events</p> 
       <p href="#" id="amenities">Amenities</p>
-      <p href="#" id="about">About</p>
     </div>
     <div>
+      <div id="explore-details">
+          {{> explore-details}}
+        </div>
       <div class="hidden", id="stay-details">
           {{> stay-details}}
         </div>
       <div class="hidden", id="eat-details">
           {{> eat-details}}
         </div>
-      <div id="explore-details">
-          {{> explore-details}}
-        </div>
-      <div class="hidden", id="event-details">
+      <div class="hidden" id="event-details">
           {{> events-details}}
         </div>
-      <div class="hidden", id="amenities-details">
+      <div class="hidden" id="amenities-details">
           {{> amenities-details}}
-        </div>
-      <div class="hidden", id="about-details">
-          {{> about-details}}
         </div>
     </div>
   </div>

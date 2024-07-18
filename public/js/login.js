@@ -50,6 +50,12 @@ const userSignUp = async (event) => {
   const email = document.querySelector("#sign-up-email").value;
   const password = document.querySelector("#sign-up-password").value;
 
+  if (!email) {
+    emailAlert.classList.toggle("hidden");
+  } else {
+    emailAlert.classList.add("hidden");
+  }
+
   if (first && last && email && password) {
     const response = await fetch("/api/users", {
       method: "POST",
